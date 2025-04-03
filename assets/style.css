@@ -7,25 +7,79 @@
     CSS PLUGIN DASHBOARD PROGRAMAS ACADÉMICOS
     =========================================
 	
-    01. Navbar
-    02. Academic Programs Section
-        02. 1 Filters
-        02. 2 Programs List
-    03. Hero
-    04. Service Css
-        04.program-liste two
-    05. About Css
-    06. Contact Css 
-    07. Team Style Css
-    08. Blog Css
-    09. Blog Details Css
-    10. Testimonial Css
-    11. Newsletter Css
-    12. Footer Css
+    01. General
+    02. Navbar
+    03. Academic Programs Section
+        03. 1 Filters
+        03. 2 Programs List
+    04. Pagination
     
 -----------------------------------------------------------------------------------*/
+
 /*----------------------------------------*/
-/*  01. Navbar
+/*  01. General
+/*----------------------------------------*/
+
+.pa-title-main {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #007bff, #00c3ff);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    padding: 10px;
+}
+
+.pa-title-main::after {
+    content: "";
+    display: block;
+    width: 50%;
+    height: 4px;
+    background: #007bff;
+    margin: 8px auto 0;
+    transition: width 0.3s ease-in-out;
+}
+
+.pa-title-main:hover::after {
+    width: 80%;
+}
+
+@media (max-width: 768px) {
+    .pa-title-main {
+        font-size: clamp(1.5rem, 4.5vw, 2rem);
+        padding: 8px;
+    }
+
+    .pa-title-main::after {
+        width: 60%;
+    }
+
+    .pa-title-main:hover::after {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .pa-title-main {
+        font-size: clamp(1.2rem, 5vw, 1.8rem);
+        padding: 5px;
+    }
+
+    .pa-title-main::after {
+        width: 70%;
+        height: 3px;
+    }
+
+    .pa-title-main:hover::after {
+        width: 95%;
+    }
+}
+  
+  
+/*----------------------------------------*/
+/*  02. Navbar
 /*----------------------------------------*/
 
 /*-- Common Style --*/
@@ -134,7 +188,7 @@
 }
 
 /*----------------------------------------*/
-/*  02. Academic Programs Section
+/*  03. Academic Programs Section
 /*----------------------------------------*/
 
 /*-- 
@@ -151,7 +205,7 @@
 }
 
 /*--
-    02. 1 Filters
+    03. 1 Filters
 ---------------------*/
 
 .pa-filter {
@@ -319,7 +373,7 @@
 }
 
 /*--
-    02. 2 Programs List
+    03. 2 Programs List
 ---------------------*/
 
 .program-list-container {
@@ -467,9 +521,9 @@
     }
 }
 
-/*-- 
-    - Pagination
------------------------------------------*/
+/*----------------------------------------*/
+/*  04. Pagination
+/*----------------------------------------*/
 
 .pagination {
     display: flex;
@@ -508,7 +562,6 @@
     box-shadow: 0 2px 8px rgba(44, 62, 80, 0.3);
 }
 
-/* Flechas (opcional) */
 .page-link.prev,
 .page-link.next {
     width: auto;
@@ -516,7 +569,10 @@
     border-radius: 20px;
 }
 
-/* Responsive */
+/*-- 
+    - Media Queries
+-----------------------------------------*/
+
 @media (max-width: 768px) {
     .page-link {
         width: 36px;
