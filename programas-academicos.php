@@ -130,7 +130,7 @@ function gica_mostrar_programas($atts) {
                             foreach ($items as $programa) : 
                                 
                                 $statusClass = $programa['active'] ? 'active' : 'inactive';
-                                $hasUpdated = $programa['updated'];
+                                $hasUpdated = $programa['updated'] ?? false;
                                 $hasStatus = true;
 
                                 ?>
