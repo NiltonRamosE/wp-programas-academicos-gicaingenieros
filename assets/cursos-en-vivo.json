@@ -1,0 +1,26 @@
+{
+    "2020": [
+        { "code": "C - LSST - T", "title": "LEY N° 29783 - SEGURIDAD Y SALUD EN EL TRABAJO", "image": "http://gicaingenieros.com/images/banners/clssttrujillo-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/cursos/curso-lsst-trujillo(2Feb).html", "active": true, "updated": true },
+        { "code": "C - RIEL - T", "title": "RIESGOS ELÉCTRICOS", "image": "http://gicaingenieros.com/images/banners/crieltrujillo-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/cursos/curso-riel-trujillo.html", "active": true, "updated": true }
+    ],
+    "2021": [
+        { "code": "CO-GA55001", "title": "GESTIÓN DE ACTIVOS ISO 55001 ANÁLISIS E IMPLEMENTACIÓN", "image": "http://gicaingenieros.com/cursoga55/img/co-ga55001-01.jpg", "url": "http://gicaingenieros.com/cursoga55/seguimiento.html", "active": true, "updated": true },
+        { "code": "CO-MISGC9001", "title": "METODOLOGÍA DE IMPLEMENTACIÓN SGC ISO 9001:2015", "image": "http://gicaingenieros.com/cursomisgc/img/co-misgc9001-01.jpg", "url": "http://gicaingenieros.com/cursomisgc/seguimiento.html", "active": true, "updated": true },
+        { "code": "CO-ELECMOV", "title": "ELECTROMOVILIDAD: OPERACIÓN Y MANTENIMIENTO DE VEHÍCULOS ELÉCTRICOS", "image": "http://gicaingenieros.com/elecmov/img/co-elecmov-01.jpg", "url": "http://gicaingenieros.com/elecmov/21-08-10/seguimiento.html", "active": true, "updated": true }
+    ],
+    "2022": [
+        { "code": "CO-ELECMOV2", "title": "ELECTROMOVILIDAD: OPERACIÓN Y MANTENIMIENTO DE VEHÍCULOS ELÉCTRICOS", "image": "http://gicaingenieros.com/elecmov/img/co-elecmov2-01.jpg", "url": "http://gicaingenieros.com/elecmov/22-02-22/seguimiento.html", "active": true, "updated": true },
+        { "code": "CO-PERIVAME", "title": "PERITAJE Y VALUACIÓN DE MAQUINARIA Y EQUIPOS", "image": "http://gicaingenieros.com/perivame/img/co-perivame-01.jpg", "url": "http://gicaingenieros.com/perivame/22-05-05/seguimiento.html", "active": true, "updated": true },
+        { "code": "CO-FISGA14", "title": "FUNDAMENTOS E INTERPRETACIÓN ISO 14001:2015 SISTEMA DE GESTIÓN AMBIENTAL", "image": "http://gicaingenieros.com/fisga14/img/co-fisga14-01.jpg", "url": "http://gicaingenieros.com/fisga14/06-06-22/seguimiento.html", "active": true, "updated": true },
+        { "code": "CO-FISST45", "title": "FUNDAMENTOS E INTERPRETACIÓN ISO 45001:2018 SISTEMA DE GESTIÓN DE SEGURIDAD Y SALUD EN EL TRABAJO", "image": "http://gicaingenieros.com/fisst45/img/co-fisst45-01.jpg", "url": "http://gicaingenieros.com/fisst45/08-06-22/seguimiento.html", "active": true, "updated": true },
+        { "code": "CO-FISGC9", "title": "FUNDAMENTOS E INTERPRETACIÓN ISO 9001:2015 SISTEMA DE GESTIÓN DE LA CALIDAD", "image": "http://gicaingenieros.com/fisgc9/img/co-fisgc9-01.jpg", "url": "http://gicaingenieros.com/fisgc9/09-06-22/seguimiento.html", "active": true, "updated": true },
+        { "code": "CO-IGM9", "title": "IMPLEMENTACIÓN DEL PROCESO DE GESTIÓN DE MANTENIMIENTO BAJO ISO 9001:2015(7.1.3)", "image": "http://gicaingenieros.com/igm9/img/co-igm9-01.jpg", "url": "http://gicaingenieros.com/igm9/09-07-22/seguimiento.html", "active": true, "updated": true },
+        { "code": "CO-APA", "title": "NORMAS APA SÉPTIMA EDICIÓN", "image": "http://gicaingenieros.com/apa/img/co-apa-01.jpg", "url": "http://gicaingenieros.com/apa/19-07-22/seguimiento.html", "active": true, "updated": true },
+        { "code": "CO-FAISSOMA", "title": "FORMACIÓN DE AUDITOR INTERNO SSOMA ISO 45001:2018 E ISO 14001:2015", "image": "http://gicaingenieros.com/faissoma/img/co-faissoma-01.jpg", "url": "http://gicaingenieros.com/faissoma/27-08-22/seguimiento.html", "active": true, "updated": true },
+        { "code": "CO-FAISGA55", "title": "FORMACIÓN DE AUDITOR INTERNO ISO 55001:2014 SISTEMA DE GESTIÓN DE ACTIVOS", "image": "http://gicaingenieros.com/faisga55/img/co-faisga55-01.jpg", "url": "http://gicaingenieros.com/faisga55/13-09-22/seguimiento.html", "active": true, "updated": true },
+        { "code": "CO-APA2", "title": "NORMAS APA SÉPTIMA EDICIÓN", "image": "http://gicaingenieros.com/apa/img/co-apa2-01.jpg", "url": "http://gicaingenieros.com/apa/19-10-22/seguimiento.html", "active": true, "updated": true }
+    ],
+    "2023": [
+        { "code": "20 CURSOS", "title": "CURSOS OBLIGATORIOS SEGURIDAD Y SALUD EN EL TRABAJO LEY 29783", "image": "http://gicaingenieros.com/cursossst23/img/cursossst23-01.jpg", "url": "http://gicaingenieros.com/cursossst23/seguimiento.html", "active": true, "updated": true }
+    ]
+}
