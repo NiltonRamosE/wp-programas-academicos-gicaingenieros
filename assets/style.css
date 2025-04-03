@@ -44,6 +44,8 @@
     --btn-year-text-hover: white;
 
     /*-- State Buttons --*/
+
+    /*
     --btn-state-bg-all: #e7f5ff;
     --btn-state-border-color-all: #d0ebff;
     --btn-state-text-color-all: #228be6;
@@ -59,6 +61,7 @@
     --btn-state-bg-updated: #fff9db;
     --btn-state-border-color-updated: #ffec99;
     --btn-state-text-color-updated: #e67700;
+    */
 
     /*-- State Badges --*/
     --badge-state-active: #27ae60;
@@ -275,18 +278,26 @@
     gap: 15px;
 }
 
-.pa-filter__year, .pa-filter__state {
+.pa-filter__year {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
     align-items: center;
 }
 
+/* -- Si se llega a activar el state
+.pa-filter__year, .pa-filter__state {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+}
+*/
 .pa-filter__year {
     margin-right: auto;
 }
 
-.pa-filter__btn-year, .pa-filter__btn-state {
+.pa-filter__btn-year {
     position: relative;
     padding: 8px 16px;
     border: none;
@@ -301,6 +312,22 @@
     text-align: center;
 }
 
+/* -- Si se llega a activar el state
+.pa-filter__btn-year, .pa-filter__btn-state {
+    position: relative;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    z-index: 1;
+    min-width: 60px;
+    text-align: center;
+}
+*/
 /*-- Year Buttons --*/
 
 .pa-filter__btn-year {
@@ -337,7 +364,7 @@
 }
 
 /*-- State Buttons --*/
-
+/*
 .pa-filter__btn-state {
     border: 1px solid;
 }
@@ -370,7 +397,7 @@
     transform: translateY(-2px);
     box-shadow: var(--container-shadow-hover);
 }
-
+*/
 /*-- 
     - Media Queries
 -----------------------------------------*/
@@ -380,16 +407,28 @@
         align-items: stretch;
         gap: 12px;
     }
-    
+
+    .pa-filter__year {
+        justify-content: center;
+    }
+
+    .pa-filter__btn-year {
+        padding: 6px 12px;
+        font-size: 12px;
+        min-width: 50px;
+    }
+
+    /* -- Si se llega a activar el state
     .pa-filter__year, .pa-filter__state {
         justify-content: center;
     }
-    
+
     .pa-filter__btn-year, .pa-filter__btn-state {
         padding: 6px 12px;
         font-size: 12px;
         min-width: 50px;
     }
+    */
 }
 
 @media (max-width: 480px) {

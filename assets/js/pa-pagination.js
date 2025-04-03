@@ -1,5 +1,5 @@
 jQuery(document).ready(function($) {
-    // Clase para manejar la paginación
+
     function AcademicPagination(containerId, itemsPerPage) {
         this.container = $('#' + containerId);
         this.itemsPerPage = itemsPerPage || 6;
@@ -17,8 +17,7 @@ jQuery(document).ready(function($) {
             if (typeof window.registerPaginationInstance === 'function') {
                 window.registerPaginationInstance(this.container.attr('id'), this);
             }
-            
-            // Mostrar primera página al cargar
+
             this.showPage(this.getUrlPage());
             this.setupEventListeners();
         },
@@ -41,14 +40,12 @@ jQuery(document).ready(function($) {
             this.paginationContainer.empty();
             
             if (totalPages > 1) {
-                // Botón Anterior
                 if (this.currentPage > 1) {
                     this.paginationContainer.append(
                         this.createPageLink('&laquo; Anterior', this.currentPage - 1, 'prev')
                     );
                 }
                 
-                // Números de página
                 var maxVisiblePages = 5;
                 var startPage = Math.max(1, this.currentPage - Math.floor(maxVisiblePages / 2));
                 var endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
@@ -75,7 +72,6 @@ jQuery(document).ready(function($) {
                     this.paginationContainer.append(this.createPageLink(totalPages, totalPages));
                 }
                 
-                // Botón Siguiente
                 if (this.currentPage < totalPages) {
                     this.paginationContainer.append(
                         this.createPageLink('Siguiente &raquo;', this.currentPage + 1, 'next')
@@ -123,7 +119,6 @@ jQuery(document).ready(function($) {
         }
     };
 
-    // Inicialización para cada contenedor
     $('[id^="pagination-"]').each(function() {
         var containerId = $(this).attr('id').replace('pagination-', '');
         new AcademicPagination(containerId, 6);
