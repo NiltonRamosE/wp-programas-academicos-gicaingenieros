@@ -65,6 +65,16 @@ function gica_enqueue_styles() {
 }
 add_action('wp_enqueue_scripts', 'gica_enqueue_styles');
 
+// Encolar el archivo JavaScript
+function gica_enqueue_scripts() {
+    wp_enqueue_script('jquery');
+    wp_enqueue_script('gica-pa-script-sections', plugin_dir_url(__FILE__) . 'assets/js/pa-sections.js', array('jquery'), null, true);
+    wp_enqueue_script('gica-pa-script-filter-year', plugin_dir_url(__FILE__) . 'assets/js/pa-filter-year.js', array('jquery'), null, true);
+    wp_enqueue_script('gica-pa-script-pagination', plugin_dir_url(__FILE__) . 'assets/js/pa-pagination.js', array('jquery'), null, true);
+}
+add_action('wp_enqueue_scripts', 'gica_enqueue_scripts');
+
+
 // Shortcode para mostrar programas con filtros
 function gica_mostrar_programas($atts) {
     ob_start();
@@ -90,6 +100,8 @@ function gica_mostrar_programas($atts) {
     if (json_last_error() === JSON_ERROR_NONE) {
         ?>
         <div class="programas-academicos-container">
+            <img src="https://www.gicaingenieros.com/email/images/img-gica-2.jpg" alt="">
+            <h1 class="pa-title-main">PLANTILLAS DE PROGRAMAS ACADÉMICOS</h1>
             <nav class="programas-academicos-nav">
                 <?php foreach (array_keys($data_programs) as $category) : ?>
                     <button class="pa-nav__btn" data-program-category="<?php echo $category; ?>">
@@ -106,144 +118,58 @@ function gica_mostrar_programas($atts) {
                                 <button class="pa-filter__btn-year" data-year="<?php echo $year; ?>"><?php echo $year; ?></button>
                             <?php endforeach; ?>
                         </div>
+                        <!--
                         <div class="pa-filter__state">
                             <button class="pa-filter__btn-state" data-state="all">Todos</button>
                             <button class="pa-filter__btn-state" data-state="active">Activos</button>
                             <button class="pa-filter__btn-state" data-state="inactive">Inactivos</button>
                             <button class="pa-filter__btn-state" data-state="updated">Actualizados</button>
                         </div>
+                        -->
                     </div>
                     <div class="program-list-container">
-                        <?php
-                        $items_per_page = 6;
-                        $current_page = isset($_GET['page']) ? intval($_GET['page']) : 1;
-                        $start_index = ($current_page - 1) * $items_per_page;
-                        $end_index = $start_index + $items_per_page;
-                        $item_count = 0;
+                        <?php foreach ($programs as $year => $items) :
+                            foreach ($items as $programa) : 
+                                
+                                $statusClass = $programa['active'] ? 'active' : 'inactive';
+                                $hasUpdated = $programa['updated'] ?? false;
+                                $hasStatus = true;
 
-                        foreach ($programs as $year => $items) {
-                            foreach ($items as $programa) {
-                                if ($item_count >= $start_index && $item_count < $end_index) {
-                                    $statusClass = $programa['active'] ? 'active' : 'inactive';
-                                    $hasUpdated = $programa['updated'];
-                                    $hasStatus = true;
-                                    ?>
-                                    <div class="program-item" data-year="<?php echo $year; ?>" data-active="<?php echo $programa['active'] ? 'true' : 'false'; ?>" data-updated="<?php echo $programa['updated'] ? 'true' : 'false'; ?>">
-                                        <?php if($hasUpdated && !$hasStatus) { ?>
-                                            <span class="status-badge updated-left">Actualizado</span>
+                                ?>
+                                <div class="program-item" 
+                                     data-year="<?php echo $year; ?>" 
+                                     data-active="<?php echo $programa['active'] ? 'true' : 'false'; ?>" 
+                                     data-updated="<?php echo $programa['updated'] ? 'true' : 'false'; ?>">
+
+                                    <?php if($hasUpdated && !$hasStatus) : ?>
+                                        <span class="status-badge updated-left">Actualizado</span>
+                                    <?php endif; ?>
+                                    <div class="status-badges-container">
+                                        <?php if($hasStatus) { ?>
+                                            <span class="status-badge <?php echo $statusClass; ?>">
+                                                <?php echo $programa['active'] ? 'Activo' : 'Inactivo'; ?>
+                                            </span>
                                         <?php } ?>
-                                        
-                                        <div class="status-badges-container">
-                                            <?php if($hasStatus) { ?>
-                                                <span class="status-badge <?php echo $statusClass; ?>">
-                                                    <?php echo $programa['active'] ? 'Activo' : 'Inactivo'; ?>
-                                                </span>
-                                            <?php } ?>
-                                            
-                                            <?php if($hasUpdated && $hasStatus) { ?>
-                                                <span class="status-badge updated">Actualizado</span>
-                                            <?php } ?>
-                                        </div>
-                                        
-                                        <a href="<?php echo $programa['url']; ?>" target="_blank">
-                                            <img src="<?php echo $programa['image']; ?>" alt="<?php echo $programa['title']; ?>">
-                                        </a>
-                                        <h3><?php echo $programa['title']; ?></h3>
-                                        <p><?php echo $programa['code']; ?></p>
+                                        <?php if($hasUpdated && $hasStatus) { ?>
+                                            <span class="status-badge updated">Actualizado</span>
+                                        <?php } ?>
                                     </div>
-                                    <?php
-                                }
-                                $item_count++;
-                            }
-                        }
-                        ?>
+                                    
+                                    <a href="<?php echo $programa['url']; ?>" target="_blank">
+                                        <img src="<?php echo $programa['image']; ?>" alt="<?php echo $programa['title']; ?>">
+                                    </a>
+                                    <h3><?php echo $programa['title']; ?></h3>
+                                    <p><?php echo $programa['code']; ?></p>
+                                </div>
+                                <?php 
+                            endforeach;
+                        endforeach; ?>
                     </div>
-                    <div class="pagination">
-                        <?php
-                        $total_items = $item_count;
-                        $total_pages = ceil($total_items / $items_per_page);
-                        $current_page = isset($_GET['page']) ? intval($_GET['page']) : 1;
-
-                        if ($total_pages > 1) {
-                            // Botón Anterior (opcional)
-                            if ($current_page > 1) {
-                                echo "<a href='?page=".($current_page-1)."' class='page-link prev'>&laquo; Anterior</a>";
-                            }
-
-                            // Números de página
-                            for ($i = 1; $i <= $total_pages; $i++) {
-                                $active_class = ($i == $current_page) ? 'active' : '';
-                                echo "<a href='?page={$i}' class='page-link {$active_class}'>{$i}</a>";
-                            }
-
-                            // Botón Siguiente (opcional)
-                            if ($current_page < $total_pages) {
-                                echo "<a href='?page=".($current_page+1)."' class='page-link next'>Siguiente &raquo;</a>";
-                            }
-                        }
-                        ?>
-                    </div>
+                    
+                    <div class="pagination" id="pagination-<?php echo $category; ?>"></div>
                 </section>
             <?php endforeach; ?>
         </div>
-
-        <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const navButtons = document.querySelectorAll('.pa-nav__btn');
-            const buttonsYear = document.querySelectorAll('.pa-filter__btn-year');
-            const buttonsEstado = document.querySelectorAll('.pa-filter__btn-state');
-            const programasSections = document.querySelectorAll('.programas-academicos-section');
-
-            navButtons.forEach(button => {
-                button.addEventListener('click', function () {
-                    const programCategory = this.getAttribute('data-program-category');
-                    programasSections.forEach(section => {
-                        section.style.display = section.id === programCategory ? 'block' : 'none';
-                    });
-                });
-            });
-
-            buttonsYear.forEach(button => {
-                button.addEventListener('click', function () {
-                    const year = this.getAttribute('data-year');
-                    filtrarProgramas(year, obtenerEstadoSeleccionado());
-                });
-            });
-
-            buttonsEstado.forEach(button => {
-                button.addEventListener('click', function () {
-                    const estado = this.getAttribute('data-state');
-                    filtrarProgramas(getSelectedYear(), estado);
-                });
-            });
-
-            function filtrarProgramas(year, estado) {
-                const programas = document.querySelectorAll('.programa');
-                programas.forEach(programa => {
-                    const programYear = programa.getAttribute('data-year');
-                    const programaActive = programa.getAttribute('data-active') === 'true';
-                    const programaUpdated = programa.getAttribute('data-updated') === 'true';
-
-                    let mostrar = true;
-                    if (year && programYear !== year) mostrar = false;
-                    if (estado === 'active' && !programaActive) mostrar = false;
-                    if (estado === 'updated' && !programaUpdated) mostrar = false;
-
-                    programa.style.display = mostrar ? 'block' : 'none';
-                });
-            }
-
-            function getSelectedYear() {
-                const yearActive = document.querySelector('.pa-filter__btn-year.active');
-                return yearActive ? yearActive.getAttribute('data-year') : null;
-            }
-
-            function obtenerEstadoSeleccionado() {
-                const estadoActivo = document.querySelector('.pa-filter__btn-state.active');
-                return estadoActivo ? estadoActivo.getAttribute('data-state') : 'all';
-            }
-        });
-        </script>
         <?php
     } else {
         echo "<p>Error al leer los archivos JSON.</p>";

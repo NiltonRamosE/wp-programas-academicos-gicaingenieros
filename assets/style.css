@@ -7,25 +7,139 @@
     CSS PLUGIN DASHBOARD PROGRAMAS ACADÉMICOS
     =========================================
 	
-    01. Navbar
-    02. Academic Programs Section
-        02. 1 Filters
-        02. 2 Programs List
-    03. Hero
-    04. Service Css
-        04.program-liste two
-    05. About Css
-    06. Contact Css 
-    07. Team Style Css
-    08. Blog Css
-    09. Blog Details Css
-    10. Testimonial Css
-    11. Newsletter Css
-    12. Footer Css
+    00. Variables
+    01. General
+    02. Navbar
+    03. Academic Programs Section
+        03. 1 Filters
+        03. 2 Programs List
+    04. Pagination
     
 -----------------------------------------------------------------------------------*/
+
 /*----------------------------------------*/
-/*  01. Navbar
+/*  00. Variables
+/*----------------------------------------*/
+:root {
+    /*-- General --*/
+    --primary-color: #092f58;
+    --secondary-color: #f9c127;
+    --tertiary-color: #63a3fa;
+    --quaternary-color: #7f8c8d;
+
+    --border-container: #ddd;
+    --container-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    --container-shadow-hover: 0 4px 8px rgba(0, 0, 0, 0.15);
+    
+    /*-- Navbar Buttons --*/
+    --btn-nav-active: #082949;
+    --btn-nav-primary-color: #f9b809;
+    --btn-nav-secondary-color: #dd8d02;
+    --btn-nav-text-color: white;
+    
+    /*-- Year Buttons --*/
+    --btn-year-bg: #f5f5f5;
+    --btn-year-bg-hover: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+    --btn-year-text: #333;
+    --btn-year-text-hover: white;
+
+    /*-- State Buttons --*/
+
+    /*
+    --btn-state-bg-all: #e7f5ff;
+    --btn-state-border-color-all: #d0ebff;
+    --btn-state-text-color-all: #228be6;
+
+    --btn-state-bg-active: #ebfbee;
+    --btn-state-border-color-active: #d3f9d8;
+    --btn-state-text-color-active: #2b8a3e;
+
+    --btn-state-bg-inactive: #fff5f5;
+    --btn-state-border-color-inactive: #ffd8d8;
+    --btn-state-text-color-inactive: #c92a2a;
+
+    --btn-state-bg-updated: #fff9db;
+    --btn-state-border-color-updated: #ffec99;
+    --btn-state-text-color-updated: #e67700;
+    */
+
+    /*-- State Badges --*/
+    --badge-state-active: #27ae60;
+    --badge-state-inactive: #e74c3c;
+    --badge-state-updated: #f39c12;
+
+    /*-- Pagination --*/
+    --pagination-bg: #f5f5f5;
+    --pagination-bg-hover: #e0e0e0;
+    --pagination-bg-hover-active: #2c3e50;
+    --pagination-text-color: #333;
+    --pagination-text-color-active: white;
+}
+
+/*----------------------------------------*/
+/*  01. General
+/*----------------------------------------*/
+
+.pa-title-main {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, var(--primary-color), var(--tertiary-color));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    padding: 10px;
+}
+
+.pa-title-main::after {
+    content: "";
+    display: block;
+    width: 50%;
+    height: 4px;
+    background: var(--primary-color);
+    margin: 8px auto 0;
+    transition: width 0.3s ease-in-out;
+}
+
+.pa-title-main:hover::after {
+    width: 80%;
+}
+
+@media (max-width: 768px) {
+    .pa-title-main {
+        font-size: clamp(1.5rem, 4.5vw, 2rem);
+        padding: 8px;
+    }
+
+    .pa-title-main::after {
+        width: 60%;
+    }
+
+    .pa-title-main:hover::after {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .pa-title-main {
+        font-size: clamp(1.2rem, 5vw, 1.8rem);
+        padding: 5px;
+    }
+
+    .pa-title-main::after {
+        width: 70%;
+        height: 3px;
+    }
+
+    .pa-title-main:hover::after {
+        width: 95%;
+    }
+}
+  
+  
+/*----------------------------------------*/
+/*  02. Navbar
 /*----------------------------------------*/
 
 /*-- Common Style --*/
@@ -48,15 +162,15 @@
     padding: 12px 0;
     border: none;
     border-radius: 8px;
-    background: linear-gradient(135deg, #f9b809 0%, #dd8d02 100%);
-    color: white;
+    background: linear-gradient(135deg, var(--btn-nav-primary-color) 0%, var(--btn-nav-secondary-color) 100%);
+    color: var(--btn-nav-text-color);
     font-weight: 600;
     font-size: 14px;
     cursor: pointer;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--container-shadow);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -75,14 +189,14 @@
     right: 100%;
     width: 100%;
     height: 100%;
-    background: #dd8d02;
+    background: var(--btn-nav-secondary-color);
     transition: all 0.4s ease-in-out;
     z-index: -1;
 }
 
 .pa-nav__btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--container-shadow-hover);
 }
 
 .pa-nav__btn:hover::before {
@@ -96,8 +210,7 @@
 }
 
 .pa-nav__btn--active {
-    background: #3498db;
-    color: white;
+    background: var(--btn-nav-active);
 }
 
 /*-- 
@@ -134,7 +247,7 @@
 }
 
 /*----------------------------------------*/
-/*  02. Academic Programs Section
+/*  03. Academic Programs Section
 /*----------------------------------------*/
 
 /*-- 
@@ -142,7 +255,7 @@
 -----------------------------------------*/
 
 .programas-academicos-section {
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-container);
     padding: 1rem;
 }
 
@@ -151,7 +264,7 @@
 }
 
 /*--
-    02. 1 Filters
+    03. 1 Filters
 ---------------------*/
 
 .pa-filter {
@@ -160,23 +273,31 @@
     align-items: center;
     flex-wrap: wrap;
     padding: 15px 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--container-shadow);
     margin-bottom: 30px;
     gap: 15px;
 }
 
-.pa-filter__year, .pa-filter__state {
+.pa-filter__year {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
     align-items: center;
 }
 
+/* -- Si se llega a activar el state
+.pa-filter__year, .pa-filter__state {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+}
+*/
 .pa-filter__year {
     margin-right: auto;
 }
 
-.pa-filter__btn-year, .pa-filter__btn-state {
+.pa-filter__btn-year {
     position: relative;
     padding: 8px 16px;
     border: none;
@@ -191,11 +312,27 @@
     text-align: center;
 }
 
+/* -- Si se llega a activar el state
+.pa-filter__btn-year, .pa-filter__btn-state {
+    position: relative;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    z-index: 1;
+    min-width: 60px;
+    text-align: center;
+}
+*/
 /*-- Year Buttons --*/
 
 .pa-filter__btn-year {
-    background: #f5f5f5;
-    color: #333;
+    background: var(--btn-year-bg);
+    color: var(--btn-year-text);
 }
 
 .pa-filter__btn-year::before {
@@ -205,15 +342,15 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+    background: var(--btn-year-bg-hover);
     transition: all 0.4s ease;
     z-index: -1;
 }
 
 .pa-filter__btn-year:hover {
-    color: white;
+    color: var(--btn-year-text-hover);
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--container-shadow-hover);
 }
 
 .pa-filter__btn-year:hover::before {
@@ -221,70 +358,46 @@
 }
 
 .pa-filter__btn-year--active {
-    background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
-    color: white;
-    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+    background: var(--btn-year-bg-hover);
+    color: var(--btn-year-text-hover);
+    box-shadow: var(--container-shadow-hover);
 }
 
 /*-- State Buttons --*/
-
+/*
 .pa-filter__btn-state {
-    background: #f8f9fa;
-    color: #495057;
-    border: 1px solid #e9ecef;
+    border: 1px solid;
 }
 
 .pa-filter__btn-state[data-state="all"] {
-    background: #e7f5ff;
-    color: #228be6;
-    border-color: #d0ebff;
+    background:var(--btn-state-bg-all);
+    color: var(--btn-state-text-color-all);
+    border-color: var(--btn-state-border-color-all);
 }
 
 .pa-filter__btn-state[data-state="active"] {
-    background: #ebfbee;
-    color: #2b8a3e;
-    border-color: #d3f9d8;
+    background: var(--btn-state-bg-active);
+    color: var(--btn-state-text-color-active);
+    border-color: var(--btn-state-border-color-active);
 }
 
 .pa-filter__btn-state[data-state="inactive"] {
-    background: #fff5f5;
-    color: #c92a2a;
-    border-color: #ffd8d8;
+    background: var(--btn-state-bg-inactive);
+    color: var(--btn-state-text-color-inactive);
+    border-color: var(--btn-state-border-color-inactive);
 }
 
 .pa-filter__btn-state[data-state="updated"] {
-    background: #fff9db;
-    color: #e67700;
-    border-color: #ffec99;
-}
-
-.pa-filter__btn-state::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.2);
-    transition: all 0.4s ease;
-    z-index: -1;
+    background: var(--btn-state-bg-updated);
+    color: var(--btn-state-text-color-updated);
+    border-color: var(--btn-state-border-color-updated);
 }
 
 .pa-filter__btn-state:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--container-shadow-hover);
 }
-
-.pa-filter__btn-state:hover::before {
-    left: 0;
-}
-
-.pa-filter__btn-state--active {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    font-weight: 700;
-}
-
+*/
 /*-- 
     - Media Queries
 -----------------------------------------*/
@@ -294,16 +407,28 @@
         align-items: stretch;
         gap: 12px;
     }
-    
+
+    .pa-filter__year {
+        justify-content: center;
+    }
+
+    .pa-filter__btn-year {
+        padding: 6px 12px;
+        font-size: 12px;
+        min-width: 50px;
+    }
+
+    /* -- Si se llega a activar el state
     .pa-filter__year, .pa-filter__state {
         justify-content: center;
     }
-    
+
     .pa-filter__btn-year, .pa-filter__btn-state {
         padding: 6px 12px;
         font-size: 12px;
         min-width: 50px;
     }
+    */
 }
 
 @media (max-width: 480px) {
@@ -319,7 +444,7 @@
 }
 
 /*--
-    02. 2 Programs List
+    03. 2 Programs List
 ---------------------*/
 
 .program-list-container {
@@ -340,17 +465,16 @@
 }
 
 .program-item {
-    background: white;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--container-shadow);
     transition: all 0.3s ease;
     position: relative;
 }
 
 .program-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    box-shadow: var(--container-shadow-hover);
 }
 
 .program-item img {
@@ -358,7 +482,6 @@
     height: 180px;
     object-fit: cover;
     display: block;
-    border-bottom: 1px solid #f0f0f0;
     transition: transform 0.4s ease;
 }
 
@@ -369,14 +492,14 @@
 .program-item h3 {
     margin: 15px 20px 5px;
     font-size: 18px;
-    color: #2c3e50;
+    color: var(--primary-color);
     font-weight: 600;
     line-height: 1.3;
 }
 
 .program-item p {
     margin: 0 20px 15px;
-    color: #7f8c8d;
+    color: var(--quaternary-color);
     font-size: 14px;
 }
 
@@ -403,22 +526,22 @@
 }
 
 .program-item .status-badge.active {
-    background: #27ae60;
+    background: var(--badge-state-active);
 }
 
 .program-item .status-badge.inactive {
-    background: #e74c3c;
+    background: var(--badge-state-inactive);
 }
 
 .program-item .status-badge.updated {
-    background: #f39c12;
+    background: var(--badge-state-updated);
 }
 
 .program-item .status-badge.updated-left {
     position: absolute;
     top: 15px;
     left: 15px;
-    background: #f39c12;
+    background: var(--badge-state-updated);
 }
 
 /*-- 
@@ -467,9 +590,9 @@
     }
 }
 
-/*-- 
-    - Pagination
------------------------------------------*/
+/*----------------------------------------*/
+/*  04. Pagination
+/*----------------------------------------*/
 
 .pagination {
     display: flex;
@@ -487,8 +610,8 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: #f5f5f5;
-    color: #333;
+    background-color: var(--pagination-bg);
+    color: var(--pagination-text-color);
     font-weight: 600;
     text-decoration: none;
     transition: all 0.3s ease;
@@ -496,19 +619,17 @@
 }
 
 .page-link:hover {
-    background-color: #e0e0e0;
+    background-color: var(--pagination-bg-hover);
     transform: translateY(-2px);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: var(--container-shadow-hover);
 }
 
 .page-link.active {
-    background-color: #2c3e50;
-    color: white;
-    border-color: #3498db;
-    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.3);
+    background-color: var(--pagination-bg-hover-active);
+    color: var(--pagination-text-color-active);
+    box-shadow: var(--container-shadow-hover);
 }
 
-/* Flechas (opcional) */
 .page-link.prev,
 .page-link.next {
     width: auto;
@@ -516,7 +637,10 @@
     border-radius: 20px;
 }
 
-/* Responsive */
+/*-- 
+    - Media Queries
+-----------------------------------------*/
+
 @media (max-width: 768px) {
     .page-link {
         width: 36px;
