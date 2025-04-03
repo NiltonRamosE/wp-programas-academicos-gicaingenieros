@@ -29,7 +29,7 @@
         { "code": "RIEL", "title": "RIESGOS ELÉCTRICOS", "image": "http://gicaingenieros.com/images/banners/riel-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/riel/riesgos-electricos.html", "active": true, "updated": true },
         { "code": "EXT", "title": "EXTINTORES PORTÁTILES", "image": "http://gicaingenieros.com/images/banners/ext-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/extintores-portatiles/ext.html", "active": true, "updated": true },
         { "code": "ERGO", "title": "ERGONOMÍA", "image": "http://gicaingenieros.com/images/banners/ergo-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/ergonomia/ergo.html", "active": true, "updated": true },
-        { "code": "GAMC", "title": "GESTIÓN DE ACTIVOS, MANTENIMIENTO Y CONFIABILIDAD EN MAQUINARIA PESADA", "image": "http://gicaingenieros.com/images/banners/gamc-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/gamc/gamc.html", "active": true }
+        { "code": "GAMC", "title": "GESTIÓN DE ACTIVOS, MANTENIMIENTO Y CONFIABILIDAD EN MAQUINARIA PESADA", "image": "http://gicaingenieros.com/images/banners/gamc-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/gamc/gamc.html", "active": true, "updated": true }
     ],
     "2020": [
         { "code": "GSSC", "title": "GERENCIA DE LA SEGURIDAD Y SALUD EN LA CONSTRUCCIÓN", "image": "http://gicaingenieros.com/images/banners/gssc-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/gerencia-construccion/gssc.html", "active": false, "updated": true },
