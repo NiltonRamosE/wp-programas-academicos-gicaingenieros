@@ -13,6 +13,10 @@ jQuery(document).ready(function($) {
 
             this.programItems = this.container.find('.program-item');
             this.paginationContainer = $('#pagination-' + this.container.attr('id'));
+
+            if (typeof window.registerPaginationInstance === 'function') {
+                window.registerPaginationInstance(this.container.attr('id'), this);
+            }
             
             // Mostrar primera página al cargar
             this.showPage(this.getUrlPage());
