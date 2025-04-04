@@ -2,13 +2,13 @@
 
 function gica_enqueue_admin_styles($hook) {
     if ($hook == 'toplevel_page_gica-dashboard') {
-        wp_enqueue_style('gica-dashboard-style', plugin_dir_url(__FILE__) . 'assets/dashboard.css');
+        wp_enqueue_style('gica-pa-dashboard-style', plugin_dir_url(__FILE__) . 'assets/css/pa-dashboard.css');
     }
 }
 add_action('admin_enqueue_scripts', 'gica_enqueue_admin_styles');
 
 function gica_enqueue_styles() {
-    wp_enqueue_style('gica-programas-style', plugin_dir_url(__FILE__) . 'assets/style.css');
+    wp_enqueue_style('gica-pa-shortcode-style', plugin_dir_url(__FILE__) . 'assets/css/pa-shortcode.css');
 }
 add_action('wp_enqueue_scripts', 'gica_enqueue_styles');
 

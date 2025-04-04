@@ -8,11 +8,6 @@
  * License: GPL2
  */
 
-// Incluir configuración de colores
-require_once plugin_dir_path(__FILE__) . 'pa-gica-color-settings.php';
-require_once plugin_dir_path(__FILE__) . 'pa-gica-shortcodes.php';
-require_once plugin_dir_path(__FILE__) . 'pa-gica-enqueue.php';
-
 // Evita el acceso directo al archivo
 if (!defined('ABSPATH')) {
     exit;
@@ -28,8 +23,22 @@ function gica_register_main_menu() {
         'dashicons-welcome-learn-more',
         20
     );
+
+    add_submenu_page(
+        'gica-dashboard',
+        'Dashboard',
+        'Dashboard',
+        'manage_options',
+        'gica-dashboard',
+        'gica_render_main_page',
+        0
+    );
 }
 add_action('admin_menu', 'gica_register_main_menu');
+
+require_once plugin_dir_path(__FILE__) . 'pa-gica-color-settings.php';
+require_once plugin_dir_path(__FILE__) . 'pa-gica-shortcodes.php';
+require_once plugin_dir_path(__FILE__) . 'pa-gica-enqueue.php';
 
 function gica_render_main_page() {
     ?>

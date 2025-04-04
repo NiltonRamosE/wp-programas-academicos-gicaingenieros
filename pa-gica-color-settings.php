@@ -4,9 +4,7 @@
  * Maneja la personalización de colores desde el panel de administración
  */
 
-if (!defined('ABSPATH')) {
-    exit; // Salir si se accede directamente
-}
+
 
 class GICA_Color_Settings {
     private $default_colors;
@@ -47,14 +45,14 @@ class GICA_Color_Settings {
     }
 
     public function register_settings_page() {
-        add_menu_page(
+        add_submenu_page(
+            'gica-dashboard', // Slug del menú padre
             'Personalización de Colores', 
-            'Colores GICA', 
+            'Colores', // Nombre más corto para el submenú
             'manage_options', 
             'gica-color-settings', 
             array($this, 'render_settings_page'),
-            'dashicons-admin-appearance',
-            80
+            10
         );
     }
 
@@ -62,6 +60,13 @@ class GICA_Color_Settings {
         register_setting('gica_color_options', 'gica_colors', array(
             'sanitize_callback' => array($this, 'validate_colors')
         ));
+    }
+
+    public function enqueue_admin_styles($hook) {
+        // Solo cargar estilos en nuestra página de configuración
+        if ($hook === 'programas-academicos_page_gica-color-settings') {
+            wp_enqueue_style('gica-color-settings-css', plugin_dir_url(dirname(__FILE__)) . 'assets/css/pa-color-settings.css');
+        }
     }
 
     public function render_settings_page() {
@@ -72,7 +77,7 @@ class GICA_Color_Settings {
         $colors = get_option('gica_colors', array());
         $colors = wp_parse_args($colors, $this->default_colors);
         ?>
-        <div class="wrap">
+        <div class="wrap gica-color-settings">
             <h1>Personalización de Colores GICA</h1>
             <form method="post" action="options.php">
                 <?php settings_fields('gica_color_options'); ?>
