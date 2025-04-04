@@ -4,6 +4,9 @@ function gica_enqueue_admin_styles($hook) {
     if ($hook == 'toplevel_page_gica-dashboard') {
         wp_enqueue_style('gica-pa-dashboard-style', plugin_dir_url(__FILE__) . 'assets/css/pa-dashboard.css');
     }
+    if ($hook === 'programas-academicos_page_gica-color-settings') {
+        wp_enqueue_style('gica-color-settings-css', plugin_dir_url(__FILE__) . 'assets/css/pa-color-settings.css');
+    }
 }
 add_action('admin_enqueue_scripts', 'gica_enqueue_admin_styles');
 

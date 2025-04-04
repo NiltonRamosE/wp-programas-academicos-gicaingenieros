@@ -39,7 +39,6 @@ class GICA_Color_Settings {
 
         add_action('admin_menu', array($this, 'register_settings_page'));
         add_action('admin_init', array($this, 'register_settings'));
-        add_action('admin_enqueue_scripts', array($this, 'enqueue_admin_styles'));
         add_action('wp_enqueue_scripts', array($this, 'generate_dynamic_css'), 100);
     }
 
@@ -53,12 +52,6 @@ class GICA_Color_Settings {
             array($this, 'render_settings_page'),
             10
         );
-    }
-
-    public function enqueue_admin_styles($hook) {
-        if ($hook === 'programas-academicos_page_gica-color-settings') {
-            wp_enqueue_style('gica-color-settings-css', plugin_dir_url(__FILE__) . 'assets/css/pa-color-settings.css');
-        }
     }
 
     public function register_settings() {
