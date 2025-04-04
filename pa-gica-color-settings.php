@@ -4,8 +4,6 @@
  * Maneja la personalización de colores desde el panel de administración
  */
 
-
-
 class GICA_Color_Settings {
     private $default_colors;
 
@@ -41,32 +39,32 @@ class GICA_Color_Settings {
 
         add_action('admin_menu', array($this, 'register_settings_page'));
         add_action('admin_init', array($this, 'register_settings'));
+        add_action('admin_enqueue_scripts', array($this, 'enqueue_admin_styles'));
         add_action('wp_enqueue_scripts', array($this, 'generate_dynamic_css'), 100);
     }
 
     public function register_settings_page() {
         add_submenu_page(
-            'gica-dashboard', // Slug del menú padre
+            'gica-dashboard',
             'Personalización de Colores', 
-            'Colores', // Nombre más corto para el submenú
+            'Colores',
             'manage_options', 
-            'gica-color-settings', 
+            'gica-color-settings',
             array($this, 'render_settings_page'),
             10
         );
+    }
+
+    public function enqueue_admin_styles($hook) {
+        if ($hook === 'programas-academicos_page_gica-color-settings') {
+            wp_enqueue_style('gica-color-settings-css', plugin_dir_url(__FILE__) . 'assets/css/pa-color-settings.css');
+        }
     }
 
     public function register_settings() {
         register_setting('gica_color_options', 'gica_colors', array(
             'sanitize_callback' => array($this, 'validate_colors')
         ));
-    }
-
-    public function enqueue_admin_styles($hook) {
-        // Solo cargar estilos en nuestra página de configuración
-        if ($hook === 'programas-academicos_page_gica-color-settings') {
-            wp_enqueue_style('gica-color-settings-css', plugin_dir_url(dirname(__FILE__)) . 'assets/css/pa-color-settings.css');
-        }
     }
 
     public function render_settings_page() {
@@ -138,5 +136,4 @@ class GICA_Color_Settings {
     }
 }
 
-// Inicializar la clase
 new GICA_Color_Settings();

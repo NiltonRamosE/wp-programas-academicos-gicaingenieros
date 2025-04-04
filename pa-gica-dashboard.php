@@ -36,9 +36,10 @@ function gica_register_main_menu() {
 }
 add_action('admin_menu', 'gica_register_main_menu');
 
+require_once plugin_dir_path(__FILE__) . 'pa-gica-enqueue.php';
 require_once plugin_dir_path(__FILE__) . 'pa-gica-color-settings.php';
 require_once plugin_dir_path(__FILE__) . 'pa-gica-shortcodes.php';
-require_once plugin_dir_path(__FILE__) . 'pa-gica-enqueue.php';
+
 
 function gica_render_main_page() {
     ?>
