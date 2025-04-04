@@ -22,7 +22,7 @@ function gica_mostrar_programas($atts) {
     if (json_last_error() === JSON_ERROR_NONE) {
         ?>
         <div class="programas-academicos-container">
-            <img src="https://www.gicaingenieros.com/email/images/img-gica-2.jpg" alt="">
+            <img src="https://www.gicaingenieros.com/email/images/img-gica-2.jpg" alt="gica-fondo-email">
             <h1 class="pa-title-main">PLANTILLAS DE PROGRAMAS ACADÉMICOS</h1>
             <nav class="programas-academicos-nav">
                 <?php foreach (array_keys($data_programs) as $category) : ?>

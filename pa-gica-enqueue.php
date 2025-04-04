@@ -10,6 +10,14 @@ function gica_enqueue_admin_styles($hook) {
 }
 add_action('admin_enqueue_scripts', 'gica_enqueue_admin_styles');
 
+function gica_enqueue_admin_scripts($hook) {
+    if (strpos($hook, 'gica-dashboard') !== false) {
+        wp_enqueue_script('clipboard-js', 'https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js');
+        wp_enqueue_script('gica-pa-script-copy-text', plugin_dir_url(__FILE__) . 'assets/js/pa-copy-text.js', array('clipboard-js', 'jquery'), null, true);
+    }
+}
+add_action('admin_enqueue_scripts', 'gica_enqueue_admin_scripts');
+
 function gica_enqueue_styles() {
     wp_enqueue_style('gica-pa-shortcode-style', plugin_dir_url(__FILE__) . 'assets/css/pa-shortcode.css');
 }

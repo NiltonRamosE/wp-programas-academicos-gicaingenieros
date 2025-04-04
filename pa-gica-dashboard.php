@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Dashboard de Programas Académicos - GicaIngenieros
  * Description: Muestra programas académicos organizados por categoría y año, con filtros y un gráfico.
- * Version: 1.0.3
+ * Version: 1.0.4
  * Author: Nilton Ramos Encarnacion
  * Author URI: https://niltonramosencarnacion.vercel.app/
  * License: GPL2
@@ -12,6 +12,9 @@
 if (!defined('ABSPATH')) {
     exit;
 }
+
+$plugin_data = get_file_data(__FILE__, array('Version' => 'Version'), false);
+define('GICA_PLUGIN_VERSION', $plugin_data['Version']);
 
 function gica_register_main_menu() {
     add_menu_page(
@@ -42,47 +45,108 @@ require_once plugin_dir_path(__FILE__) . 'pa-gica-shortcodes.php';
 
 
 function gica_render_main_page() {
+    $programs_count = [
+        'virtuales' => 24,
+        'seminarios' => 15,
+        'cursos' => 8,
+        'congresos' => 5
+    ];
+    
+    $filter_count = [
+        'categories' => count($programs_count),
+        'years' => 5,
+    ];
+
+    $last_updated = date('d/m/Y H:i');
     ?>
     <div class="wrap gica-dashboard">
         <header class="gica-dashboard__header">
-            <h1 class="gica-dashboard__title">Dashboard de Programas Académicos</h1>
-            <p class="gica-dashboard__subtitle">Administra y muestra tus programas académicos de manera profesional</p>
+            <div class="gica-dashboard__header-img-container">
+                <img src="https://www.gicaingenieros.com/email/images/img-gica-2.jpg" alt="GICA Ingenieros" class="gica-dashboard__header-img">
+            </div>
+            <div class="gica-dashboard__header-content">
+                <div>
+                    <h1 class="gica-dashboard__title">
+                        Programas Académicos
+                    </h1>
+                    <p class="gica-dashboard__subtitle">Dashboard GicaIngenieros</p>
+                </div>
+                <div class="gica-dashboard__header-badge">
+                    <span class="gica-dashboard__update"> v<?php echo GICA_PLUGIN_VERSION; ?> • <?php echo $last_updated; ?></span>
+                </div>
+            </div>
+            <div class="gica-dashboard__header-line"></div>
         </header>
 
-        <section class="gica-dashboard__section">
-            <h2 class="gica-dashboard__section-title">📌 Cómo usar el plugin</h2>
-            <ul class="gica-dashboard__list">
-                <li class="gica-dashboard__list-item">Usa el shortcode <code class="gica-dashboard__code">[programas_academicos]</code> en cualquier página o entrada</li>
-                <li class="gica-dashboard__list-item">Edita los archivos JSON en la carpeta <code class="gica-dashboard__code">/assets/</code> para modificar los programas</li>
-                <li class="gica-dashboard__list-item">Los programas se agrupan automáticamente por categoría y año</li>
-                <li class="gica-dashboard__list-item">Personaliza los colores desde el menú <strong>Colores GICA</strong></li>
-            </ul>
-        </section>
+        <div class="gica-dashboard__grid">
+            <section class="gica-dashboard__card gica-dashboard__card--summary">
+                <h2 class="gica-dashboard__card-title">Resumen General</h2>
+                <div class="gica-dashboard__stats">
+                    <div class="gica-dashboard__stat">
+                        <span class="gica-dashboard__stat-number"><?php echo array_sum($programs_count); ?></span>
+                        <span class="gica-dashboard__stat-label">Programas Totales</span>
+                    </div>
+                    <div class="gica-dashboard__stat">
+                        <span class="gica-dashboard__stat-number"><?php echo $filter_count['categories']; ?></span>
+                        <span class="gica-dashboard__stat-label">Categorías</span>
+                    </div>
+                    <div class="gica-dashboard__stat">
+                        <span class="gica-dashboard__stat-number"><?php echo $filter_count['years']; ?></span>
+                        <span class="gica-dashboard__stat-label">Años</span>
+                    </div>
+                </div>
+            </section>
 
-        <section class="gica-dashboard__section">
-            <h2 class="gica-dashboard__section-title">📁 Archivos disponibles</h2>
-            <ul class="gica-dashboard__list">
-                <li class="gica-dashboard__list-item"><code class="gica-dashboard__code">programas-virtuales.json</code></li>
-                <li class="gica-dashboard__list-item"><code class="gica-dashboard__code">seminarios-virtuales.json</code></li>
-                <li class="gica-dashboard__list-item"><code class="gica-dashboard__code">cursos-en-vivo.json</code></li>
-                <li class="gica-dashboard__list-item"><code class="gica-dashboard__code">seminarios-presenciales.json</code></li>
-                <li class="gica-dashboard__list-item"><code class="gica-dashboard__code">congresos.json</code></li>
-                <li class="gica-dashboard__list-item"><code class="gica-dashboard__code">promociones.json</code></li>
-            </ul>
-        </section>
+            <section class="gica-dashboard__card gica-dashboard__card--shortcode">
+                <h2 class="gica-dashboard__card-title">Cómo Implementar</h2>
+                <div class="gica-dashboard__code-block">
+                    <code class="gica-dashboard__code">[programas_academicos]</code>
+                    <button class="gica-dashboard__copy-btn" data-clipboard-text="[programas_academicos]">
+                        Copiar Shortcode
+                    </button>
+                </div>
+                <p class="gica-dashboard__card-text">Incrusta este shortcode en cualquier página o entrada para mostrar los programas.</p>
+            </section>
+        </div>
 
-        <section class="gica-dashboard__section">
-            <h2 class="gica-dashboard__section-title">💡 Ejemplo visual</h2>
-            <div class="gica-dashboard__visual">
-                <img src="https://www.gicaingenieros.com/email/images/img-gica-2.jpg" alt="Ejemplo visual del plugin">
+        <section class="gica-dashboard__card gica-dashboard__card--categories">
+            <h2 class="gica-dashboard__card-title">Distribución por Categoría</h2>
+            <div class="gica-dashboard__categories">
+                <?php foreach ($programs_count as $category => $count): ?>
+                <div class="gica-dashboard__category">
+                    <h3 class="gica-dashboard__category-title"><?php echo ucfirst($category); ?></h3>
+                    <div class="gica-dashboard__progress">
+                        <div class="gica-dashboard__progress-bar" style="width: <?php echo ($count/max($programs_count))*100; ?>%"></div>
+                    </div>
+                    <span class="gica-dashboard__category-count"><?php echo $count; ?> programas</span>
+                </div>
+                <?php endforeach; ?>
             </div>
-            <p>Así se verá el bloque generado por el shortcode en tu sitio web.</p>
+        </section>
+
+        <!-- Acciones Rápidas -->
+        <section class="gica-dashboard__card gica-dashboard__card--actions">
+            <h2 class="gica-dashboard__card-title">Acciones Rápidas</h2>
+            <div class="gica-dashboard__action-buttons">
+                <a href="<?php echo admin_url('admin.php?page=gica-color-settings'); ?>" class="gica-dashboard__action-btn gica-dashboard__action-btn--primary">
+                    Personalizar Colores
+                </a>
+                <button class="gica-dashboard__action-btn gica-dashboard__action-btn--secondary">
+                    Ver Documentación
+                </button>
+                <button class="gica-dashboard__action-btn gica-dashboard__action-btn--secondary">
+                    Exportar Datos
+                </button>
+            </div>
         </section>
 
         <footer class="gica-dashboard__footer">
-            <p>Plugin desarrollado por <a href="https://niltonramosencarnacion.vercel.app/" target="_blank">Nilton Ramos Encarnación</a></p>
-            <p>Versión 1.1.0 | Licencia GPL2</p>
+            <div class="gica-dashboard__footer-content">
+                <p class="gica-dashboard__footer-text">Plugin desarrollado por <a href="https://niltonramosencarnacion.vercel.app/" target="_blank">Nilton Ramos Encarnacion</a></p>
+                <p class="gica-dashboard__version">Versión <?php echo GICA_PLUGIN_VERSION; ?> | Licencia GPL2</p>
+            </div>
         </footer>
     </div>
+
     <?php
 }
