@@ -1,0 +1,179 @@
+/*----------------------------------------*/
+/*  Dashboard Styles - BEM Methodology
+/*----------------------------------------*/
+
+/*----------------------------------------*/
+/*  00. Variables
+/*----------------------------------------*/
+:root {
+    /*-- General --*/
+    --primary-color: #092f58;
+    --secondary-color: #f9c127;
+    --tertiary-color: #63a3fa;
+    --quaternary-color: #7f8c8d;
+}
+/*-- Base Styles --*/
+.gica-dashboard {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    color: var(--primary-color);
+    line-height: 1.6;
+}
+
+/*-- Header --*/
+.gica-dashboard__header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid var(--secondary-color);
+    position: relative;
+}
+
+.gica-dashboard__header::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: var(--tertiary-color);
+}
+
+.gica-dashboard__title {
+    font-size: 2.5rem;
+    margin: 0;
+    color: var(--primary-color);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.gica-dashboard__subtitle {
+    font-size: 1.1rem;
+    color: var(--quaternary-color);
+    margin-top: 0.5rem;
+    font-weight: 400;
+}
+
+/*-- Content Sections --*/
+.gica-dashboard__section {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gica-dashboard__section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.gica-dashboard__section-title {
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.gica-dashboard__section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--secondary-color);
+}
+
+/*-- List Styles --*/
+.gica-dashboard__list {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 1.5rem 0;
+}
+
+.gica-dashboard__list-item {
+    padding: 0.8rem 0;
+    border-bottom: 1px dashed #eee;
+    display: flex;
+    align-items: center;
+}
+
+.gica-dashboard__list-item::before {
+    content: '→';
+    color: var(--secondary-color);
+    margin-right: 1rem;
+    font-weight: bold;
+}
+
+.gica-dashboard__list-item:last-child {
+    border-bottom: none;
+}
+
+/*-- Code Blocks --*/
+.gica-dashboard__code {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    color: #e83e8c;
+    margin: 1rem 0;
+    display: inline-block;
+    border-left: 3px solid var(--secondary-color);
+}
+
+/*-- Example Visual --*/
+.gica-dashboard__visual {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.gica-dashboard__visual img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #eee;
+}
+
+/*-- Footer --*/
+.gica-dashboard__footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+    font-size: 0.9rem;
+    color: var(--quaternary-color);
+}
+
+.gica-dashboard__footer a {
+    color: var(--tertiary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.gica-dashboard__footer a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+/*-- Responsive Adjustments --*/
+@media (max-width: 768px) {
+    .gica-dashboard {
+        padding: 1rem;
+    }
+    
+    .gica-dashboard__title {
+        font-size: 2rem;
+    }
+    
+    .gica-dashboard__section {
+        padding: 1.5rem;
+    }
+}
