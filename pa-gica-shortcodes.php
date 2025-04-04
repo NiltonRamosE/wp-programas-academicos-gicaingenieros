@@ -5,12 +5,12 @@ function gica_mostrar_programas($atts) {
     ob_start();
 
     $json_files = [
-        'programas-virtuales' => plugin_dir_path(__FILE__) . 'assets/programas-virtuales.json',
-        'seminarios-virtuales' => plugin_dir_path(__FILE__) . 'assets/seminarios-virtuales.json',
-        'cursos-en-vivo' => plugin_dir_path(__FILE__) . 'assets/cursos-en-vivo.json',
-        'seminarios-presenciales' => plugin_dir_path(__FILE__) . 'assets/seminarios-presenciales.json',
-        'congresos' => plugin_dir_path(__FILE__) . 'assets/congresos.json',
-        'promociones' => plugin_dir_path(__FILE__) . 'assets/promociones.json',
+        'programas-virtuales' => plugin_dir_path(__FILE__) . 'assets/json/programas-virtuales.json',
+        'seminarios-virtuales' => plugin_dir_path(__FILE__) . 'assets/json/seminarios-virtuales.json',
+        'cursos-en-vivo' => plugin_dir_path(__FILE__) . 'assets/json/cursos-en-vivo.json',
+        'seminarios-presenciales' => plugin_dir_path(__FILE__) . 'assets/json/seminarios-presenciales.json',
+        'congresos' => plugin_dir_path(__FILE__) . 'assets/json/congresos.json',
+        'promociones' => plugin_dir_path(__FILE__) . 'assets/json/promociones.json',
     ];
 
     $data_programs = [];

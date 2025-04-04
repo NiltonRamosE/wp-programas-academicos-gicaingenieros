@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Dashboard de Programas Académicos - GicaIngenieros
  * Description: Muestra programas académicos organizados por categoría y año, con filtros y un gráfico.
- * Version: 1.0.5
+ * Version: 1.0.6
  * Author: Nilton Ramos Encarnacion
  * Author URI: https://niltonramosencarnacion.vercel.app/
  * License: GPL2
@@ -45,23 +45,47 @@ require_once plugin_dir_path(__FILE__) . 'pa-gica-shortcodes.php';
 
 
 function gica_render_main_page() {
-    $programs_count = [
-        'virtuales' => 24,
-        'seminarios' => 15,
-        'cursos' => 8,
-        'congresos' => 5
-    ];
-    
-    $filter_count = [
-        'categories' => count($programs_count),
-        'years' => 5,
+    $json_files = [
+        'programas-virtuales' => plugin_dir_path(__FILE__) . 'assets/json/programas-virtuales.json',
+        'seminarios-virtuales' => plugin_dir_path(__FILE__) . 'assets/json/seminarios-virtuales.json',
+        'cursos-en-vivo' => plugin_dir_path(__FILE__) . 'assets/json/cursos-en-vivo.json',
+        'seminarios-presenciales' => plugin_dir_path(__FILE__) . 'assets/json/seminarios-presenciales.json',
+        'congresos' => plugin_dir_path(__FILE__) . 'assets/json/congresos.json',
+        'promociones' => plugin_dir_path(__FILE__) . 'assets/json/promociones.json',
     ];
 
-    $state_count = [
-        'active' => 60,
-        'inactive' => 35,
-        'outdated' => 40,
-    ];
+    $programs_count = [];
+    $filter_count = ['categories' => 0, 'years' => []];
+    $state_count = ['active' => 0, 'inactive' => 0, 'outdated' => 0];
+
+    foreach ($json_files as $category => $file_path) {
+        $json_content = file_get_contents($file_path);
+        $programs = json_decode($json_content, true);
+
+        $programs_count[$category] = 0;
+        foreach ($programs as $year => $items) {
+            $programs_count[$category] += count($items);
+
+            if (!in_array($year, $filter_count['years'])) {
+                $filter_count['years'][] = $year;
+            }
+
+            foreach ($items as $program) {
+                if ($program['active']) {
+                    $state_count['active']++;
+                } else {
+                    $state_count['inactive']++;
+                }
+                if (isset($program['updated']) && !$program['updated']) {
+                    $state_count['outdated']++;
+                }
+            }
+        }
+
+        $filter_count['categories']++;
+    }
+
+    $filter_count['years'] = count($filter_count['years']);
 
     wp_localize_script('gica-dashboard-chart', 'gicaChartData', array(
         'states' => $state_count,
@@ -129,7 +153,7 @@ function gica_render_main_page() {
             <div class="gica-dashboard__categories">
                 <?php foreach ($programs_count as $category => $count): ?>
                 <div class="gica-dashboard__category">
-                    <h3 class="gica-dashboard__category-title"><?php echo ucfirst($category); ?></h3>
+                    <h3 class="gica-dashboard__category-title"><?php echo ucfirst(str_replace('-', ' ', $category)); ?></h3>
                     <div class="gica-dashboard__progress">
                         <div class="gica-dashboard__progress-bar" style="width: <?php echo ($count/max($programs_count))*100; ?>%"></div>
                     </div>
@@ -148,7 +172,7 @@ function gica_render_main_page() {
                 <div class="gica-dashboard__chart-legend"></div>
             </div>
             <div class="gica-dashboard__chart-total">
-                Total: <?php echo array_sum($state_count); ?> programas
+                Total: <?php echo array_sum($state_count) - $state_count['outdated']; ?> programas
             </div>
         </section>
 
