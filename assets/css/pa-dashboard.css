@@ -13,7 +13,8 @@
         02. 1 Stats
         02. 2 Shortcode
         02. 3 Categories
-        02. 4 Actions
+        02. 4 States
+        02. 5 Actions
     03. Footer
     
 -----------------------------------------------------------------------------------*/
@@ -282,7 +283,95 @@
 }
 
 /*--
-    02. 4 Actions
+    02. 4 States
+---------------------*/
+
+.gica-dashboard__chart-container {
+    position: relative;
+    height: 280px;
+    margin: 1.5rem 0 0.5rem 0;
+}
+
+.gica-dashboard__chart-legend {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0.5rem;
+    max-width: 100%;
+}
+
+.gica-dashboard__chart-legend-item {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    padding: 0.5rem 0.8rem;
+    border-radius: 16px;
+    box-shadow: var(--container-shadow);
+    border: 1px solid var(--border-container);
+}
+
+.gica-dashboard__chart-legend-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 6px;
+    flex-shrink: 0;
+}
+
+.gica-dashboard__chart-total {
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--quaternary-color);
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px dashed var(--border-container);
+    background: var(--bg-color);
+    padding-bottom: 0.5rem;
+}
+
+/*-- 
+    - Media Queries
+-----------------------------------------*/
+
+@media (max-width: 768px) {
+    .gica-dashboard__chart-container {
+        height: 240px;
+    }
+    
+    .gica-dashboard__chart-legend {
+        flex-direction: row;
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding: 0.8rem 0.5rem;
+        margin: 0 -0.5rem;
+        scrollbar-width: thin;
+    }
+    
+    .gica-dashboard__chart-legend-item {
+        flex: 0 0 auto;
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
+    }
+    
+    .gica-dashboard__chart-total {
+        margin-top: 0.8rem;
+        padding-top: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .gica-dashboard__chart-container {
+        height: 200px;
+    }
+    
+    .gica-dashboard__chart-legend-item {
+        font-size: 0.8rem;
+    }
+}
+
+/*--
+    02. 5 Actions
 ---------------------*/
 .gica-dashboard__action-buttons {
     display: flex;

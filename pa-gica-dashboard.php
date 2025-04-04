@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Dashboard de Programas Académicos - GicaIngenieros
  * Description: Muestra programas académicos organizados por categoría y año, con filtros y un gráfico.
- * Version: 1.0.4
+ * Version: 1.0.5
  * Author: Nilton Ramos Encarnacion
  * Author URI: https://niltonramosencarnacion.vercel.app/
  * License: GPL2
@@ -57,6 +57,21 @@ function gica_render_main_page() {
         'years' => 5,
     ];
 
+    $state_count = [
+        'active' => 60,
+        'inactive' => 35,
+        'outdated' => 40,
+    ];
+
+    wp_localize_script('gica-dashboard-chart', 'gicaChartData', array(
+        'states' => $state_count,
+        'colors' => array(
+            'active' => '#27ae60',
+            'inactive' => '#e74c3c',
+            'outdated' => '#f39c12'
+        )
+    ));
+    
     $last_updated = date('d/m/Y H:i');
     ?>
     <div class="wrap gica-dashboard">
@@ -121,6 +136,19 @@ function gica_render_main_page() {
                     <span class="gica-dashboard__category-count"><?php echo $count; ?> programas</span>
                 </div>
                 <?php endforeach; ?>
+            </div>
+        </section>
+
+        <section class="gica-dashboard__card gica-dashboard__card--states">
+            <h2 class="gica-dashboard__card-title">Distribución por Estados</h2>
+            <div class="gica-dashboard__chart-wrapper">
+                <div class="gica-dashboard__chart-container">
+                    <canvas id="gicaStatesChart"></canvas>
+                </div>
+                <div class="gica-dashboard__chart-legend"></div>
+            </div>
+            <div class="gica-dashboard__chart-total">
+                Total: <?php echo array_sum($state_count); ?> programas
             </div>
         </section>
 
