@@ -28,20 +28,22 @@
     --quaternary-color: #7f8c8d;
 
     --border-container: #ddd;
-    --container-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    --container-shadow-hover: 0 4px 8px rgba(0, 0, 0, 0.15);
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --shadow-color-hover: rgba(0, 0, 0, 0.15);
+    --container-shadow: 0 2px 5px var(--shadow-color);
+    --container-shadow-hover: 0 4px 8px var(--shadow-color-hover);
     
     /*-- Navbar Buttons --*/
     --btn-nav-active: #082949;
     --btn-nav-primary-color: #f9b809;
     --btn-nav-secondary-color: #dd8d02;
-    --btn-nav-text-color: white;
+    --btn-nav-text-color: #ffffff;
     
     /*-- Year Buttons --*/
     --btn-year-bg: #f5f5f5;
-    --btn-year-bg-hover: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+    --btn-year-bg-hover: linear-gradient(135deg, var(--tertiary-color) 0%, var(--primary-color) 100%);
     --btn-year-text: #333;
-    --btn-year-text-hover: white;
+    --btn-year-text-hover: #ffffff;
 
     /*-- State Buttons --*/
 
@@ -73,7 +75,7 @@
     --pagination-bg-hover: #e0e0e0;
     --pagination-bg-hover-active: #2c3e50;
     --pagination-text-color: #333;
-    --pagination-text-color-active: white;
+    --pagination-text-color-active: #ffffff;
 }
 
 /*----------------------------------------*/

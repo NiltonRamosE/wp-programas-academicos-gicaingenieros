@@ -10,31 +10,36 @@ class GICA_Color_Settings {
     public function __construct() {
         $this->default_colors = array(
             // Colores generales
-            'primary' => '#092f58',
-            'secondary' => '#f9c127',
-            'tertiary' => '#63a3fa',
-            'quaternary' => '#7f8c8d',
+            'primary-color' => '#092f58',
+            'secondary-color' => '#f9c127',
+            'tertiary-color' => '#63a3fa',
+            'quaternary-color' => '#7f8c8d',
             
+            'border-container' => '#ddd',
+            'shadow-color' => 'rgba(0, 0, 0, 0.1)',
+            'shadow-color-hover' => 'rgba(0, 0, 0, 0.15)',
             // Botones navbar
-            'btn_nav_active' => '#082949',
-            'btn_nav_primary' => '#f9b809',
-            'btn_nav_secondary' => '#dd8d02',
-            'btn_nav_text' => '#ffffff',
+            'btn-nav-active' => '#082949',
+            'btn-nav-primary-color' => '#f9b809',
+            'btn-nav-secondary-color' => '#dd8d02',
+            'btn-nav-text-color' => '#ffffff',
             
             // Botones año
-            'btn_year_bg' => '#f5f5f5',
-            'btn_year_text' => '#333333',
-            'btn_year_text_hover' => '#ffffff',
+            'btn-year-bg' => '#f5f5f5',
+            'btn-year-text' => '#333333',
+            'btn-year-text-hover' => '#ffffff',
             
             // Badges estado
-            'badge_active' => '#27ae60',
-            'badge_inactive' => '#e74c3c',
-            'badge_updated' => '#f39c12',
+            'badge-state-active' => '#27ae60',
+            'badge-state-inactive' => '#e74c3c',
+            'badge-state-updated' => '#f39c12',
             
             // Paginación
-            'pagination_bg' => '#f5f5f5',
-            'pagination_text' => '#333333',
-            'pagination_text_active' => '#ffffff'
+            'pagination-bg' => '#f5f5f5',
+            'pagination-bg-hover' => '#e0e0e0',
+            'pagination-bg-hover-active' => '#2c3e50',
+            'pagination-text-color' => '#333333',
+            'pagination-text-color-active' => '#ffffff'
         );
 
         add_action('admin_menu', array($this, 'register_settings_page'));
@@ -64,7 +69,7 @@ class GICA_Color_Settings {
         if (!current_user_can('manage_options')) {
             return;
         }
-        
+    
         $colors = get_option('gica_colors', array());
         $colors = wp_parse_args($colors, $this->default_colors);
         ?>
@@ -73,42 +78,207 @@ class GICA_Color_Settings {
             <form method="post" action="options.php">
                 <?php settings_fields('gica_color_options'); ?>
                 <?php do_settings_sections('gica_color_options'); ?>
-                
+    
                 <h2>Colores Principales</h2>
                 <table class="form-table">
                     <tr>
                         <th scope="row"><label for="primary_color">Color Primario</label></th>
                         <td>
-                            <input type="color" id="primary_color" name="gica_colors[primary]" value="<?php echo esc_attr($colors['primary']); ?>">
+                            <input type="color" id="primary_color" name="gica_colors[primary-color]" value="<?php echo esc_attr($colors['primary-color']); ?>">
                             <span class="description">Color principal de la marca</span>
                         </td>
                     </tr>
                     <tr>
                         <th scope="row"><label for="secondary_color">Color Secundario</label></th>
                         <td>
-                            <input type="color" id="secondary_color" name="gica_colors[secondary]" value="<?php echo esc_attr($colors['secondary']); ?>">
+                            <input type="color" id="secondary_color" name="gica_colors[secondary-color]" value="<?php echo esc_attr($colors['secondary-color']); ?>">
                             <span class="description">Color secundario/accent</span>
                         </td>
                     </tr>
-                    <!-- Agrega más campos según necesites -->
+                    <tr>
+                        <th scope="row"><label for="tertiary_color">Color Terciario</label></th>
+                        <td>
+                            <input type="color" id="tertiary_color" name="gica_colors[tertiary-color]" value="<?php echo esc_attr($colors['tertiary-color']); ?>">
+                            <span class="description">Color terciario</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="quaternary_color">Color Cuaternario</label></th>
+                        <td>
+                            <input type="color" id="quaternary_color" name="gica_colors[quaternary-color]" value="<?php echo esc_attr($colors['quaternary-color']); ?>">
+                            <span class="description">Color cuaternario</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="border_container">Color de Borde del Contenedor</label></th>
+                        <td>
+                            <input type="color" id="border_container" name="gica_colors[border-container]" value="<?php echo esc_attr($colors['border-container']); ?>">
+                            <span class="description">Color de borde del contenedor</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="shadow_color">Color de Sombra</label></th>
+                        <td>
+                            <input type="color" id="shadow_color" name="gica_colors[shadow-color]" value="<?php echo esc_attr($colors['shadow-color']); ?>">
+                            <span class="description">Color de sombra</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="shadow_color_hover">Color de Sombra al Pasar el Ratón</label></th>
+                        <td>
+                            <input type="color" id="shadow_color_hover" name="gica_colors[shadow-color-hover]" value="<?php echo esc_attr($colors['shadow-color-hover']); ?>">
+                            <span class="description">Color de sombra al pasar el ratón</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="btn_nav_active">Color de Botón de Navegación Activo</label></th>
+                        <td>
+                            <input type="color" id="btn_nav_active" name="gica_colors[btn-nav-active]" value="<?php echo esc_attr($colors['btn-nav-active']); ?>">
+                            <span class="description">Color de botón de navegación activo</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="btn_nav_primary_color">Color Primario de Botón de Navegación</label></th>
+                        <td>
+                            <input type="color" id="btn_nav_primary_color" name="gica_colors[btn-nav-primary-color]" value="<?php echo esc_attr($colors['btn-nav-primary-color']); ?>">
+                            <span class="description">Color primario de botón de navegación</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="btn_nav_secondary_color">Color Secundario de Botón de Navegación</label></th>
+                        <td>
+                            <input type="color" id="btn_nav_secondary_color" name="gica_colors[btn-nav-secondary-color]" value="<?php echo esc_attr($colors['btn-nav-secondary-color']); ?>">
+                            <span class="description">Color secundario de botón de navegación</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="btn_nav_text_color">Color de Texto de Botón de Navegación</label></th>
+                        <td>
+                            <input type="color" id="btn_nav_text_color" name="gica_colors[btn-nav-text-color]" value="<?php echo esc_attr($colors['btn-nav-text-color']); ?>">
+                            <span class="description">Color de texto de botón de navegación</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="btn_year_bg">Color de Fondo de Botón de Año</label></th>
+                        <td>
+                            <input type="color" id="btn_year_bg" name="gica_colors[btn-year-bg]" value="<?php echo esc_attr($colors['btn-year-bg']); ?>">
+                            <span class="description">Color de fondo de botón de año</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="btn_year_text">Color de Texto de Botón de Año</label></th>
+                        <td>
+                            <input type="color" id="btn_year_text" name="gica_colors[btn-year-text]" value="<?php echo esc_attr($colors['btn-year-text']); ?>">
+                            <span class="description">Color de texto de botón de año</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="btn_year_text_hover">Color de Texto de Botón de Año al Pasar el Ratón</label></th>
+                        <td>
+                            <input type="color" id="btn_year_text_hover" name="gica_colors[btn-year-text-hover]" value="<?php echo esc_attr($colors['btn-year-text-hover']); ?>">
+                            <span class="description">Color de texto de botón de año al pasar el ratón</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="badge_state_active">Color de Insignia de Estado Activo</label></th>
+                        <td>
+                            <input type="color" id="badge_state_active" name="gica_colors[badge-state-active]" value="<?php echo esc_attr($colors['badge-state-active']); ?>">
+                            <span class="description">Color de insignia de estado activo</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="badge_state_inactive">Color de Insignia de Estado Inactivo</label></th>
+                        <td>
+                            <input type="color" id="badge_state_inactive" name="gica_colors[badge-state-inactive]" value="<?php echo esc_attr($colors['badge-state-inactive']); ?>">
+                            <span class="description">Color de insignia de estado inactivo</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="badge_state_updated">Color de Insignia de Estado Actualizado</label></th>
+                        <td>
+                            <input type="color" id="badge_state_updated" name="gica_colors[badge-state-updated]" value="<?php echo esc_attr($colors['badge-state-updated']); ?>">
+                            <span class="description">Color de insignia de estado actualizado</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="pagination_bg">Color de Fondo de Paginación</label></th>
+                        <td>
+                            <input type="color" id="pagination_bg" name="gica_colors[pagination-bg]" value="<?php echo esc_attr($colors['pagination-bg']); ?>">
+                            <span class="description">Color de fondo de paginación</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="pagination_bg_hover">Color de Fondo de Paginación al Pasar el Ratón</label></th>
+                        <td>
+                            <input type="color" id="pagination_bg_hover" name="gica_colors[pagination-bg-hover]" value="<?php echo esc_attr($colors['pagination-bg-hover']); ?>">
+                            <span class="description">Color de fondo de paginación al pasar el ratón</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="pagination_bg_hover_active">Color de Fondo de Paginación Activo al Pasar el Ratón</label></th>
+                        <td>
+                            <input type="color" id="pagination_bg_hover_active" name="gica_colors[pagination-bg-hover-active]" value="<?php echo esc_attr($colors['pagination-bg-hover-active']); ?>">
+                            <span class="description">Color de fondo de paginación activo al pasar el ratón</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="pagination_text_color">Color de Texto de Paginación</label></th>
+                        <td>
+                            <input type="color" id="pagination_text_color" name="gica_colors[pagination-text-color]" value="<?php echo esc_attr($colors['pagination-text-color']); ?>">
+                            <span class="description">Color de texto de paginación</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="pagination_text_color_active">Color de Texto de Paginación Activo</label></th>
+                        <td>
+                            <input type="color" id="pagination_text_color_active" name="gica_colors[pagination-text-color-active]" value="<?php echo esc_attr($colors['pagination-text-color-active']); ?>">
+                            <span class="description">Color de texto de paginación activo</span>
+                        </td>
+                    </tr>
                 </table>
-                
+    
+                <input type="hidden" name="gica_colors[reset]" value="0" />
                 <?php submit_button('Guardar Cambios'); ?>
+                <button type="submit" name="gica_colors[reset]" value="1" class="button button-secondary">Restablecer a Valores Predeterminados</button>
             </form>
         </div>
         <?php
     }
+    
 
     public function generate_dynamic_css() {
         $colors = get_option('gica_colors', array());
         $colors = wp_parse_args($colors, $this->default_colors);
         
         $css = ":root {\n";
-        $css .= "    --primary-color: {$colors['primary']};\n";
-        $css .= "    --secondary-color: {$colors['secondary']};\n";
-        $css .= "    --tertiary-color: {$colors['tertiary']};\n";
-        $css .= "    --quaternary-color: {$colors['quaternary']};\n";
-        // Agrega todas las variables CSS necesarias
+        $css .= "    --primary-color: {$colors['primary-color']};\n";
+        $css .= "    --secondary-color: {$colors['secondary-color']};\n";
+        $css .= "    --tertiary-color: {$colors['tertiary-color']};\n";
+        $css .= "    --quaternary-color: {$colors['quaternary-color']};\n";
+
+        $css .= "    --border-container: {$colors['border-container']};\n";
+        $css .= "    --shadow-color: {$colors['shadow-color']};\n";
+        $css .= "    --shadow-color-hover: {$colors['shadow-color-hover']};\n";
+
+        $css .= "    --btn-nav-active: {$colors['btn-nav-active']};\n";
+        $css .= "    --btn-nav-primary-color: {$colors['btn-nav-primary-color']};\n";
+        $css .= "    --btn-nav-secondary-color: {$colors['btn-nav-secondary-color']};\n";
+        $css .= "    --btn-nav-text-color: {$colors['btn-nav-text-color']};\n";
+        
+        $css .= "    --btn-year-bg: {$colors['btn-year-bg']};\n";
+        $css .= "    --btn-year-text: {$colors['btn-year-text']};\n";
+        $css .= "    --btn-year-text-hover: {$colors['btn-year-text-hover']};\n";
+
+        $css .= "    --badge-state-active: {$colors['badge-state-active']};\n";
+        $css .= "    --badge-state-inactive: {$colors['badge-state-inactive']};\n";
+        $css .= "    --badge-state-updated: {$colors['badge-state-updated']};\n";
+
+        $css .= "    --pagination-bg: {$colors['pagination-bg']};\n";
+        $css .= "    --pagination-bg-hover: {$colors['pagination-bg-hover']};\n";
+        $css .= "    --pagination-bg-hover-active: {$colors['pagination-bg-hover-active']};\n";
+        $css .= "    --pagination-text-color: {$colors['pagination-text-color']};\n";
+        $css .= "    --pagination-text-color-active: {$colors['pagination-text-color-active']};\n";
+
         $css .= "}\n";
         
         wp_register_style('gica-dynamic-css', false);
@@ -119,7 +289,10 @@ class GICA_Color_Settings {
     public function validate_colors($input) {
         $validated = array();
         foreach ($input as $key => $value) {
-            if (preg_match('/^#([a-f0-9]{3}){1,2}$/i', $value)) {
+            if ($key === 'reset' && $value == '1') {
+                // Restablecer a los valores predeterminados
+                return $this->default_colors;
+            } elseif (preg_match('/^#([a-f0-9]{3}){1,2}$/i', $value)) {
                 $validated[$key] = $value;
             } else {
                 $validated[$key] = $this->default_colors[$key];
@@ -127,6 +300,7 @@ class GICA_Color_Settings {
         }
         return $validated;
     }
+    
 }
 
 new GICA_Color_Settings();
