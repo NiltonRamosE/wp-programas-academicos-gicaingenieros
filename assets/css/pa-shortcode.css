@@ -23,9 +23,8 @@
 :root {
     /*-- General --*/
     --primary-color: #092f58;
-    --secondary-color: #f9c127;
-    --tertiary-color: #63a3fa;
-    --quaternary-color: #7f8c8d;
+    --secondary-color: #63a3fa;
+    --tertiary-color: #7f8c8d;
 
     --border-container: #ddd;
     --shadow-color: rgba(0, 0, 0, 0.1);
@@ -41,7 +40,7 @@
     
     /*-- Year Buttons --*/
     --btn-year-bg: #f5f5f5;
-    --btn-year-bg-hover: linear-gradient(135deg, var(--tertiary-color) 0%, var(--primary-color) 100%);
+    --btn-year-bg-hover: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
     --btn-year-text: #333;
     --btn-year-text-hover: #ffffff;
 
@@ -87,7 +86,7 @@
     font-weight: bold;
     text-align: center;
     text-transform: uppercase;
-    background: linear-gradient(90deg, var(--primary-color), var(--tertiary-color));
+    background: var(--primary-color);
     background-clip: text;
     -webkit-text-fill-color: transparent;
     position: relative;
@@ -501,7 +500,7 @@
 
 .program-item p {
     margin: 0 20px 15px;
-    color: var(--quaternary-color);
+    color: var(--tertiary-color);
     font-size: 14px;
 }
 
