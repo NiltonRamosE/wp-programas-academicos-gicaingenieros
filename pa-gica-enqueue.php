@@ -17,6 +17,9 @@ function gica_enqueue_admin_scripts($hook) {
         wp_enqueue_script('gica-pa-script-copy-text', plugin_dir_url(__FILE__) . 'assets/js/pa-copy-text.js', array('clipboard-js', 'jquery'), GICA_PLUGIN_VERSION, true);
         wp_enqueue_script('gica-dashboard-chart', plugin_dir_url(__FILE__) . 'assets/js/pa-gica-chart.js', array('jquery', 'chart-js'), GICA_PLUGIN_VERSION, true); 
     }
+    if ($hook === 'programas-academicos_page_gica-design-settings') {
+        wp_enqueue_script('gica-design-settings-join-values', plugin_dir_url(__FILE__) . 'assets/js/design-settings/ds-join-values.js', GICA_PLUGIN_VERSION, true);
+    }
 }
 add_action('admin_enqueue_scripts', 'gica_enqueue_admin_scripts');
 

@@ -8,7 +8,7 @@
     =========================================
 	
     00. Variables
-    01. General
+    01. Title
     02. Navbar
     03. Academic Programs Section
         03. 1 Filters
@@ -21,6 +21,21 @@
 /*  00. Variables
 /*----------------------------------------*/
 :root {
+    /*-- Title Design --*/
+    --title-color: #092f58;
+    --line-title-color: #092f58;
+    --text-title-size-min: 1.8rem;
+    --text-title-size-max: 2.5rem;
+    --text-title-weight: 700;
+
+    --width-title-line-base: 50%;
+    --width-title-line-tablet: 60%;
+    --width-title-line-mobile: 70%;
+
+    --width-title-line-hover-base: 80%;
+    --width-title-line-hover-tablet: 90%;
+    --width-title-line-hover-mobile: 95%;
+    
     /*-- General --*/
     --primary-color: #092f58;
     --secondary-color: #63a3fa;
@@ -78,15 +93,14 @@
 }
 
 /*----------------------------------------*/
-/*  01. General
+/*  01. Title
 /*----------------------------------------*/
 
 .pa-title-main {
-    font-size: clamp(1.8rem, 5vw, 2.5rem);
-    font-weight: bold;
+    font-size: clamp(var(--text-title-size-min), 5vw, var(--text-title-size-max));
+    font-weight: var(--text-title-weight);
     text-align: center;
-    text-transform: uppercase;
-    background: var(--primary-color);
+    background: var(--title-color);
     background-clip: text;
     -webkit-text-fill-color: transparent;
     position: relative;
@@ -96,45 +110,43 @@
 .pa-title-main::after {
     content: "";
     display: block;
-    width: 50%;
+    width: var(--width-title-line-base);
     height: 4px;
-    background: var(--primary-color);
+    background: var(--line-title-color);
     margin: 8px auto 0;
     transition: width 0.3s ease-in-out;
 }
 
 .pa-title-main:hover::after {
-    width: 80%;
+    width: var(--width-title-line-hover-base);
 }
 
 @media (max-width: 768px) {
     .pa-title-main {
-        font-size: clamp(1.5rem, 4.5vw, 2rem);
         padding: 8px;
     }
 
     .pa-title-main::after {
-        width: 60%;
+        width: var(--width-title-line-tablet);
     }
 
     .pa-title-main:hover::after {
-        width: 90%;
+        width: var(--width-title-line-hover-tablet);
     }
 }
 
 @media (max-width: 480px) {
     .pa-title-main {
-        font-size: clamp(1.2rem, 5vw, 1.8rem);
         padding: 5px;
     }
 
     .pa-title-main::after {
-        width: 70%;
+        width: var(--width-title-line-mobile);
         height: 3px;
     }
 
     .pa-title-main:hover::after {
-        width: 95%;
+        width: var(--width-title-line-hover-mobile);
     }
 }
   
