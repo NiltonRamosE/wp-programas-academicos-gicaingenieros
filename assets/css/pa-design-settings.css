@@ -186,7 +186,7 @@
 /*----------------------------------------*/
 
 
-.main-title__form, .navbar__form {
+.main-title__form, .navbar__form, .filters__form {
     padding: 2rem;
     padding-top: 0;
 }
@@ -195,21 +195,21 @@
     03. 1 Text
 ---------------------*/
 
-.main-title__table, .navbar__table {
+.main-title__table, .navbar__table, .filters__table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 2rem;
 }
 
-.main-title__table-row, .navbar__table-row {
+.main-title__table-row, .navbar__table-row, .filters__table-row {
     border-bottom: 1px solid var(--bg-secondary-color);
 }
 
-.main-title__table-row:last-child, .navbar__table-row:last-child {
+.main-title__table-row:last-child, .navbar__table-row:last-child, .filters__table-row:last-child {
     border-bottom: none;
 }
 
-.main-title__table-label, .navbar__table-label {
+.main-title__table-label, .navbar__table-label, .filters__table-label {
     padding: 1rem 1rem 1rem 0;
     text-align: left;
     vertical-align: middle;
@@ -218,12 +218,12 @@
     color: var(--primary-color);
 }
 
-.main-title__table-input, .navbar__table-input {
+.main-title__table-input, .navbar__table-input, .filters__table-input {
     padding: 1rem 0;
     vertical-align: middle;
 }
 
-.main-title__input--color, .navbar__input--color {
+.main-title__input--color, .navbar__input--color, .filters__input--color {
     width: 40px;
     height: 40px;
     border: 1px solid var(--quaternary-color) !important;
@@ -231,11 +231,11 @@
     cursor: pointer;
 }
 
-.main-title__input--color::-webkit-color-swatch, .navbar__input--color::-webkit-color-swatch {
+.main-title__input--color::-webkit-color-swatch, .navbar__input--color::-webkit-color-swatch, .filters__input--color::-webkit-color-swatch {
     border-radius: 50% ;
 }
 
-.main-title__input--color::-moz-color-swatch, .navbar__input--color::-webkit-color-swatch {
+.main-title__input--color::-moz-color-swatch, .navbar__input--color::-moz-color-swatch, .filters__input--color::-moz-color-swatch {
     border-radius: 50%;
 }
 
@@ -246,7 +246,10 @@
 .navbar__input--number,
 .navbar__input--text,
 .navbar__input--select,
-.navbar__unit-select {
+.navbar__unit-select,
+.filters__input--number,
+.filters__input--select,
+.filters__unit-select {
     width: 100%;
     border: 1px solid var(--quaternary-color) !important;
     border-radius: 10px !important;
@@ -259,19 +262,21 @@
 .main-title__input--select:focus,
 .navbar__input--number:focus,
 .navbar__input--text:focus,
-.navbar__input--select:focus {
+.navbar__input--select:focus,
+.filters__input--number:focus,
+.filters__input--select:focus {
     border-color: var(--primary-color) !important;
     box-shadow: 0 0 0 3px var(--container-shadow-hover) !important;
     outline: none;
 }
 
-.main-title__size-input-group, .navbar__size-input-group {
+.main-title__size-input-group, .navbar__size-input-group, .filters__size-input-group {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.main-title__size-input-group .main-title__input--number,  .navbar__size-input-group .navbar__input--number{
+.main-title__size-input-group .main-title__input--number,  .navbar__size-input-group .navbar__input--number, .filters__size-input-group .filters__input--number{
     width: 80px;
     flex-shrink: 0;
 }
@@ -348,7 +353,7 @@
     03. 3 Buttons Action
 ---------------------*/
 
-.main-title__actions, .navbar__actions {
+.main-title__actions, .navbar__actions, .filters__actions {
     display: flex;
     justify-content: flex-end;
     gap: 15px;
@@ -357,7 +362,7 @@
     margin-top: 2rem;
 }
 
-.main-title__button, .navbar__button {
+.main-title__button, .navbar__button, .filters__button {
     padding: 0.75rem 1.5rem;
     border-radius: 4px;
     font-weight: 700;
@@ -366,13 +371,13 @@
     border: none;
 }
 
-.main-title__button--secondary, .navbar__button--secondary {
+.main-title__button--secondary, .navbar__button--secondary, .filters__button--secondary {
     background-color: var(--btn-secondary-color);
     color: black;
     border: 1px solid var(--primary-color);
 }
 
-.main-title__button--secondary:hover, .navbar__button--secondary:hover {
+.main-title__button--secondary:hover, .navbar__button--secondary:hover, .filters__button--secondary:hover {
     background-color: var(--secondary-color);
 }
 
@@ -381,27 +386,27 @@
 -----------------------------------------*/
 
 @media (max-width: 768px) {
-    .main-title__table-row {
+    .main-title__table-row, .navbar__table-row, .filters__table-row {
         display: flex;
         flex-wrap: wrap;
         padding: 1rem 0;
     }
     
-    .main-title__table-label {
+    .main-title__table-label, .navbar__table-label, .filters__table-label {
         width: 100%;
         padding: 0.5rem 0;
     }
     
-    .main-title__table-input {
+    .main-title__table-input, .navbar__table-input, .filters__table-input {
         width: 100%;
         padding: 0.5rem 0;
     }
     
-    .main-title__actions {
+    .main-title__actions, .navbar__title__actions, .filters__title__actions {
         flex-direction: column;
     }
     
-    .main-title__button {
+    .main-title__button, .navbar__button, .filters__button {
         width: 100%;
     }
 }
@@ -410,9 +415,9 @@
 /*  04. Navbar Section
 /*----------------------------------------*/
 
-
-
-
+/*----------------------------------------*/
+/*  05. Filters Section
+/*----------------------------------------*/
 
 /*----------------------------------------*/
 /*  05. Footer

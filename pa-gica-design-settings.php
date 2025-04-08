@@ -8,6 +8,7 @@ class GICA_Design_Settings {
 
     private $default_design_title;
     private $default_design_navbar;
+    private $default_design_filters;
     private $default_colors;
 
     public function __construct() {
@@ -45,6 +46,26 @@ class GICA_Design_Settings {
             'btn-nav-text-color' => '#ffffff',
         );
 
+        $this->default_design_filters = array(
+            'border-container-section' => '#ddd',
+            'padding-container-section' => '1rem',
+            'margin-top-container-section' => '0px',
+            
+            'margin-bottom-container-filter' => '30px',
+            
+            'gap-filter-year' => '8px',
+            'border-radius-filter-year' => '20px',
+            'font-weight-filter-year' => '600',
+            'font-size-filter-year' => '13px',
+            'min-width-filter-year' => '60px',
+
+            'filter-primary-color' => '#63a3fa',
+            'filter-secondary-color' => '#092f58',
+            'filter-color' => '#333',
+            'filter-hover-color' => '#ffffff',
+            'filter-bg-color' => '#f5f5f5',
+        );
+
         $this->default_colors = array(
             // Botones año
             'btn-year-bg' => '#f5f5f5',
@@ -68,6 +89,7 @@ class GICA_Design_Settings {
         add_action('admin_init', array($this, 'register_settings'));
         add_action('wp_enqueue_scripts', array($this, 'generate_dynamic_css_main_title'), 100);
         add_action('wp_enqueue_scripts', array($this, 'generate_dynamic_css_navbar'), 100);
+        add_action('wp_enqueue_scripts', array($this, 'generate_dynamic_css_filters'), 100);
     }
 
     public function register_settings_page() {
@@ -89,6 +111,9 @@ class GICA_Design_Settings {
         register_setting('gica_design_navbar_options', 'gica_design_navbar', array(
             'sanitize_callback' => array($this, 'reset_values_navbar')
         ));
+        register_setting('gica_design_filters_options', 'gica_design_filters', array(
+            'sanitize_callback' => array($this, 'reset_values_filters')
+        ));
     }
 
     public function render_settings_page() {
@@ -101,6 +126,9 @@ class GICA_Design_Settings {
 
         $design_navbar = get_option('gica_design_navbar', array());
         $design_navbar = wp_parse_args($design_navbar, $this->default_design_navbar);
+
+        $design_filters = get_option('gica_design_filters', array());
+        $design_filters = wp_parse_args($design_filters, $this->default_design_filters);
 
         $last_updated = date('d/m/Y H:i');
         ?>
@@ -131,6 +159,10 @@ class GICA_Design_Settings {
                 <?php include plugin_dir_path(__FILE__) . 'partials/design-settings/form-navbar.php'; ?>
             </div>
 
+            <div class="gica-design-settings__grid">
+                <?php include plugin_dir_path(__FILE__) . 'partials/design-settings/form-filters.php'; ?>
+            </div>
+
             <footer class="gica-design-settings__footer">
                 <div class="gica-design-settings__footer-content">
                     <p class="gica-design-settings__footer-text">Plugin desarrollado por <a href="https://niltonramosencarnacion.vercel.app/" target="_blank">Nilton Ramos Encarnacion</a></p>
@@ -159,6 +191,13 @@ class GICA_Design_Settings {
     public function reset_values_navbar($input) {
         if (isset($input['reset-default-navbar']) && $input['reset-default-navbar'] == '1') {
             return $this->default_design_navbar;
+        }
+        return $input;
+    }
+
+    public function reset_values_filters($input) {
+        if (isset($input['reset-default-filters']) && $input['reset-default-filters'] == '1') {
+            return $this->default_design_filters;
         }
         return $input;
     }
@@ -215,6 +254,34 @@ class GICA_Design_Settings {
         wp_add_inline_style('gica-dynamic-css_navbar', $css);
     }
     
+    public function generate_dynamic_css_filters() {
+        $design_filters = get_option('gica_design_filters', array());
+        $design_filters = wp_parse_args($design_filters, $this->default_design_filters);
+        
+        $css = ":root {\n";
+        $css .= "    --border-container-section: {$design_filters['border-container-section']};\n";
+        $css .= "    --padding-container-section: {$design_filters['padding-container-section']};\n";
+        $css .= "    --margin-top-container-section: {$design_filters['margin-top-container-section']};\n";
+        
+        $css .= "    --margin-bottom-container-filter: {$design_filters['margin-bottom-container-filter']};\n";
+        
+        $css .= "    --gap-filter-year: {$design_filters['gap-filter-year']};\n";
+        $css .= "    --border-radius-filter-year: {$design_filters['border-radius-filter-year']};\n";
+        $css .= "    --font-weight-filter-year: {$design_filters['font-weight-filter-year']};\n";
+        $css .= "    --font-size-filter-year: {$design_filters['font-size-filter-year']};\n";
+        $css .= "    --min-width-filter-year: {$design_filters['min-width-filter-year']};\n";
+        
+        $css .= "    --filter-primary-color: {$design_filters['filter-primary-color']};\n";
+        $css .= "    --filter-secondary-color: {$design_filters['filter-secondary-color']};\n";
+        $css .= "    --filter-color: {$design_filters['filter-color']};\n";
+        $css .= "    --filter-hover-color: {$design_filters['filter-hover-color']};\n";
+        $css .= "    --filter-bg-color: {$design_filters['filter-bg-color']};\n";
+        $css .= "}\n";
+        
+        wp_register_style('gica-dynamic-css_filters', false);
+        wp_enqueue_style('gica-dynamic-css_filters');
+        wp_add_inline_style('gica-dynamic-css_filters', $css);
+    }
 }
 
 new GICA_Design_Settings();

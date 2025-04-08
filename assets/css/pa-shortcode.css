@@ -53,6 +53,25 @@
     --btn-nav-secondary-color: #dd8d02;
     --btn-nav-text-color: #ffffff;
 
+    /*-- Filters Design --*/
+    --border-container-section: #ddd;
+    --padding-container-section: 1rem;
+    --margin-top-container-section: 0px;
+
+    --margin-bottom-container-filter: 30px;
+    
+    --gap-filter-year: 8px;
+    --border-radius-filter-year: 20px;
+    --font-weight-filter-year: 600;
+    --font-size-filter-year: 13px;
+    --min-width-filter-year: 60px;
+
+    --filter-primary-color: #63a3fa;
+    --filter-secondary-color: #092f58;
+    --filter-color: #333;
+    --filter-hover-color: #ffffff;
+    --filter-bg-color: #f5f5f5;
+
     /*-- General --*/
     --primary-color: #092f58;
     --secondary-color: #63a3fa;
@@ -63,35 +82,6 @@
     --shadow-color-hover: rgba(0, 0, 0, 0.15);
     --container-shadow: 0 2px 5px var(--shadow-color);
     --container-shadow-hover: 0 4px 8px var(--shadow-color-hover);
-    
-    /*-- Navbar Buttons --*/
-    
-    
-    /*-- Year Buttons --*/
-    --btn-year-bg: #f5f5f5;
-    --btn-year-bg-hover: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
-    --btn-year-text: #333;
-    --btn-year-text-hover: #ffffff;
-
-    /*-- State Buttons --*/
-
-    /*
-    --btn-state-bg-all: #e7f5ff;
-    --btn-state-border-color-all: #d0ebff;
-    --btn-state-text-color-all: #228be6;
-
-    --btn-state-bg-active: #ebfbee;
-    --btn-state-border-color-active: #d3f9d8;
-    --btn-state-text-color-active: #2b8a3e;
-
-    --btn-state-bg-inactive: #fff5f5;
-    --btn-state-border-color-inactive: #ffd8d8;
-    --btn-state-text-color-inactive: #c92a2a;
-
-    --btn-state-bg-updated: #fff9db;
-    --btn-state-border-color-updated: #ffec99;
-    --btn-state-text-color-updated: #e67700;
-    */
 
     /*-- State Badges --*/
     --badge-state-active: #27ae60;
@@ -281,12 +271,12 @@
 -----------------------------------------*/
 
 .programas-academicos-section {
-    border: 1px solid var(--border-container);
-    padding: 1rem;
+    border: 1px solid var(--border-container-section);
+    padding: var(--padding-container-section);
 }
 
 .programas-academicos-section h2 {
-    margin-top: 0;
+    margin-top: var(--margin-top-container-section);
 }
 
 /*--
@@ -300,65 +290,37 @@
     flex-wrap: wrap;
     padding: 15px 20px;
     box-shadow: var(--container-shadow);
-    margin-bottom: 30px;
-    gap: 15px;
+    margin-bottom: var(--margin-bottom-container-filter);
 }
 
 .pa-filter__year {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: var(--gap-filter-year);
     align-items: center;
 }
 
-/* -- Si se llega a activar el state
-.pa-filter__year, .pa-filter__state {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    align-items: center;
-}
-*/
 .pa-filter__year {
     margin-right: auto;
 }
 
-.pa-filter__btn-year {
-    position: relative;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 20px;
-    font-weight: 600;
-    font-size: 13px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    overflow: hidden;
-    z-index: 1;
-    min-width: 60px;
-    text-align: center;
-}
-
-/* -- Si se llega a activar el state
-.pa-filter__btn-year, .pa-filter__btn-state {
-    position: relative;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 20px;
-    font-weight: 600;
-    font-size: 13px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    overflow: hidden;
-    z-index: 1;
-    min-width: 60px;
-    text-align: center;
-}
-*/
 /*-- Year Buttons --*/
 
 .pa-filter__btn-year {
-    background: var(--btn-year-bg);
-    color: var(--btn-year-text);
+    position: relative;
+    padding: 8px 16px;
+    border: none;
+    border-radius: var(--border-radius-filter-year);
+    font-weight: var(--font-weight-filter-year);
+    font-size: var(--font-size-filter-year);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    z-index: 1;
+    min-width: var(--min-width-filter-year);
+    text-align: center;
+    background: var(--filter-bg-color);
+    color: var(--filter-color);
 }
 
 .pa-filter__btn-year::before {
@@ -368,13 +330,13 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: var(--btn-year-bg-hover);
+    background: linear-gradient(135deg, var(--filter-secondary-color) 0%, var(--filter-primary-color) 100%);
     transition: all 0.4s ease;
     z-index: -1;
 }
 
 .pa-filter__btn-year:hover {
-    color: var(--btn-year-text-hover);
+    color: var(--filter-hover-color);
     transform: translateY(-2px);
     box-shadow: var(--container-shadow-hover);
 }
@@ -384,46 +346,11 @@
 }
 
 .pa-filter__btn-year--active {
-    background: var(--btn-year-bg-hover);
-    color: var(--btn-year-text-hover);
+    background: linear-gradient(135deg, var(--filter-secondary-color) 0%, var(--filter-primary-color) 100%);
+    color: var(--filter-hover-color);
     box-shadow: var(--container-shadow-hover);
 }
 
-/*-- State Buttons --*/
-/*
-.pa-filter__btn-state {
-    border: 1px solid;
-}
-
-.pa-filter__btn-state[data-state="all"] {
-    background:var(--btn-state-bg-all);
-    color: var(--btn-state-text-color-all);
-    border-color: var(--btn-state-border-color-all);
-}
-
-.pa-filter__btn-state[data-state="active"] {
-    background: var(--btn-state-bg-active);
-    color: var(--btn-state-text-color-active);
-    border-color: var(--btn-state-border-color-active);
-}
-
-.pa-filter__btn-state[data-state="inactive"] {
-    background: var(--btn-state-bg-inactive);
-    color: var(--btn-state-text-color-inactive);
-    border-color: var(--btn-state-border-color-inactive);
-}
-
-.pa-filter__btn-state[data-state="updated"] {
-    background: var(--btn-state-bg-updated);
-    color: var(--btn-state-text-color-updated);
-    border-color: var(--btn-state-border-color-updated);
-}
-
-.pa-filter__btn-state:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--container-shadow-hover);
-}
-*/
 /*-- 
     - Media Queries
 -----------------------------------------*/
@@ -431,7 +358,6 @@
     .pa-filter {
         flex-direction: column;
         align-items: stretch;
-        gap: 12px;
     }
 
     .pa-filter__year {
@@ -440,32 +366,13 @@
 
     .pa-filter__btn-year {
         padding: 6px 12px;
-        font-size: 12px;
-        min-width: 50px;
     }
-
-    /* -- Si se llega a activar el state
-    .pa-filter__year, .pa-filter__state {
-        justify-content: center;
-    }
-
-    .pa-filter__btn-year, .pa-filter__btn-state {
-        padding: 6px 12px;
-        font-size: 12px;
-        min-width: 50px;
-    }
-    */
 }
 
 @media (max-width: 480px) {
-    .pa-filter__year, .pa-filter__state {
-        gap: 6px;
-    }
     
-    .pa-filter__btn-year, .pa-filter__btn-state {
+    .pa-filter__btn-year {
         padding: 5px 10px;
-        font-size: 11px;
-        border-radius: 15px;
     }
 }
 
