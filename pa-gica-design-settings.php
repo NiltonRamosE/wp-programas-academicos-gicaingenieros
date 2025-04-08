@@ -9,6 +9,7 @@ class GICA_Design_Settings {
     private $default_design_title;
     private $default_design_navbar;
     private $default_design_filters;
+    private $default_design_cards;
     private $default_colors;
 
     public function __construct() {
@@ -66,17 +67,20 @@ class GICA_Design_Settings {
             'filter-bg-color' => '#f5f5f5',
         );
 
+        $this->default_design_cards = array(
+            'border-radius-card' => '12px',
+            'title-color-card' => '#092f58',
+            'subtitle-color-card' => '#7f8c8d',
+            'title-font-size-card' => '18px',
+            'subtitle-font-size-card' => '14px',
+            'title-font-weight-card' => '900',
+
+            'badge-state-active-card' => '#27ae60',
+            'badge-state-inactive-card' => '#e74c3c',
+            'badge-state-updated-card' => '#f39c12',
+        );
+
         $this->default_colors = array(
-            // Botones año
-            'btn-year-bg' => '#f5f5f5',
-            'btn-year-text' => '#333333',
-            'btn-year-text-hover' => '#ffffff',
-            
-            // Badges estado
-            'badge-state-active' => '#27ae60',
-            'badge-state-inactive' => '#e74c3c',
-            'badge-state-updated' => '#f39c12',
-            
             // Paginación
             'pagination-bg' => '#f5f5f5',
             'pagination-bg-hover' => '#e0e0e0',
@@ -90,6 +94,7 @@ class GICA_Design_Settings {
         add_action('wp_enqueue_scripts', array($this, 'generate_dynamic_css_main_title'), 100);
         add_action('wp_enqueue_scripts', array($this, 'generate_dynamic_css_navbar'), 100);
         add_action('wp_enqueue_scripts', array($this, 'generate_dynamic_css_filters'), 100);
+        add_action('wp_enqueue_scripts', array($this, 'generate_dynamic_css_cards'), 100);
     }
 
     public function register_settings_page() {
@@ -114,6 +119,9 @@ class GICA_Design_Settings {
         register_setting('gica_design_filters_options', 'gica_design_filters', array(
             'sanitize_callback' => array($this, 'reset_values_filters')
         ));
+        register_setting('gica_design_cards_options', 'gica_design_cards', array(
+            'sanitize_callback' => array($this, 'reset_values_cards')
+        ));
     }
 
     public function render_settings_page() {
@@ -129,6 +137,9 @@ class GICA_Design_Settings {
 
         $design_filters = get_option('gica_design_filters', array());
         $design_filters = wp_parse_args($design_filters, $this->default_design_filters);
+
+        $design_cards = get_option('gica_design_cards', array());
+        $design_cards = wp_parse_args($design_cards, $this->default_design_cards);
 
         $last_updated = date('d/m/Y H:i');
         ?>
@@ -161,6 +172,10 @@ class GICA_Design_Settings {
 
             <div class="gica-design-settings__grid">
                 <?php include plugin_dir_path(__FILE__) . 'partials/design-settings/form-filters.php'; ?>
+            </div>
+
+            <div class="gica-design-settings__grid">
+                <?php include plugin_dir_path(__FILE__) . 'partials/design-settings/form-cards.php'; ?>
             </div>
 
             <footer class="gica-design-settings__footer">
@@ -198,6 +213,13 @@ class GICA_Design_Settings {
     public function reset_values_filters($input) {
         if (isset($input['reset-default-filters']) && $input['reset-default-filters'] == '1') {
             return $this->default_design_filters;
+        }
+        return $input;
+    }
+
+    public function reset_values_cards($input) {
+        if (isset($input['reset-default-cards']) && $input['reset-default-cards'] == '1') {
+            return $this->default_design_cards;
         }
         return $input;
     }
@@ -281,6 +303,28 @@ class GICA_Design_Settings {
         wp_register_style('gica-dynamic-css_filters', false);
         wp_enqueue_style('gica-dynamic-css_filters');
         wp_add_inline_style('gica-dynamic-css_filters', $css);
+    }
+
+    public function generate_dynamic_css_cards() {
+        $design_cards = get_option('gica_design_cards', array());
+        $design_cards = wp_parse_args($design_cards, $this->default_design_cards);
+        
+        $css = ":root {\n";
+        $css .= "    --border-radius-card: {$design_cards['border-radius-card']};\n";
+        $css .= "    --title-color-card: {$design_cards['title-color-card']};\n";
+        $css .= "    --subtitle-color-card: {$design_cards['subtitle-color-card']};\n";
+        $css .= "    --title-font-size-card: {$design_cards['title-font-size-card']};\n";
+        $css .= "    --subtitle-font-size-card: {$design_cards['subtitle-font-size-card']};\n";
+        $css .= "    --title-font-weight-card: {$design_cards['title-font-weight-card']};\n";
+        
+        $css .= "    --badge-state-active-card: {$design_cards['badge-state-active-card']};\n";
+        $css .= "    --badge-state-inactive-card: {$design_cards['badge-state-inactive-card']};\n";
+        $css .= "    --badge-state-updated-card: {$design_cards['badge-state-updated-card']};\n";
+        $css .= "}\n";
+        
+        wp_register_style('gica-dynamic-css_cards', false);
+        wp_enqueue_style('gica-dynamic-css_cards');
+        wp_add_inline_style('gica-dynamic-css_cards', $css);
     }
 }
 
