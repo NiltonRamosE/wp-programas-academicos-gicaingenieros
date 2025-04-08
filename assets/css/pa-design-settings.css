@@ -1,10 +1,319 @@
-/* Íconos */
-.main-title__responsive-icon {
+/*-----------------------------------------------------------------------------------
+
+    Version: 1.0
+
+-----------------------------------------------------------------------------------
+    
+    CSS PLUGIN DASHBOARD PROGRAMAS ACADÉMICOS
+    =========================================
+	
+    00. Variables
+    01. Header
+    02. Layout
+    03. Main Title Section
+        03. 1 Text
+        03. 2 Line
+        03. 3 Buttons Action
+    04. Pagination
+    05. Footer
+-----------------------------------------------------------------------------------*/
+
+/*----------------------------------------*/
+/*  00. Variables
+/*----------------------------------------*/
+:root {
+    /*-- General --*/
+    --primary-color: #092f58;
+    --secondary-color: #f9c127;
+    --tertiary-color: #63a3fa;
+    --quaternary-color: #7f8c8d;
+
+    --bg-color: white;
+    --bg-secondary-color: #f5f5f5;
+    --btn-secondary-color: #dd8d02;
+    --border-container: rgba(0,0,0,0.1);
+    --container-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    --container-shadow-hover: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/*----------------------------------------*/
+/*  01. Header
+/*----------------------------------------*/
+
+/*-- Common Style --*/
+
+.gica-design-settings {
+    font-family: 'Montserrat', monospace;
+
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.gica-design-settings__header {
+    margin-bottom: 3rem;
+    padding: 0 0 1.5rem 0;
+    position: relative;
+}
+
+/*-- Image --*/
+
+.gica-design-settings__header-img-container {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px 8px 0 0;
+    max-height: 180px;
+}
+
+.gica-design-settings__header-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+/*-- Content --*/
+
+.gica-design-settings__header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1.5rem;
+}
+
+.gica-design-settings__title {
+    font-size: 2.5rem;
+    margin: 0;
+    line-height: 1.2;
+    color: var(--primary-color);
+    letter-spacing: -0.5px;
+}
+
+.gica-design-settings__subtitle {
+    font-size: 1.1rem;
+    margin: 0.5rem 0 0 0;
+    color: var(--quaternary-color);
+}
+
+.gica-design-settings__header-badge {
+    background: var(--bg-color);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    box-shadow: var(--container-shadow);
+    border: 1px solid var(--border-container);
+}
+
+.gica-design-settings__update {
+    font-size: 0.85rem;
+    color: var(--quaternary-color);
+    font-family: 'Courier New', monospace;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.gica-design-settings__update::before {
+    content: '↻';
+    font-size: 1rem;
+    color: var(--secondary-color);
+}
+
+.gica-design-settings__header-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--border-container);
+}
+
+/*-- Transition Hover Style --*/
+
+.gica-design-settings__header-badge {
+    transition: all 0.3s ease;
+}
+
+.gica-design-settings__header-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/*-- 
+    - Media Queries
+-----------------------------------------*/
+@media (max-width: 768px) {
+    .gica-design-settings__header-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .gica-design-settings__title {
+        font-size: 2rem;
+    }
+    
+    .gica-design-settings__header-badge {
+        align-self: flex-end;
+    }
+}
+
+/*----------------------------------------*/
+/*  02. Layout
+/*----------------------------------------*/
+
+/*-- Cards General--*/
+
+.gica-design-settings__card {
+    background: var(--bg-color);
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gica-design-settings__card-title {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--border-container);
+    padding-bottom: 0.75rem;
+}
+
+
+/*----------------------------------------*/
+/*  03. Main Title Section
+/*----------------------------------------*/
+
+
+.main-title__form {
+    padding: 2rem;
+    padding-top: 0;
+}
+
+/*--
+    03. 1 Text
+---------------------*/
+
+.main-title__table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+}
+
+.main-title__table-row {
+    border-bottom: 1px solid var(--bg-secondary-color);
+}
+
+.main-title__table-row:last-child {
+    border-bottom: none;
+}
+
+.main-title__table-label {
+    padding: 1rem 1rem 1rem 0;
+    text-align: left;
+    vertical-align: middle;
+    width: 25%;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.main-title__table-input {
+    padding: 1rem 0;
+    vertical-align: middle;
+}
+
+.main-title__input--color {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--quaternary-color) !important;
+    border-radius: 50% !important;
+    cursor: pointer;
+}
+
+.main-title__input--color::-webkit-color-swatch {
+    border-radius: 50% ;
+}
+
+.main-title__input--color::-moz-color-swatch {
+    border-radius: 50%;
+}
+
+.main-title__input--number,
+.main-title__input--text,
+.main-title__input--select,
+.main-title__unit-select {
+    width: 100%;
+    border: 1px solid var(--quaternary-color) !important;
+    border-radius: 10px !important;
+    font-size: 0.95rem !important;
+    transition: all 0.3s ease !important;
+}
+
+.main-title__input--number:focus,
+.main-title__input--text:focus,
+.main-title__input--select:focus {
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 0 3px var(--container-shadow-hover) !important;
+    outline: none;
+}
+
+.main-title__size-input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.main-title__size-input-group .main-title__input--number {
+    width: 80px;
+    flex-shrink: 0;
+}
+
+
+/*--
+    03. 1 Line
+---------------------*/
+
+.main-title__responsive-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+    background: #f9f9f9;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.main-title__responsive-header {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+}
+
+.main-title__responsive-title {
+    padding: 1rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+.main-title__responsive-row {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.main-title__responsive-row:last-child {
+    border-bottom: none;
+}
+
+.main-title__responsive-icon,
+.main-title__responsive-input {
+    padding: 1rem;
     text-align: center;
 }
 
+.main-title__responsive-input input {
+    text-align: center;
+}
+
+/*-- Icons --*/
+
 .main-title__icon {
-    display: inline-block;
     font-family: dashicons;
     font-size: 1.25rem;
     line-height: 1;
@@ -12,15 +321,136 @@
 
 .main-title__icon--desktop::before {
     content: "\f472";
-    color: #2271b1;
+    color: var(--primary-color);
 }
 
 .main-title__icon--tablet::before {
     content: "\f471";
-    color: #00a0d2;
+    color: var(--primary-color);
 }
 
 .main-title__icon--mobile::before {
     content: "\f470";
-    color: #d54e21;
+    color: var(--primary-color);
+}
+
+/*--
+    03. 3 Buttons Action
+---------------------*/
+
+.main-title__actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    padding-top: 1.5rem;
+    border-top: 1px solid var( --quaternary-color);
+    margin-top: 2rem;
+}
+
+.main-title__button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.main-title__button--secondary {
+    background-color: var(--btn-secondary-color);
+    color: black;
+    border: 1px solid var(--primary-color);
+}
+
+.main-title__button--secondary:hover {
+    background-color: var(--secondary-color);
+}
+
+/*-- 
+    - Media Queries
+-----------------------------------------*/
+
+@media (max-width: 768px) {
+    .main-title__table-row {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 1rem 0;
+    }
+    
+    .main-title__table-label {
+        width: 100%;
+        padding: 0.5rem 0;
+    }
+    
+    .main-title__table-input {
+        width: 100%;
+        padding: 0.5rem 0;
+    }
+    
+    .main-title__actions {
+        flex-direction: column;
+    }
+    
+    .main-title__button {
+        width: 100%;
+    }
+}
+
+/*----------------------------------------*/
+/*  05. Footer
+/*----------------------------------------*/
+
+.gica-design-settings__footer {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-container);
+    text-align: center;
+}
+
+.gica-design-settings__footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gica-design-settings__footer-text {
+    margin: 0;
+    color: var(--quaternary-color);
+}
+
+.gica-design-settings__footer-text a {
+    color: var(--tertiary-color);
+    text-decoration: none;
+}
+
+.gica-design-settings__footer-text a:hover {
+    text-decoration: underline;
+}
+
+.gica-design-settings__version {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #999;
+}
+
+/*-- 
+    - Media Queries
+-----------------------------------------*/
+@media (max-width: 768px) {
+    .gica-design-settings {
+        padding: 1rem;
+    }
+    
+    .gica-design-settings__grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .gica-design-settings__stats {
+        flex-direction: column;
+    }
+    
+    .gica-design-settings__footer-content {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
 }
