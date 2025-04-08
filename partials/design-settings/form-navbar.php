@@ -118,7 +118,7 @@
                 </td>
             </tr>
             <tr class="navbar__table-row">
-                <th class="navbar__table-label"><label for="font_weight_navbar">Grosor del Texto</label></th>
+                <th class="navbar__table-label" style="text-align: center;"><label for="font_weight_navbar">Grosor del Texto</label></th>
                 <td class="navbar__table-input" colspan="3">
                     <select id="font_weight_navbar" name="gica_design_navbar[font-weight-navbar]" class="navbar__input--select">
                         <option value="300" <?php selected($design_navbar['font-weight-navbar'], '300'); ?>>Light (300)</option>
