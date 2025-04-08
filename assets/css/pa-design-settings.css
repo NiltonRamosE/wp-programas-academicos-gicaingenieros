@@ -188,7 +188,9 @@
 
 .main-title__form,
 .navbar__form,
-.filters__form {
+.filters__form,
+.cards__form,
+.pagination__form {
   padding: 2rem;
   padding-top: 0;
 }
@@ -200,7 +202,8 @@
 .main-title__table,
 .navbar__table,
 .filters__table,
-.cards__table {
+.cards__table,
+.pagination__table {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 2rem;
@@ -209,21 +212,24 @@
 .main-title__table-row,
 .navbar__table-row,
 .filters__table-row,
-.cards__table-row {
+.cards__table-row,
+.pagination__table-row {
   border-bottom: 1px solid var(--bg-secondary-color);
 }
 
 .main-title__table-row:last-child,
 .navbar__table-row:last-child,
 .filters__table-row:last-child,
-.cards__table-row:last-child {
+.cards__table-row:last-child,
+.pagination__table-row:last-child {
   border-bottom: none;
 }
 
 .main-title__table-label,
 .navbar__table-label,
 .filters__table-label,
-.cards__table-label {
+.cards__table-label,
+.pagination__table-label {
   padding: 1rem 1rem 1rem 0;
   text-align: left;
   vertical-align: middle;
@@ -235,7 +241,8 @@
 .main-title__table-input,
 .navbar__table-input,
 .filters__table-input,
-.cards__table-input {
+.cards__table-input,
+.pagination__table-input {
   padding: 1rem 0;
   vertical-align: middle;
 }
@@ -243,7 +250,8 @@
 .main-title__input--color,
 .navbar__input--color,
 .filters__input--color,
-.cards__input--color {
+.cards__input--color,
+.pagination__input--color {
   width: 40px;
   height: 40px;
   border: 1px solid var(--quaternary-color) !important;
@@ -254,14 +262,16 @@
 .main-title__input--color::-webkit-color-swatch,
 .navbar__input--color::-webkit-color-swatch,
 .filters__input--color::-webkit-color-swatch,
-.cards__input--color::-webkit-color-swatch {
+.cards__input--color::-webkit-color-swatch,
+.pagination__input--color::-webkit-color-swatch  {
   border-radius: 50%;
 }
 
 .main-title__input--color::-moz-color-swatch,
 .navbar__input--color::-moz-color-swatch,
 .filters__input--color::-moz-color-swatch,
-.cards__input--color::-moz-color-swatch {
+.cards__input--color::-moz-color-swatch,
+.pagination__input--color::-moz-color-swatch {
   border-radius: 50%;
 }
 
@@ -278,7 +288,11 @@
 .filters__unit-select,
 .cards__input--number,
 .cards__input--select,
-.cards__unit-select {
+.cards__unit-select,
+.pagination__input--number,
+.pagination__input--text,
+.pagination__input--select,
+.pagination__unit-select {
   width: 100%;
   border: 1px solid var(--quaternary-color) !important;
   border-radius: 10px !important;
@@ -295,7 +309,10 @@
 .filters__input--number:focus,
 .filters__input--select:focus,
 .cards__input--number:focus,
-.cards__input--select:focus {
+.cards__input--select:focus,
+.pagination__input--number:focus,
+.pagination__input--text:focus,
+.pagination__input--select:focus {
   border-color: var(--primary-color) !important;
   box-shadow: 0 0 0 3px var(--container-shadow-hover) !important;
   outline: none;
@@ -304,7 +321,8 @@
 .main-title__size-input-group,
 .navbar__size-input-group,
 .filters__size-input-group,
-.cards__size-input-group {
+.cards__size-input-group,
+.pagination__size-input-group {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -313,7 +331,8 @@
 .main-title__size-input-group .main-title__input--number,
 .navbar__size-input-group .navbar__input--number,
 .filters__size-input-group .filters__input--number,
-.cards__size-input-group .cards__input--number {
+.cards__size-input-group .cards__input--number,
+.pagination__size-input-group .pagination__input--number {
   width: 80px;
   flex-shrink: 0;
 }
@@ -402,7 +421,8 @@
 .main-title__actions,
 .navbar__actions,
 .filters__actions,
-.cards__actions {
+.cards__actions,
+.pagination__actions {
   display: flex;
   justify-content: flex-end;
   gap: 15px;
@@ -414,7 +434,8 @@
 .main-title__button,
 .navbar__button,
 .filters__button,
-.cards__button {
+.cards__button,
+.pagination__button {
   padding: 0.75rem 1.5rem;
   border-radius: 4px;
   font-weight: 700;
@@ -426,7 +447,8 @@
 .main-title__button--secondary,
 .navbar__button--secondary,
 .filters__button--secondary,
-.cards__button--secondary {
+.cards__button--secondary,
+.pagination__button--secondary {
   background-color: var(--btn-secondary-color);
   color: black;
   border: 1px solid var(--primary-color);
@@ -435,7 +457,8 @@
 .main-title__button--secondary:hover,
 .navbar__button--secondary:hover,
 .filters__button--secondary:hover,
-.cards__button--secondary:hover {
+.cards__button--secondary:hover,
+.pagination__button--secondary:hover {
   background-color: var(--secondary-color);
 }
 
@@ -447,7 +470,8 @@
   .main-title__table-row,
   .navbar__table-row,
   .filters__table-row,
-  .cards__table-row {
+  .cards__table-row,
+  .pagination__table-row {
     display: flex;
     flex-wrap: wrap;
     padding: 1rem 0;
@@ -456,7 +480,8 @@
   .main-title__table-label,
   .navbar__table-label,
   .filters__table-label,
-  .cards__table-label {
+  .cards__table-label,
+  .pagination__table-label {
     width: 100%;
     padding: 0.5rem 0;
   }
@@ -464,7 +489,8 @@
   .main-title__table-input,
   .navbar__table-input,
   .filters__table-input,
-  .cards__table-input {
+  .cards__table-input,
+  .pagination__table-input {
     width: 100%;
     padding: 0.5rem 0;
   }
@@ -472,14 +498,16 @@
   .main-title__actions,
   .navbar__title__actions,
   .filters__title__actions,
-  .cards__title__actions {
+  .cards__title__actions,
+  .pagination__title__actions {
     flex-direction: column;
   }
 
   .main-title__button,
   .navbar__button,
   .filters__button,
-  .cards__button {
+  .cards__button,
+  .pagination__button {
     width: 100%;
   }
 }

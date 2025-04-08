@@ -10,7 +10,7 @@ class GICA_Design_Settings {
     private $default_design_navbar;
     private $default_design_filters;
     private $default_design_cards;
-    private $default_colors;
+    private $default_design_pagination;
 
     public function __construct() {
         $this->default_design_title = array(
@@ -80,8 +80,12 @@ class GICA_Design_Settings {
             'badge-state-updated-card' => '#f39c12',
         );
 
-        $this->default_colors = array(
-            // Paginación
+        $this->default_design_pagination = array(
+            'pagination-gap' => '8px',
+            'pagination-font-weight' => '900',
+            'pagination-border-radius' => '50%',
+            'pagination-border-radius-prev-next' => '20px',
+
             'pagination-bg' => '#f5f5f5',
             'pagination-bg-hover' => '#e0e0e0',
             'pagination-bg-hover-active' => '#2c3e50',
@@ -95,6 +99,7 @@ class GICA_Design_Settings {
         add_action('wp_enqueue_scripts', array($this, 'generate_dynamic_css_navbar'), 100);
         add_action('wp_enqueue_scripts', array($this, 'generate_dynamic_css_filters'), 100);
         add_action('wp_enqueue_scripts', array($this, 'generate_dynamic_css_cards'), 100);
+        add_action('wp_enqueue_scripts', array($this, 'generate_dynamic_css_pagination'), 100);
     }
 
     public function register_settings_page() {
@@ -122,6 +127,9 @@ class GICA_Design_Settings {
         register_setting('gica_design_cards_options', 'gica_design_cards', array(
             'sanitize_callback' => array($this, 'reset_values_cards')
         ));
+        register_setting('gica_design_pagination_options', 'gica_design_pagination', array(
+            'sanitize_callback' => array($this, 'reset_values_pagination')
+        ));
     }
 
     public function render_settings_page() {
@@ -140,6 +148,9 @@ class GICA_Design_Settings {
 
         $design_cards = get_option('gica_design_cards', array());
         $design_cards = wp_parse_args($design_cards, $this->default_design_cards);
+
+        $design_pagination = get_option('gica_design_pagination', array());
+        $design_pagination = wp_parse_args($design_pagination, $this->default_design_pagination);
 
         $last_updated = date('d/m/Y H:i');
         ?>
@@ -176,6 +187,10 @@ class GICA_Design_Settings {
 
             <div class="gica-design-settings__grid">
                 <?php include plugin_dir_path(__FILE__) . 'partials/design-settings/form-cards.php'; ?>
+            </div>
+
+            <div class="gica-design-settings__grid">
+                <?php include plugin_dir_path(__FILE__) . 'partials/design-settings/form-pagination.php'; ?>
             </div>
 
             <footer class="gica-design-settings__footer">
@@ -220,6 +235,13 @@ class GICA_Design_Settings {
     public function reset_values_cards($input) {
         if (isset($input['reset-default-cards']) && $input['reset-default-cards'] == '1') {
             return $this->default_design_cards;
+        }
+        return $input;
+    }
+
+    public function reset_values_pagination($input) {
+        if (isset($input['reset-default-pagination']) && $input['reset-default-pagination'] == '1') {
+            return $this->default_design_pagination;
         }
         return $input;
     }
@@ -325,6 +347,28 @@ class GICA_Design_Settings {
         wp_register_style('gica-dynamic-css_cards', false);
         wp_enqueue_style('gica-dynamic-css_cards');
         wp_add_inline_style('gica-dynamic-css_cards', $css);
+    }
+
+    public function generate_dynamic_css_pagination() {
+        $design_pagination = get_option('gica_design_pagination', array());
+        $design_pagination = wp_parse_args($design_pagination, $this->default_design_pagination);
+        
+        $css = ":root {\n";
+        $css .= "    --pagination-gap: {$design_pagination['pagination-gap']};\n";
+        $css .= "    --pagination-font-weight: {$design_pagination['pagination-font-weight']};\n";
+        $css .= "    --pagination-border-radius: {$design_pagination['pagination-border-radius']};\n";
+        $css .= "    --pagination-border-radius-prev-next: {$design_pagination['pagination-border-radius-prev-next']};\n";
+
+        $css .= "    --pagination-bg: {$design_pagination['pagination-bg']};\n";
+        $css .= "    --pagination-bg-hover: {$design_pagination['pagination-bg-hover']};\n";
+        $css .= "    --pagination-bg-hover-active: {$design_pagination['pagination-bg-hover-active']};\n";
+        $css .= "    --pagination-text-color: {$design_pagination['pagination-text-color']};\n";
+        $css .= "    --pagination-text-color-active: {$design_pagination['pagination-text-color-active']};\n";
+        $css .= "}\n";
+        
+        wp_register_style('gica-dynamic-css_pagination', false);
+        wp_enqueue_style('gica-dynamic-css_pagination');
+        wp_add_inline_style('gica-dynamic-css_pagination', $css);
     }
 }
 
