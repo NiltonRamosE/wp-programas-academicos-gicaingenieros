@@ -26,10 +26,10 @@
                 </td>
             </tr>
             <tr class="navbar__table-row">
-                <th class="navbar__table-label" style="text-align: center;"><label for="btn_nav_active">Separación entre botones</label></th>
-                <th class="navbar__table-label" style="text-align: center;"><label for="btn_nav_primary_color">Margin Inferior</label></th>
-                <th class="navbar__table-label" style="text-align: center;"><label for="btn_nav_secondary_color">Border Radius</label></th>
-                <th class="navbar__table-label" style="text-align: center;"><label for="btn_nav_text_color">Text Size</label></th>
+                <th class="navbar__table-label" style="text-align: center;"><label for="gap_navbar_temp">Separación entre botones</label></th>
+                <th class="navbar__table-label" style="text-align: center;"><label for="margin_bottom_navbar_temp">Margin Inferior</label></th>
+                <th class="navbar__table-label" style="text-align: center;"><label for="border_radius_navbar_temp">Border Radius</label></th>
+                <th class="navbar__table-label" style="text-align: center;"><label for="font_size_navbar_temp">Text Size</label></th>
             </tr>
             <tr class="navbar__table-row">
                 <td class="navbar__table-input">
