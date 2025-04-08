@@ -12,9 +12,10 @@
     02. Layout
     03. Main Title Section
         03. 1 Text
-        03. 2 Line
+        03. 2 Responsive
         03. 3 Buttons Action
-    04. Pagination
+    04. Navbar Section
+
     05. Footer
 -----------------------------------------------------------------------------------*/
 
@@ -185,7 +186,7 @@
 /*----------------------------------------*/
 
 
-.main-title__form {
+.main-title__form, .navbar__form {
     padding: 2rem;
     padding-top: 0;
 }
@@ -194,21 +195,21 @@
     03. 1 Text
 ---------------------*/
 
-.main-title__table {
+.main-title__table, .navbar__table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 2rem;
 }
 
-.main-title__table-row {
+.main-title__table-row, .navbar__table-row {
     border-bottom: 1px solid var(--bg-secondary-color);
 }
 
-.main-title__table-row:last-child {
+.main-title__table-row:last-child, .navbar__table-row:last-child {
     border-bottom: none;
 }
 
-.main-title__table-label {
+.main-title__table-label, .navbar__table-label {
     padding: 1rem 1rem 1rem 0;
     text-align: left;
     vertical-align: middle;
@@ -217,12 +218,12 @@
     color: var(--primary-color);
 }
 
-.main-title__table-input {
+.main-title__table-input, .navbar__table-input {
     padding: 1rem 0;
     vertical-align: middle;
 }
 
-.main-title__input--color {
+.main-title__input--color, .navbar__input--color {
     width: 40px;
     height: 40px;
     border: 1px solid var(--quaternary-color) !important;
@@ -230,18 +231,22 @@
     cursor: pointer;
 }
 
-.main-title__input--color::-webkit-color-swatch {
+.main-title__input--color::-webkit-color-swatch, .navbar__input--color::-webkit-color-swatch {
     border-radius: 50% ;
 }
 
-.main-title__input--color::-moz-color-swatch {
+.main-title__input--color::-moz-color-swatch, .navbar__input--color::-webkit-color-swatch {
     border-radius: 50%;
 }
 
 .main-title__input--number,
 .main-title__input--text,
 .main-title__input--select,
-.main-title__unit-select {
+.main-title__unit-select,
+.navbar__input--number,
+.navbar__input--text,
+.navbar__input--select,
+.navbar__unit-select {
     width: 100%;
     border: 1px solid var(--quaternary-color) !important;
     border-radius: 10px !important;
@@ -251,29 +256,32 @@
 
 .main-title__input--number:focus,
 .main-title__input--text:focus,
-.main-title__input--select:focus {
+.main-title__input--select:focus,
+.navbar__input--number:focus,
+.navbar__input--text:focus,
+.navbar__input--select:focus {
     border-color: var(--primary-color) !important;
     box-shadow: 0 0 0 3px var(--container-shadow-hover) !important;
     outline: none;
 }
 
-.main-title__size-input-group {
+.main-title__size-input-group, .navbar__size-input-group {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.main-title__size-input-group .main-title__input--number {
+.main-title__size-input-group .main-title__input--number,  .navbar__size-input-group .navbar__input--number{
     width: 80px;
     flex-shrink: 0;
 }
 
 
 /*--
-    03. 1 Line
+    03. 2 Responsive
 ---------------------*/
 
-.main-title__responsive-table {
+.main-title__responsive-table, .navbar__responsive-table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 2rem;
@@ -282,63 +290,65 @@
     overflow: hidden;
 }
 
-.main-title__responsive-header {
+.main-title__responsive-header, .navbar__responsive-header {
     background-color: var(--primary-color);
     color: var(--bg-color);
 }
 
-.main-title__responsive-title {
+.main-title__responsive-title, .navbar__responsive-title {
     padding: 1rem;
     text-align: center;
     font-weight: 500;
 }
 
-.main-title__responsive-row {
+.main-title__responsive-row, .navbar__responsive-row {
     border-bottom: 1px solid #e0e0e0;
 }
 
-.main-title__responsive-row:last-child {
+.main-title__responsive-row:last-child, .navbar__responsive-row:last-child {
     border-bottom: none;
 }
 
 .main-title__responsive-icon,
-.main-title__responsive-input {
+.main-title__responsive-input,
+.navbar__responsive-icon,
+.navbar__responsive-input {
     padding: 1rem;
     text-align: center;
 }
 
-.main-title__responsive-input input {
+.main-title__responsive-input input,  .navbar__responsive-input input{
     text-align: center;
 }
 
 /*-- Icons --*/
 
-.main-title__icon {
+.main-title__icon, .navbar__icon{
     font-family: dashicons;
     font-size: 1.25rem;
     line-height: 1;
 }
 
-.main-title__icon--desktop::before {
+.main-title__icon--desktop::before, .navbar__icon--desktop::before {
     content: "\f472";
-    color: var(--primary-color);
+    color: var(--btn-secondary-color);
 }
 
-.main-title__icon--tablet::before {
+.main-title__icon--tablet::before, .navbar__icon--tablet::before {
     content: "\f471";
-    color: var(--primary-color);
+    color: var(--btn-secondary-color);
 }
 
-.main-title__icon--mobile::before {
+.main-title__icon--mobile::before, .navbar__icon--mobile::before  {
     content: "\f470";
-    color: var(--primary-color);
+    color: var(--btn-secondary-color);
 }
 
 /*--
     03. 3 Buttons Action
 ---------------------*/
 
-.main-title__actions {
+.main-title__actions, .navbar__actions {
     display: flex;
     justify-content: flex-end;
     gap: 15px;
@@ -347,7 +357,7 @@
     margin-top: 2rem;
 }
 
-.main-title__button {
+.main-title__button, .navbar__button {
     padding: 0.75rem 1.5rem;
     border-radius: 4px;
     font-weight: 700;
@@ -356,13 +366,13 @@
     border: none;
 }
 
-.main-title__button--secondary {
+.main-title__button--secondary, .navbar__button--secondary {
     background-color: var(--btn-secondary-color);
     color: black;
     border: 1px solid var(--primary-color);
 }
 
-.main-title__button--secondary:hover {
+.main-title__button--secondary:hover, .navbar__button--secondary:hover {
     background-color: var(--secondary-color);
 }
 
@@ -395,6 +405,14 @@
         width: 100%;
     }
 }
+
+/*----------------------------------------*/
+/*  04. Navbar Section
+/*----------------------------------------*/
+
+
+
+
 
 /*----------------------------------------*/
 /*  05. Footer

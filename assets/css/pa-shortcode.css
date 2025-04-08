@@ -36,6 +36,23 @@
     --width-title-line-hover-tablet: 90%;
     --width-title-line-hover-mobile: 95%;
     
+    /*-- Navbar Design --*/
+    --gap-navbar: 12px;
+    --margin-bottom-navbar: 20px;
+    --border-radius-navbar: 8px;
+    --font-size-navbar: 14px;
+    --font-weight-navbar: 600;
+
+    --grid-columns-navbar-escritorio-xl: 4;
+    --grid-columns-navbar-escritorio-lg: 3;
+    --grid-columns-navbar-tablet: 2;
+    --grid-columns-navbar-mobile: 1;
+
+    --btn-nav-active: #082949;
+    --btn-nav-primary-color: #f9b809;
+    --btn-nav-secondary-color: #dd8d02;
+    --btn-nav-text-color: #ffffff;
+
     /*-- General --*/
     --primary-color: #092f58;
     --secondary-color: #63a3fa;
@@ -48,10 +65,7 @@
     --container-shadow-hover: 0 4px 8px var(--shadow-color-hover);
     
     /*-- Navbar Buttons --*/
-    --btn-nav-active: #082949;
-    --btn-nav-primary-color: #f9b809;
-    --btn-nav-secondary-color: #dd8d02;
-    --btn-nav-text-color: #ffffff;
+    
     
     /*-- Year Buttons --*/
     --btn-year-bg: #f5f5f5;
@@ -165,23 +179,22 @@
 
 .programas-academicos-nav {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
-    margin-bottom: 20px;
+    grid-template-columns: repeat(var(--grid-columns-navbar-escritorio-xl), 1fr);
+    gap: var(--gap-navbar);
+    margin-bottom: var(--margin-bottom-navbar);
 }
 
 .pa-nav__btn {
     position: relative;
     padding: 12px 0;
     border: none;
-    border-radius: 8px;
+    border-radius: var(--border-radius-navbar);
     background: linear-gradient(135deg, var(--btn-nav-primary-color) 0%, var(--btn-nav-secondary-color) 100%);
     color: var(--btn-nav-text-color);
-    font-weight: 600;
-    font-size: 14px;
+    font-weight: var(--font-weight-navbar);
+    font-size: var(--font-size-navbar);
     cursor: pointer;
     text-align: center;
-    text-transform: uppercase;
     letter-spacing: 0.5px;
     box-shadow: var(--container-shadow);
     display: flex;
@@ -231,13 +244,13 @@
 -----------------------------------------*/
 @media (max-width: 992px) {
     .programas-academicos-nav {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(var(--grid-columns-navbar-escritorio-lg), 1fr);
     }
 }
 
 @media (max-width: 768px) {
     .programas-academicos-nav {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(var(--grid-columns-navbar-tablet), 1fr);
         padding: 15px;
         gap: 10px;
     }
@@ -251,7 +264,7 @@
 
 @media (max-width: 480px) {
     .programas-academicos-nav {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(var(--grid-columns-navbar-mobile), 1fr);
     }
     
     .pa-nav__btn {

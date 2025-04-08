@@ -1,12 +1,13 @@
 <?php
 /**
  * GICA Design Settings
- * Maneja la personalización de colores desde el panel de administración
+ * Maneja la personalización desde el panel de administración
  */
 
 class GICA_Design_Settings {
 
     private $default_design_title;
+    private $default_design_navbar;
     private $default_colors;
 
     public function __construct() {
@@ -26,21 +27,25 @@ class GICA_Design_Settings {
             'width-title-line-hover-mobile' => '95%',
         );
 
-        $this->default_colors = array(
-            // Colores generales
-            'primary-color' => '#092f58',
-            'secondary-color' => '#63a3fa',
-            'tertiary-color' => '#7f8c8d',
-            
-            'border-container' => '#ddd',
-            'shadow-color' => 'rgba(0, 0, 0, 0.1)',
-            'shadow-color-hover' => 'rgba(0, 0, 0, 0.15)',
-            // Botones navbar
+        $this->default_design_navbar = array(
+            'gap-navbar' => '12px',
+            'margin-bottom-navbar' => '20px',
+            'border-radius-navbar' => '8px',
+            'font-size-navbar' => '14px',
+            'font-weight-navbar' => '600',
+
+            'grid-columns-navbar-escritorio-xl' => '4',
+            'grid-columns-navbar-escritorio-lg' => '3',
+            'grid-columns-navbar-tablet' => '2',
+            'grid-columns-navbar-mobile' => '1',
+
             'btn-nav-active' => '#082949',
             'btn-nav-primary-color' => '#f9b809',
             'btn-nav-secondary-color' => '#dd8d02',
             'btn-nav-text-color' => '#ffffff',
-            
+        );
+
+        $this->default_colors = array(
             // Botones año
             'btn-year-bg' => '#f5f5f5',
             'btn-year-text' => '#333333',
@@ -61,7 +66,8 @@ class GICA_Design_Settings {
 
         add_action('admin_menu', array($this, 'register_settings_page'));
         add_action('admin_init', array($this, 'register_settings'));
-        add_action('wp_enqueue_scripts', array($this, 'generate_dynamic_css'), 100);
+        add_action('wp_enqueue_scripts', array($this, 'generate_dynamic_css_main_title'), 100);
+        add_action('wp_enqueue_scripts', array($this, 'generate_dynamic_css_navbar'), 100);
     }
 
     public function register_settings_page() {
@@ -80,6 +86,9 @@ class GICA_Design_Settings {
         register_setting('gica_design_title_options', 'gica_design_title', array(
             'sanitize_callback' => array($this, 'reset_values_title')
         ));
+        register_setting('gica_design_navbar_options', 'gica_design_navbar', array(
+            'sanitize_callback' => array($this, 'reset_values_navbar')
+        ));
     }
 
     public function render_settings_page() {
@@ -89,6 +98,10 @@ class GICA_Design_Settings {
     
         $design_title = get_option('gica_design_title', array());
         $design_title = wp_parse_args($design_title, $this->default_design_title);
+
+        $design_navbar = get_option('gica_design_navbar', array());
+        $design_navbar = wp_parse_args($design_navbar, $this->default_design_navbar);
+
         $last_updated = date('d/m/Y H:i');
         ?>
         <div class="wrap gica-design-settings">
@@ -111,147 +124,12 @@ class GICA_Design_Settings {
             </header>
 
             <div class="gica-design-settings__grid">
-                <section class="gica-design-settings__card">
-                    <h2 class="gica-design-settings__card-title">Título principal</h2>
-
-                    <form method="post" action="options.php" class="main-title__form">
-                        <?php settings_fields('gica_design_title_options'); ?>
-                        <?php do_settings_sections('gica_design_title_options'); ?>
-                        <table class="main-title__table">
-                            <tr class="main-title__table-row">
-                                <th class="main-title__table-label"><label for="title_color">Color del Título</label></th>
-                                <td class="main-title__table-input">
-                                    <input type="color" id="title_color" name="gica_design_title[title-color]" value="<?php echo esc_attr($design_title['title-color']); ?>" class="main-title__input--color">
-                                </td>
-                                <th class="main-title__table-label"><label for="text_title_size_min">Min Text Size </label></th>
-                                <td class="main-title__table-input">
-                                    <div class="main-title__size-input-group">
-                                        <input 
-                                            type="number"
-                                            id="text_title_size_min_temp" 
-                                            class="main-title__input--number"
-                                            step="0.1"
-                                            min="0.1"
-                                            value="<?php echo esc_attr($this->extract_size_value($design_title['text-title-size-min'])); ?>"
-                                        >
-                                        
-                                        <select class="main-title__unit-select ">
-                                            <option value="px" <?php selected($this->extract_size_unit($design_title['text-title-size-min']), 'px'); ?>>px</option>
-                                            <option value="rem" <?php selected($this->extract_size_unit($design_title['text-title-size-min']), 'rem'); ?>>rem</option>
-                                        </select>
-                                        
-                                        <input type="hidden" 
-                                            name="gica_design_title[text-title-size-min]" 
-                                            id="text_title_size_min_real"
-                                            value="<?php echo esc_attr($design_title['text-title-size-min']); ?>"
-                                        >
-                                    </div>
-                                </td>
-                            </tr>
-
-                            <tr class="main-title__table-row">
-                                <th class="main-title__table-label"><label for="line_title_color">Color de la Línea</label></th>
-                                <td class="main-title__table-input">
-                                    <input type="color" id="line_title_color" name="gica_design_title[line-title-color]" value="<?php echo esc_attr($design_title['line-title-color']); ?>" class="main-title__input--color">
-                                </td>
-                                <th class="main-title__table-label"><label for="text_title_size_max">Max Text Size</label></th>
-                                <td class="main-title__table-input">
-                                    <div class="main-title__size-input-group">
-                                        <input 
-                                            type="number"
-                                            id="text_title_size_max_temp" 
-                                            class="main-title__input--number"
-                                            step="0.1"
-                                            min="0.1"
-                                            value="<?php echo esc_attr($this->extract_size_value($design_title['text-title-size-max'])); ?>"
-                                        >
-                                        
-                                        <select class="main-title__unit-select ">
-                                            <option value="px" <?php selected($this->extract_size_unit($design_title['text-title-size-max']), 'px'); ?>>px</option>
-                                            <option value="rem" <?php selected($this->extract_size_unit($design_title['text-title-size-max']), 'rem'); ?>>rem</option>
-                                        </select>
-                                        
-                                        <input type="hidden" 
-                                            name="gica_design_title[text-title-size-max]" 
-                                            id="text_title_size_max_real"
-                                            value="<?php echo esc_attr($design_title['text-title-size-max']); ?>"
-                                        >
-                                    </div>
-                                </td>
-                            </tr>
-
-                            <tr class="main-title__table-row">
-                                <th class="main-title__table-label"><label for="text_title_weight">Grosor del Texto</label></th>
-                                <td class="main-title__table-input" colspan="3">
-                                    <select id="text_title_weight" name="gica_design_title[text-title-weight]" class="main-title__input--select">
-                                        <option value="300" <?php selected($design_title['text-title-weight'], '300'); ?>>Light (300)</option>
-                                        <option value="400" <?php selected($design_title['text-title-weight'], '400'); ?>>Normal (400)</option>
-                                        <option value="500" <?php selected($design_title['text-title-weight'], '500'); ?>>Medium (500)</option>
-                                        <option value="600" <?php selected($design_title['text-title-weight'], '600'); ?>>Semi-bold (600)</option>
-                                        <option value="700" <?php selected($design_title['text-title-weight'], '700'); ?>>Bold (700)</option>
-                                        <option value="800" <?php selected($design_title['text-title-weight'], '800'); ?>>Extra-bold (800)</option>
-                                        <option value="900" <?php selected($design_title['text-title-weight'], '900'); ?>>Black (900)</option>
-                                    </select>
-                                </td>
-                            </tr>
-                        </table>
-
-                        <table class="main-title__responsive-table">
-                            <tr class="main-title__responsive-header">
-                                <th class="main-title__responsive-title">Ancho de la Línea</th>
-                                <th class="main-title__responsive-title">Normal</th>
-                                <th class="main-title__responsive-title">Hover</th>
-                            </tr>
-
-                            <!-- Desktop -->
-                            <tr class="main-title__responsive-row">
-                                <td class="main-title__responsive-icon">
-                                    <span class="main-title__icon main-title__icon--desktop"></span>
-                                </td>
-                                <td class="main-title__responsive-input">
-                                    <input type="text" name="gica_design_title[width-title-line-base]" value="<?php echo esc_attr($design_title['width-title-line-base']); ?>" class="main-title__input--text">
-                                </td>
-                                <td class="main-title__responsive-input">
-                                    <input type="text" name="gica_design_title[width-title-line-hover-base]" value="<?php echo esc_attr($design_title['width-title-line-hover-base']); ?>" class="main-title__input--text">
-                                </td>
-                            </tr>
-
-                            <!-- Tablet -->
-                            <tr class="main-title__responsive-row">
-                                <td class="main-title__responsive-icon">
-                                    <span class="main-title__icon main-title__icon--tablet"></span>
-                                </td>
-                                <td class="main-title__responsive-input">
-                                    <input type="text" name="gica_design_title[width-title-line-tablet]" value="<?php echo esc_attr($design_title['width-title-line-tablet']); ?>" class="main-title__input--text">
-                                </td>
-                                <td class="main-title__responsive-input">
-                                    <input type="text" name="gica_design_title[width-title-line-hover-tablet]" value="<?php echo esc_attr($design_title['width-title-line-hover-tablet']); ?>" class="main-title__input--text">
-                                </td>
-                            </tr>
-
-                            <!-- Mobile -->
-                            <tr class="main-title__responsive-row">
-                                <td class="main-title__responsive-icon">
-                                    <span class="main-title__icon main-title__icon--mobile"></span>
-                                </td>
-                                <td class="main-title__responsive-input">
-                                    <input type="text" name="gica_design_title[width-title-line-mobile]" value="<?php echo esc_attr($design_title['width-title-line-mobile']); ?>" class="main-title__input--text">
-                                </td>
-                                <td class="main-title__responsive-input">
-                                    <input type="text" name="gica_design_title[width-title-line-hover-mobile]" value="<?php echo esc_attr($design_title['width-title-line-hover-mobile']); ?>" class="main-title__input--text">
-                                </td>
-                            </tr>
-                        </table>
-
-                        <div class="main-title__actions">
-                            <input type="hidden" name="gica_design_title[reset]" value="0" />
-                            <?php submit_button('Guardar Cambios', 'primary', 'submit', false, ['class' => 'main-title__button main-title__button--primary']); ?>
-                            <button type="submit" name="gica_design_title[reset-default-title]" value="1" class="main-title__button main-title__button--secondary">Restablecer a Valores Predeterminados</button>
-                        </div>
-                    </form>
-                </section>
+                <?php include plugin_dir_path(__FILE__) . 'partials/design-settings/form-main-title.php'; ?>
             </div>
             
+            <div class="gica-design-settings__grid">
+                <?php include plugin_dir_path(__FILE__) . 'partials/design-settings/form-navbar.php'; ?>
+            </div>
 
             <footer class="gica-design-settings__footer">
                 <div class="gica-design-settings__footer-content">
@@ -263,11 +141,11 @@ class GICA_Design_Settings {
         <?php
     }
     
-    private function extract_size_value($size) {
+    public function extract_size_value($size) {
         return preg_replace('/[^0-9.]/', '', $size);
     }
     
-    private function extract_size_unit($size) {
+    public function extract_size_unit($size) {
         return preg_replace('/[^a-z%]/', '', $size);
     }
 
@@ -278,7 +156,14 @@ class GICA_Design_Settings {
         return $input;
     }
 
-    public function generate_dynamic_css() {
+    public function reset_values_navbar($input) {
+        if (isset($input['reset-default-navbar']) && $input['reset-default-navbar'] == '1') {
+            return $this->default_design_navbar;
+        }
+        return $input;
+    }
+
+    public function generate_dynamic_css_main_title() {
         $design_title = get_option('gica_design_title', array());
         $design_title = wp_parse_args($design_title, $this->default_design_title);
         
@@ -298,9 +183,36 @@ class GICA_Design_Settings {
         $css .= "    --width-title-line-hover-mobile: {$design_title['width-title-line-hover-mobile']};\n";
         $css .= "}\n";
         
-        wp_register_style('gica-dynamic-css', false);
-        wp_enqueue_style('gica-dynamic-css');
-        wp_add_inline_style('gica-dynamic-css', $css);
+        wp_register_style('gica-dynamic-css_main_title', false);
+        wp_enqueue_style('gica-dynamic-css_main_title');
+        wp_add_inline_style('gica-dynamic-css_main_title', $css);
+    }
+
+    public function generate_dynamic_css_navbar() {
+        $design_navbar = get_option('gica_design_navbar', array());
+        $design_navbar = wp_parse_args($design_navbar, $this->default_design_navbar);
+        
+        $css = ":root {\n";
+        $css .= "    --gap-navbar: {$design_navbar['gap-navbar']};\n";
+        $css .= "    --margin-bottom-navbar: {$design_navbar['margin-bottom-navbar']};\n";
+        $css .= "    --border-radius-navbar: {$design_navbar['border-radius-navbar']};\n";
+        $css .= "    --font-size-navbar: {$design_navbar['font-size-navbar']};\n";
+        $css .= "    --font-weight-navbar: {$design_navbar['font-weight-navbar']};\n";
+
+        $css .= "    --grid-columns-navbar-escritorio-xl: {$design_navbar['grid-columns-navbar-escritorio-xl']};\n";
+        $css .= "    --grid-columns-navbar-escritorio-lg: {$design_navbar['grid-columns-navbar-escritorio-lg']};\n";
+        $css .= "    --grid-columns-navbar-tablet: {$design_navbar['grid-columns-navbar-tablet']};\n";
+        $css .= "    --grid-columns-navbar-mobile: {$design_navbar['grid-columns-navbar-mobile']};\n";
+        
+        $css .= "    --btn-nav-active: {$design_navbar['btn-nav-active']};\n";
+        $css .= "    --btn-nav-primary-color: {$design_navbar['btn-nav-primary-color']};\n";
+        $css .= "    --btn-nav-secondary-color: {$design_navbar['btn-nav-secondary-color']};\n";
+        $css .= "    --btn-nav-text-color: {$design_navbar['btn-nav-text-color']};\n";
+        $css .= "}\n";
+        
+        wp_register_style('gica-dynamic-css_navbar', false);
+        wp_enqueue_style('gica-dynamic-css_navbar');
+        wp_add_inline_style('gica-dynamic-css_navbar', $css);
     }
     
 }
