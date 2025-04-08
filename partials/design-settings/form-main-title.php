@@ -10,7 +10,7 @@
                 <td class="main-title__table-input">
                     <input type="color" id="title_color" name="gica_design_title[title-color]" value="<?php echo esc_attr($design_title['title-color']); ?>" class="main-title__input--color">
                 </td>
-                <th class="main-title__table-label"><label for="text_title_size_min">Min Text Size </label></th>
+                <th class="main-title__table-label"><label for="text_title_size_min_temp">Min Text Size </label></th>
                 <td class="main-title__table-input">
                     <div class="main-title__size-input-group">
                         <input
@@ -39,7 +39,7 @@
                 <td class="main-title__table-input">
                     <input type="color" id="line_title_color" name="gica_design_title[line-title-color]" value="<?php echo esc_attr($design_title['line-title-color']); ?>" class="main-title__input--color">
                 </td>
-                <th class="main-title__table-label"><label for="text_title_size_max">Max Text Size</label></th>
+                <th class="main-title__table-label"><label for="text_title_size_max_temp">Max Text Size</label></th>
                 <td class="main-title__table-input">
                     <div class="main-title__size-input-group">
                         <input
