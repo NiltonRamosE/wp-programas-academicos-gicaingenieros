@@ -1,6 +1,5 @@
 <?php
 
-// Shortcode para mostrar programas con filtros
 function gica_mostrar_programas($atts) {
     ob_start();
 
@@ -40,14 +39,6 @@ function gica_mostrar_programas($atts) {
                                 <button class="pa-filter__btn-year" data-year="<?php echo $year; ?>"><?php echo $year; ?></button>
                             <?php endforeach; ?>
                         </div>
-                        <!--
-                        <div class="pa-filter__state">
-                            <button class="pa-filter__btn-state" data-state="all">Todos</button>
-                            <button class="pa-filter__btn-state" data-state="active">Activos</button>
-                            <button class="pa-filter__btn-state" data-state="inactive">Inactivos</button>
-                            <button class="pa-filter__btn-state" data-state="updated">Actualizados</button>
-                        </div>
-                        -->
                     </div>
                     <div class="program-list-container">
                         <?php foreach ($programs as $year => $items) :
