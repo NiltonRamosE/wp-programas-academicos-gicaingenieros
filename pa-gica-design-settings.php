@@ -193,6 +193,21 @@ class GICA_Design_Settings {
                 <?php include plugin_dir_path(__FILE__) . 'partials/design-settings/form-pagination.php'; ?>
             </div>
 
+            <section class="gica-design-settings__card gica-design-settings__card--actions">
+                <h2 class="gica-design-settings__card-title">Acciones Rápidas</h2>
+                <div class="gica-design-settings__action-buttons">
+                    <a href="<?php echo admin_url('admin.php?page=gica-dashboard'); ?>" class="gica-design-settings__action-btn gica-design-settings__action-btn--primary">
+                        Ir al Dashboard
+                    </a>
+                    <button class="gica-design-settings__action-btn gica-design-settings__action-btn--secondary">
+                        Ver Documentación
+                    </button>
+                    <button class="gica-design-settings__action-btn gica-design-settings__action-btn--secondary">
+                        Exportar Datos
+                    </button>
+                </div>
+            </section>
+
             <footer class="gica-design-settings__footer">
                 <div class="gica-design-settings__footer-content">
                     <p class="gica-design-settings__footer-text">Plugin desarrollado por <a href="https://niltonramosencarnacion.vercel.app/" target="_blank">Nilton Ramos Encarnacion</a></p>

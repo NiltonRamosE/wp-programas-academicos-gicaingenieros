@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Dashboard de Programas Académicos - GicaIngenieros
  * Description: Muestra programas académicos organizados por categoría y año, con filtros y un gráfico.
- * Version: 1.0.12
+ * Version: 1.1.0
  * Author: Nilton Ramos Encarnacion
  * Author URI: https://niltonramosencarnacion.vercel.app/
  * License: GPL2
@@ -180,8 +180,8 @@ function gica_render_main_page() {
         <section class="gica-dashboard__card gica-dashboard__card--actions">
             <h2 class="gica-dashboard__card-title">Acciones Rápidas</h2>
             <div class="gica-dashboard__action-buttons">
-                <a href="<?php echo admin_url('admin.php?page=gica-color-settings'); ?>" class="gica-dashboard__action-btn gica-dashboard__action-btn--primary">
-                    Personalizar Colores
+                <a href="<?php echo admin_url('admin.php?page=gica-design-settings'); ?>" class="gica-dashboard__action-btn gica-dashboard__action-btn--primary">
+                    Personalizar Diseño
                 </a>
                 <button class="gica-dashboard__action-btn gica-dashboard__action-btn--secondary">
                     Ver Documentación

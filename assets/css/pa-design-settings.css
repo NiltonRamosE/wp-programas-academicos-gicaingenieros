@@ -18,7 +18,8 @@
     05. Filters Section
     06. Cards Section
     07. Pagination Section
-    08. Footer
+    08. Actions Section
+    09. Footer
 -----------------------------------------------------------------------------------*/
 
 /*----------------------------------------*/
@@ -529,7 +530,48 @@
 /*----------------------------------------*/
 
 /*----------------------------------------*/
-/*  08. Footer
+/*  08. Actions Section
+/*----------------------------------------*/
+
+.gica-design-settings__action-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.gica-design-settings__action-btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.gica-design-settings__action-btn--primary {
+  background: var(--secondary-color);
+  color: var(--bg-color);
+}
+
+.gica-design-settings__action-btn--primary:hover {
+  background: var(--btn-secondary-color);
+  transform: translateY(-2px);
+}
+
+.gica-design-settings__action-btn--secondary {
+  background: var(--bg-color);
+  color: var(--primary-color);
+  border: 1px solid var(--border-container);
+}
+
+.gica-design-settings__action-btn--secondary:hover {
+  border-color: var(--secondary-color);
+  color: var(--secondary-color);
+}
+
+/*----------------------------------------*/
+/*  09. Footer
 /*----------------------------------------*/
 
 .gica-design-settings__footer {
