@@ -1,11 +1,16 @@
 <?php
 
 function gica_enqueue_admin_styles($hook) {
+    wp_enqueue_style('gica-general-style-css', plugin_dir_url(__FILE__) . 'assets/css/pa-general-style.css', GICA_PLUGIN_VERSION, true);
+
     if ($hook == 'toplevel_page_gica-dashboard') {
         wp_enqueue_style('gica-pa-dashboard-style', plugin_dir_url(__FILE__) . 'assets/css/pa-dashboard.css', GICA_PLUGIN_VERSION, true);
     }
     if ($hook === 'programas-academicos_page_gica-design-settings') {
         wp_enqueue_style('gica-design-settings-css', plugin_dir_url(__FILE__) . 'assets/css/pa-design-settings.css', GICA_PLUGIN_VERSION, true);
+    }
+    if ($hook === 'programas-academicos_page_gica-add-academic-program') {
+        wp_enqueue_style('gica-add-academic-program-css', plugin_dir_url(__FILE__) . 'assets/css/pa-add-academic-program.css', GICA_PLUGIN_VERSION, true);
     }
 }
 add_action('admin_enqueue_scripts', 'gica_enqueue_admin_styles');
