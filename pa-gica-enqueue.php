@@ -27,6 +27,7 @@ function gica_enqueue_admin_scripts($hook) {
     }
     if ($hook === 'programas-academicos_page_gica-add-academic-program') {
         wp_enqueue_script('sweetalert2', 'https://cdn.jsdelivr.net/npm/sweetalert2@11', array(), null, true);
+        wp_enqueue_script('gica-add-academic-program-add', plugin_dir_url(__FILE__) . 'assets/js/add-program/ap-add-program.js', array('jquery'), GICA_PLUGIN_VERSION, true);
         wp_enqueue_script('gica-add-academic-program-delete', plugin_dir_url(__FILE__) . 'assets/js/add-program/ap-delete-program.js', array('jquery'), GICA_PLUGIN_VERSION, true);
         wp_localize_script('gica-add-academic-program-delete', 'gica_admin_params', array(
             'ajax_url' => admin_url('admin-ajax.php'),

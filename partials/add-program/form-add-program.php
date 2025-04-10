@@ -3,7 +3,7 @@
 ?>
 <section class="gica-academic-program__card">
     <h2 class="gica-academic-program__card-title">Añadir Programa Académico</h2>
-    <form method="post" action="admin-post.php" class="add-program__form">
+    <form id="add-program-form" method="post" action="admin-post.php" class="add-program__form">
         <input type="hidden" name="action" value="add_academic_program">
         <?php wp_nonce_field('add_academic_program_nonce'); ?>
 
