@@ -9,7 +9,8 @@
 	
     00. Variables
     01. Academic Program Form
-    02. 
+    02. Table
+    03. Pagination
 -----------------------------------------------------------------------------------*/
 
 /*----------------------------------------*/
@@ -32,7 +33,7 @@
 
 /*----------------------------------------*/
 /*  01. Academic Program Form
-  /*----------------------------------------*/
+/*----------------------------------------*/
 
 /*-- Common Style --*/
 
@@ -200,7 +201,7 @@
 }
 
 /*----------------------------------------*/
-/*  Tabla de Programas Académicos
+/*  02. Table
 /*----------------------------------------*/
 
 .add-program__table {
@@ -280,7 +281,7 @@
   text-decoration: underline;
 }
 
-/* Badges de estado */
+/*-- Badges de estado --*/
 .add-program__status-badge {
   display: inline-block;
   padding: 0.25rem 0.5rem;
@@ -309,7 +310,7 @@
   color: #95a5a6;
 }
 
-/* Botones de acción */
+/*-- Botones de acción --*/
 .add-program__action-buttons {
   display: flex;
   flex-direction: column;
@@ -344,7 +345,6 @@
   background-color: rgba(231, 76, 60, 0.2);
 }
 
-/* Responsive */
 @media (max-width: 1024px) {
   .add-program__table {
     display: block;
@@ -379,7 +379,7 @@
     width: 120px;
     color: var(--primary-color);
   }
-  
+
   .add-program__table-cell--actions {
     border-bottom: none;
     padding-top: 1rem;
@@ -391,5 +391,75 @@
     gap: 1.5rem;
     width: 100%;
     justify-content: flex-end;
+  }
+}
+
+/*----------------------------------------*/
+/*  03. Pagination
+/*----------------------------------------*/
+
+.add-program__pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.add-program__pagination-link,
+.add-program__pagination-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.5rem;
+  height: 2.5rem;
+  padding: 0 0.5rem;
+  border-radius: 25px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.add-program__pagination-link {
+  color: var(--primary-color);
+  border: 1px solid var(--border-container);
+  background-color: var(--bg-color);
+}
+
+.add-program__pagination-link:hover {
+  background-color: rgba(9, 47, 88, 0.05);
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.add-program__pagination-link--prev,
+.add-program__pagination-link--next {
+  padding: 0 1rem;
+  white-space: nowrap;
+}
+
+.add-program__pagination-item--current {
+  background-color: var(--primary-color);
+  color: white;
+  border: 1px solid var(--primary-color);
+}
+
+@media (max-width: 768px) {
+  .add-program__pagination {
+    gap: 0.3rem;
+  }
+
+  .add-program__pagination-link,
+  .add-program__pagination-item {
+    min-width: 2rem;
+    height: 2rem;
+    font-size: 0.85rem;
+  }
+
+  .add-program__pagination-link--prev,
+  .add-program__pagination-link--next {
+    padding: 0 0.75rem;
   }
 }
