@@ -101,6 +101,7 @@ class GICA_Design_Settings {
         add_action('wp_enqueue_scripts', array($this, 'generate_dynamic_css_cards'), 100);
         add_action('wp_enqueue_scripts', array($this, 'generate_dynamic_css_pagination'), 100);
         add_action('admin_post_export_design_settings', array($this, 'export_design_settings'));
+        add_action('admin_post_import_design_settings', array($this, 'import_design_settings'));
     }
 
     public function register_settings_page() {
@@ -382,6 +383,63 @@ class GICA_Design_Settings {
 
         echo $json_data;
         exit;
+    }
+
+    function import_design_settings() {
+        if (!current_user_can('manage_options')) {
+            wp_die('No tienes permisos suficientes.');
+        }
+
+        check_admin_referer('import_design_settings_nonce');
+
+    
+        // Comprobar si se ha subido el archivo
+        if (isset($_FILES['design_settings_file']) && $_FILES['design_settings_file']['error'] == UPLOAD_ERR_OK) {
+            // Leer el contenido del archivo JSON
+            $file = $_FILES['design_settings_file'];
+            
+            if ($file['type'] == 'application/json') {
+                $json_data = file_get_contents($file['tmp_name']);
+                
+                // Decodificar el JSON
+                $design_settings = json_decode($json_data, true);
+    
+                if (is_array($design_settings)) {
+                    // Guardar las configuraciones en la base de datos
+                    if (isset($design_settings['title'])) {
+                        update_option('gica_design_title', $design_settings['title']);
+                    }
+                    if (isset($design_settings['navbar'])) {
+                        update_option('gica_design_navbar', $design_settings['navbar']);
+                    }
+                    if (isset($design_settings['filters'])) {
+                        update_option('gica_design_filters', $design_settings['filters']);
+                    }
+                    if (isset($design_settings['cards'])) {
+                        update_option('gica_design_cards', $design_settings['cards']);
+                    }
+                    if (isset($design_settings['pagination'])) {
+                        update_option('gica_design_pagination', $design_settings['pagination']);
+                    }
+    
+                    // Redirigir con mensaje de éxito
+                    wp_redirect(add_query_arg('import_status', 'success', wp_get_referer()));
+                    exit;
+                } else {
+                    // Redirigir con error en la decodificación del JSON
+                    wp_redirect(add_query_arg('import_status', 'error', wp_get_referer()));
+                    exit;
+                }
+            } else {
+                // Redirigir si el archivo no es JSON
+                wp_redirect(add_query_arg('import_status', 'invalid_file', wp_get_referer()));
+                exit;
+            }
+        } else {
+            // Redirigir si hubo un error al subir el archivo
+            wp_redirect(add_query_arg('import_status', 'upload_error', wp_get_referer()));
+            exit;
+        }
     }
 }
 
