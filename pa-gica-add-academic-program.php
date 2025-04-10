@@ -80,49 +80,70 @@ class GICA_Add_Academic_Program {
 
             <section class="gica-academic-program__card">
                 <h2 class="gica-academic-program__card-title">Añadir Programa Académico</h2>
-                <form method="post" action="admin-post.php">
+                <form method="post" action="admin-post.php" class="add-program__form">
                     <input type="hidden" name="action" value="add_academic_program">
                     <?php wp_nonce_field('add_academic_program_nonce'); ?>
 
-                    <label for="category_program_field">Categoría:</label>
-                    <select name="category-program" id="category_program_field">
-                        <option value="programas-virtuales">Programas Virtuales</option>
-                        <option value="seminarios-virtuales">Seminarios Virtuales</option>
-                        <option value="cursos-en-vivo">Cursos en Vivo</option>
-                        <option value="seminarios-presenciales">Seminarios Presenciales</option>
-                        <option value="congresos">Congresos</option>
-                        <option value="promociones">Promociones</option>
-                    </select><br>
+                    <div class="add-program__form-group">
+                        <label for="category_program_field" class="add-program__form-label">Categoría:</label>
+                        <select name="category-program" id="category_program_field" class="add-program__form-select">
+                            <option value="programas-virtuales">Programas Virtuales</option>
+                            <option value="seminarios-virtuales">Seminarios Virtuales</option>
+                            <option value="cursos-en-vivo">Cursos en Vivo</option>
+                            <option value="seminarios-presenciales">Seminarios Presenciales</option>
+                            <option value="congresos">Congresos</option>
+                            <option value="promociones">Promociones</option>
+                        </select>
+                    </div>
 
-                    <label for="year_publication_program_field">Año:</label>
-                    <input 
-                        type="number" 
-                        id="year_publication_program_field" 
-                        name="year-publication-program"
-                        min="2000"
-                        max= <?php echo $current_year; ?>
-                        required
-                    ><br>
+                    <div class="add-program__form-group">
+                        <label for="year_publication_program_field" class="add-program__form-label">Año:</label>
+                        <input 
+                            type="number" 
+                            id="year_publication_program_field" 
+                            name="year-publication-program"
+                            class="add-program__form-input"
+                            min="2000"
+                            max="<?php echo $current_year; ?>"
+                            required
+                        >
+                    </div>
                     
-                    <label for="code_program_field">Código:</label>
-                    <input type="text" id="code_program_field" name="code-program" required><br>
+                    <div class="add-program__form-group">
+                        <label for="code_program_field" class="add-program__form-label">Código:</label>
+                        <input type="text" id="code_program_field" name="code-program" class="add-program__form-input">
+                    </div>
                     
-                    <label for="title_program_field">Título:</label>
-                    <input type="text" id="title_program_field" name="title-program" required><br>
+                    <div class="add-program__form-group">
+                        <label for="title_program_field" class="add-program__form-label">Título:</label>
+                        <input type="text" id="title_program_field" name="title-program" class="add-program__form-input" required>
+                    </div>
                     
-                    <label for="image_program_field">Imagen URL:</label>
-                    <input type="text" id="image_program_field" name="image-program" required><br>
+                    <div class="add-program__form-group">
+                        <label for="image_program_field" class="add-program__form-label">Imagen URL:</label>
+                        <input type="text" id="image_program_field" name="image-program" class="add-program__form-input" required>
+                    </div>
                     
-                    <label for="url_program_field">URL:</label>
-                    <input type="text" id="url_program_field" name="url-program" required><br>
+                    <div class="add-program__form-group">
+                        <label for="url_program_field" class="add-program__form-label">URL:</label>
+                        <input type="text" id="url_program_field" name="url-program" class="add-program__form-input" required>
+                    </div>
                     
-                    <label for="active_program_field">Activo:</label>
-                    <input type="checkbox" id="active_program_field" name="active-program"><br>
+                    <div class="add-program__form-group add-program__form-group--inline">
+                        <label for="active_program_field" class="add-program__form-label add-program__form-label--checkbox">
+                            <input type="checkbox" id="active_program_field" name="active-program" class="add-program__form-checkbox">
+                            <span>Activo</span>
+                        </label>
+                    </div>
                     
-                    <label for="updated_program_field">Actualizado:</label>
-                    <input type="checkbox" id="updated_program_field" name="updated-program"><br>
+                    <div class="add-program__form-group add-program__form-group--inline">
+                        <label for="updated_program_field" class="add-program__form-label add-program__form-label--checkbox">
+                            <input type="checkbox" id="updated_program_field" name="updated-program" class="add-program__form-checkbox">
+                            <span>Actualizado</span>
+                        </label>
+                    </div>
                     
-                    <button type="submit">Añadir Programa</button>
+                    <button type="submit" class="add-program__form-submit add-program__action-btn add-program__action-btn--primary">Añadir Programa</button>
                 </form>
             </section>
 
@@ -134,32 +155,49 @@ class GICA_Add_Academic_Program {
                     $programs = array();
                 }
                 ?>
-                <table class="wp-list-table widefat striped">
-                    <thead>
-                        <tr>
-                            <th>Categoría</th>
-                            <th>Año</th>
-                            <th>Código</th>
-                            <th>Título</th>
-                            <th>Imagen</th>
-                            <th>URL</th>
-                            <th>Activo</th>
-                            <th>Actualizado</th>
+                <table class="add-program__table">
+                    <thead class="add-program__table-head">
+                        <tr class="add-program__table-row">
+                            <th class="add-program__table-header">Categoría</th>
+                            <th class="add-program__table-header">Año</th>
+                            <th class="add-program__table-header">Código</th>
+                            <th class="add-program__table-header">Imagen</th>
+                            <th class="add-program__table-header">URL</th>
+                            <th class="add-program__table-header">Activo</th>
+                            <th class="add-program__table-header">Actualizado</th>
+                            <th class="add-program__table-header">Acciones</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="add-program__table-body">
                         <?php foreach ($programs as $category => $years): ?>
                             <?php foreach ($years as $year => $program_list): ?>
-                                <?php foreach ($program_list as $program): ?>
-                                    <tr>
-                                        <td><?php echo esc_html($category); ?></td>
-                                        <td><?php echo esc_html($year); ?></td>
-                                        <td><?php echo esc_html($program['code']); ?></td>
-                                        <td><?php echo esc_html($program['title']); ?></td>
-                                        <td><img src="<?php echo esc_url($program['image']); ?>" width="50"></td>
-                                        <td><a href="<?php echo esc_url($program['url']); ?>" target="_blank">Ver</a></td>
-                                        <td><?php echo $program['active'] ? 'Sí' : 'No'; ?></td>
-                                        <td><?php echo $program['updated'] ? 'Sí' : 'No'; ?></td>
+                                <?php foreach ($program_list as $index => $program): ?>
+                                    <tr class="add-program__table-row">
+                                        <td class="add-program__table-cell" data-label="Categoría"><?php echo esc_html(ucwords(str_replace('-', ' ', $category))); ?></td>
+                                        <td class="add-program__table-cell" data-label="Año"><?php echo esc_html($year); ?></td>
+                                        <td class="add-program__table-cell" data-label="Código"><?php echo esc_html($program['code']); ?></td>
+                                        <td class="add-program__table-cell add-program__table-cell--image" data-label="Imagen">
+                                            <img src="<?php echo esc_url($program['image']); ?>" class="add-program__table-image" alt="<?php echo esc_attr($program['title']); ?>">
+                                        </td>
+                                        <td class="add-program__table-cell" data-label="URL">
+                                            <a href="<?php echo esc_url($program['url']); ?>" class="add-program__table-link" target="_blank">Ver</a>
+                                        </td>
+                                        <td class="add-program__table-cell add-program__table-cell--status" data-label="Activo">
+                                            <span class="add-program__status-badge add-program__status-badge--<?php echo $program['active'] ? 'active' : 'inactive'; ?>">
+                                                <?php echo $program['active'] ? 'Sí' : 'No'; ?>
+                                            </span>
+                                        </td>
+                                        <td class="add-program__table-cell add-program__table-cell--status" data-label="Actualizado">
+                                            <span class="add-program__status-badge add-program__status-badge--<?php echo $program['updated'] ? 'updated' : 'not-updated'; ?>">
+                                                <?php echo $program['updated'] ? 'Sí' : 'No'; ?>
+                                            </span>
+                                        </td>
+                                        <td class="add-program__table-cell add-program__table-cell--actions" data-label="Acciones">
+                                            <div class="add-program__action-buttons">
+                                                <a href="<?php echo admin_url('admin.php?page=gica-edit-academic-program&category=' . $category . '&year=' . $year . '&index=' . $index); ?>" class="add-program__action-btn add-program__action-btn--edit">Editar</a>
+                                                <a href="#" class="add-program__action-btn add-program__action-btn--delete delete-program" data-category="<?php echo esc_attr($category); ?>" data-year="<?php echo esc_attr($year); ?>" data-index="<?php echo esc_attr($index); ?>">Eliminar</a>
+                                            </div>
+                                        </td>
                                     </tr>
                                 <?php endforeach; ?>
                             <?php endforeach; ?>
@@ -167,6 +205,33 @@ class GICA_Add_Academic_Program {
                     </tbody>
                 </table>
             </section>
+
+            <script type="text/javascript">
+                jQuery(document).ready(function($) {
+                    $('.delete-program').on('click', function(e) {
+                        e.preventDefault();
+                        var category = $(this).data('category');
+                        var year = $(this).data('year');
+                        var index = $(this).data('index');
+
+                        if (confirm('¿Estás seguro de que deseas eliminar este programa?')) {
+                            $.post(ajaxurl, {
+                                action: 'delete_academic_program',
+                                category: category,
+                                year: year,
+                                index: index,
+                                _ajax_nonce: '<?php echo wp_create_nonce('delete_academic_program_nonce'); ?>'
+                            }, function(response) {
+                                if (response.success) {
+                                    location.reload();
+                                } else {
+                                    alert('Ocurrió un error al eliminar el programa.');
+                                }
+                            });
+                        }
+                    });
+                });
+            </script>
 
 
             <?php include plugin_dir_path(__FILE__) . 'partials/pa-gica-actions.php'; ?>

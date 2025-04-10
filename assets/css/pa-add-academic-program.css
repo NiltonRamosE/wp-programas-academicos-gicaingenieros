@@ -8,8 +8,8 @@
     =========================================
 	
     00. Variables
-    01. 
-
+    01. Academic Program Form
+    02. 
 -----------------------------------------------------------------------------------*/
 
 /*----------------------------------------*/
@@ -31,7 +31,365 @@
 }
 
 /*----------------------------------------*/
-/*  01. 
+/*  01. Academic Program Form
   /*----------------------------------------*/
 
 /*-- Common Style --*/
+
+.add-program__form {
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.add-program__form-group {
+  margin-bottom: 1.5rem;
+}
+
+.add-program__form-group--inline {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.add-program__form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  font-size: 0.95rem;
+}
+
+.add-program__form-label--checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.add-program__form-input,
+.add-program__form-select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-container) !important;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.add-program__form-input:focus,
+.add-program__form-select:focus {
+  outline: none;
+  border-color: var(--tertiary-color);
+  box-shadow: 0 0 0 3px rgba(99, 163, 250, 0.2) !important;
+}
+
+.add-program__form-select {
+  background-position: right 1rem center !important;
+}
+
+.add-program__form-checkbox {
+  width: 1.2em;
+  height: 1.2em;
+  border: 1px solid var(--border-container) !important;
+  border-radius: 15px !important;
+  margin: 0;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease !important;
+}
+
+.add-program__form-checkbox:checked {
+  background-color: var(--secondary-color) !important;
+  border-color: var(--secondary-color) !important;
+}
+
+.add-program__form-checkbox:checked::after {
+  position: absolute;
+  color: white;
+  font-size: 0.8em;
+  top: 50%;
+  left: 50%;
+}
+
+.add-program__form-submit,
+.add-program__action-btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: "Montserrat", monospace;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.add-program__action-btn--primary {
+  background: var(--secondary-color);
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.add-program__action-btn--primary:hover {
+  background: var(--btn-secondary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.add-program__action-btn--primary:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+.add-program__action-btn--primary::after {
+  content: "→";
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.add-program__action-btn--primary:hover::after {
+  opacity: 1;
+  right: 1.2rem;
+}
+
+.add-program__action-btn--primary.loading::before {
+  content: "";
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.2rem;
+  height: 1.2rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
+
+@media (min-width: 768px) {
+  .add-program__form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem 2rem;
+  }
+
+  .add-program__form-group--full-width {
+    grid-column: span 2;
+  }
+
+  .add-program__form-submit {
+    grid-column: span 2;
+  }
+}
+
+/*----------------------------------------*/
+/*  Tabla de Programas Académicos
+/*----------------------------------------*/
+
+.add-program__table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+  box-shadow: var(--container-shadow);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.add-program__table-head {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.add-program__table-header {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.add-program__table-body {
+  background-color: var(--bg-color);
+}
+
+.add-program__table-row {
+  transition: background-color 0.2s ease;
+}
+
+.add-program__table-row:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.add-program__table-row:hover {
+  background-color: rgba(99, 163, 250, 0.05);
+}
+
+.add-program__table-cell {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-container);
+  vertical-align: middle;
+}
+
+.add-program__table-cell--image {
+  padding: 0.5rem 1rem;
+}
+
+.add-program__table-cell--status {
+  text-align: center;
+}
+
+.add-program__table-cell--actions {
+  white-space: nowrap;
+}
+
+.add-program__table-image {
+  width: 50px;
+  height: auto;
+  border-radius: 4px;
+  display: block;
+}
+
+.add-program__table-link {
+  color: var(--tertiary-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.add-program__table-link:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+/* Badges de estado */
+.add-program__status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.add-program__status-badge--active {
+  background-color: rgba(46, 204, 113, 0.15);
+  color: #2ecc71;
+}
+
+.add-program__status-badge--inactive {
+  background-color: rgba(231, 76, 60, 0.15);
+  color: #e74c3c;
+}
+
+.add-program__status-badge--updated {
+  background-color: rgba(41, 128, 185, 0.15);
+  color: #2980b9;
+}
+
+.add-program__status-badge--not-updated {
+  background-color: rgba(149, 165, 166, 0.15);
+  color: #95a5a6;
+}
+
+/* Botones de acción */
+.add-program__action-buttons {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.add-program__action-btn {
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.add-program__action-btn--edit {
+  background-color: rgba(52, 152, 219, 0.1);
+  color: #3498db;
+}
+
+.add-program__action-btn--edit:hover {
+  background-color: rgba(52, 152, 219, 0.2);
+}
+
+.add-program__action-btn--delete {
+  background-color: rgba(231, 76, 60, 0.1);
+  color: #e74c3c;
+}
+
+.add-program__action-btn--delete:hover {
+  background-color: rgba(231, 76, 60, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .add-program__table {
+    display: block;
+  }
+
+  .add-program__table-head {
+    display: none;
+  }
+
+  .add-program__table-body,
+  .add-program__table-row,
+  .add-program__table-cell {
+    display: block;
+  }
+
+  .add-program__table-row {
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border-container);
+    border-radius: 8px;
+    padding: 0.5rem;
+  }
+
+  .add-program__table-cell {
+    padding: 0.75rem 0.5rem;
+    border-bottom: 1px dashed var(--border-container);
+  }
+
+  .add-program__table-cell:before {
+    content: attr(data-label);
+    display: inline-block;
+    font-weight: 600;
+    width: 120px;
+    color: var(--primary-color);
+  }
+  
+  .add-program__table-cell--actions {
+    border-bottom: none;
+    padding-top: 1rem;
+    text-align: center;
+  }
+
+  .add-program__action-buttons {
+    flex-direction: row;
+    gap: 1.5rem;
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
