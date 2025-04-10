@@ -100,6 +100,7 @@ class GICA_Design_Settings {
         add_action('wp_enqueue_scripts', array($this, 'generate_dynamic_css_filters'), 100);
         add_action('wp_enqueue_scripts', array($this, 'generate_dynamic_css_cards'), 100);
         add_action('wp_enqueue_scripts', array($this, 'generate_dynamic_css_pagination'), 100);
+        add_action('admin_post_export_design_settings', array($this, 'export_design_settings'));
     }
 
     public function register_settings_page() {
@@ -155,7 +156,9 @@ class GICA_Design_Settings {
         $title_gica = "Personalización del Diseño GicaIngenieros";
         $redirect_page = 'admin.php?page=gica-dashboard';
         $redirect_page_name = "Ir al Dashboard";
-        $third_option_name = "Exportar Datos";
+        $third_option_redirect_page = 'admin-post.php?action=export_design_settings';
+        $third_option_name = "Exportar Diseño";
+        $fourth_option_name_design_settings = "Importar Diseño";
         ?>
         <div class="wrap gica-academic-program">
             <?php include plugin_dir_path(__FILE__) . 'partials/pa-gica-header.php'; ?>
@@ -344,6 +347,41 @@ class GICA_Design_Settings {
         wp_register_style('gica-dynamic-css_pagination', false);
         wp_enqueue_style('gica-dynamic-css_pagination');
         wp_add_inline_style('gica-dynamic-css_pagination', $css);
+    }
+
+    function export_design_settings() {
+
+        $design_title = get_option('gica_design_title', array());
+        $design_title = wp_parse_args($design_title, $this->default_design_title);
+
+        $design_navbar = get_option('gica_design_navbar', array());
+        $design_navbar = wp_parse_args($design_navbar, $this->default_design_navbar);
+
+        $design_filters = get_option('gica_design_filters', array());
+        $design_filters = wp_parse_args($design_filters, $this->default_design_filters);
+
+        $design_cards = get_option('gica_design_cards', array());
+        $design_cards = wp_parse_args($design_cards, $this->default_design_cards);
+
+        $design_pagination = get_option('gica_design_pagination', array());
+        $design_pagination = wp_parse_args($design_pagination, $this->default_design_pagination);
+
+        $design_settings = array(
+            'title' => $design_title,
+            'navbar' => $design_navbar,
+            'filters' => $design_filters,
+            'cards' => $design_cards,
+            'pagination' => $design_pagination,
+        );
+
+        $json_data = json_encode($design_settings, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+
+        header('Content-Type: application/json');
+        header('Content-Disposition: attachment; filename="design-settings.json"');
+        header('Content-Length: ' . strlen($json_data));
+
+        echo $json_data;
+        exit;
     }
 }
 
