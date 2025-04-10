@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Dashboard de Programas Académicos - GicaIngenieros
  * Description: Muestra programas académicos organizados por categoría y año, con filtros y un gráfico.
- * Version: 1.1.4
+ * Version: 1.1.5
  * Author: Nilton Ramos Encarnacion
  * Author URI: https://niltonramosencarnacion.vercel.app/
  * License: GPL2
@@ -100,6 +100,7 @@ function gica_render_main_page() {
     $title_gica = "Dashboard GicaIngenieros";
     $redirect_page = 'admin.php?page=gica-design-settings';
     $redirect_page_name = "Personalizar Diseño";
+    $third_option_redirect_page = 'admin-post.php?action=export_data_chart';
     $third_option_name = "Exportar Datos";
     ?>
     <div class="wrap gica-academic-program">
@@ -171,3 +172,63 @@ function gica_render_main_page() {
 
     <?php
 }
+
+function gica_export_data_chart() {
+    if (!current_user_can('manage_options')) {
+        wp_die('No tienes permiso para acceder a esta acción.');
+    }
+
+    $json_files = [
+        'programas-virtuales' => plugin_dir_path(__FILE__) . 'assets/json/programas-virtuales.json',
+        'seminarios-virtuales' => plugin_dir_path(__FILE__) . 'assets/json/seminarios-virtuales.json',
+        'cursos-en-vivo' => plugin_dir_path(__FILE__) . 'assets/json/cursos-en-vivo.json',
+        'seminarios-presenciales' => plugin_dir_path(__FILE__) . 'assets/json/seminarios-presenciales.json',
+        'congresos' => plugin_dir_path(__FILE__) . 'assets/json/congresos.json',
+        'promociones' => plugin_dir_path(__FILE__) . 'assets/json/promociones.json',
+    ];
+
+    $programs_count = [];
+    $filter_count = ['categories' => 0, 'years' => []];
+    $state_count = ['active' => 0, 'inactive' => 0, 'outdated' => 0];
+
+    foreach ($json_files as $category => $file_path) {
+        $json_content = file_get_contents($file_path);
+        $programs = json_decode($json_content, true);
+
+        $programs_count[$category] = 0;
+        foreach ($programs as $year => $items) {
+            $programs_count[$category] += count($items);
+
+            if (!in_array($year, $filter_count['years'])) {
+                $filter_count['years'][] = $year;
+            }
+
+            foreach ($items as $program) {
+                if ($program['active']) {
+                    $state_count['active']++;
+                } else {
+                    $state_count['inactive']++;
+                }
+                if (isset($program['updated']) && !$program['updated']) {
+                    $state_count['outdated']++;
+                }
+            }
+        }
+
+        $filter_count['categories']++;
+    }
+
+    $filter_count['years'] = count($filter_count['years']);
+
+    $data = [
+        'programs_count' => $programs_count,
+        'filter_count' => $filter_count,
+        'state_count' => $state_count,
+    ];
+
+    header('Content-Type: application/json');
+    header('Content-Disposition: attachment; filename="dashboard-data.json"');
+    echo json_encode($data, JSON_PRETTY_PRINT);
+    exit;
+}
+add_action('admin_post_export_data_chart', 'gica_export_data_chart');
