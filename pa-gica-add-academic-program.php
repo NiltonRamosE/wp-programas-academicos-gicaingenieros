@@ -11,6 +11,8 @@ class GICA_Add_Academic_Program {
         add_action('admin_init', array($this, 'register_settings'));
         add_action('admin_post_add_academic_program', array($this, 'handle_form_submission'));
         add_action('wp_ajax_delete_academic_program', array($this, 'delete_academic_program'));
+        add_action('admin_post_export_academic_programs', array($this, 'export_academic_programs'));
+        add_action('admin_post_import_academic_programs', array($this, 'import_academic_programs'));
     }
 
     public function register_add_program_page() {
@@ -67,7 +69,10 @@ class GICA_Add_Academic_Program {
         $title_gica = "Nuevo Programa Académico GicaIngenieros";
         $redirect_page = 'admin.php?page=gica-dashboard';
         $redirect_page_name = "Ir al Dashboard";
-        $third_option_name = "Importar archivo JSON";
+        $third_option_redirect_page = 'admin-post.php?action=export_academic_programs';
+        $third_option_name = "Exportar archivo JSON";
+
+        $fourth_option_name_add_program = "Importar archivo JSON";
 
         $programs = get_option('gica_academic_programs', array());
         if (!is_array($programs)) {
@@ -161,6 +166,63 @@ class GICA_Add_Academic_Program {
         }
     }
 
+    public function export_academic_programs() {
+        if (!current_user_can('manage_options')) {
+            wp_die('No tienes permisos suficientes.');
+        }
+    
+        $programs = get_option('gica_academic_programs', array());
+    
+        header('Content-Type: application/json');
+        header('Content-Disposition: attachment; filename="programas-academicos.json"');
+        header('Pragma: no-cache');
+        header('Expires: 0');
+    
+        echo json_encode($programs, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+        exit;
+    }
+
+    public function import_academic_programs() {
+        if (!current_user_can('manage_options')) {
+            wp_die('No tienes permisos suficientes.');
+        }
+    
+        check_admin_referer('import_academic_programs_nonce');
+    
+        if (!isset($_FILES['import_json']) || $_FILES['import_json']['error'] !== UPLOAD_ERR_OK) {
+            wp_die('Error al subir el archivo.');
+        }
+    
+        $file = $_FILES['import_json']['tmp_name'];
+        $content = file_get_contents($file);
+        $imported_data = json_decode($content, true);
+    
+        if (json_last_error() !== JSON_ERROR_NONE || !is_array($imported_data)) {
+            wp_die('El archivo no contiene un JSON válido.');
+        }
+    
+        $existing_programs = get_option('gica_academic_programs', array());
+    
+        foreach ($imported_data as $category => $years) {
+            foreach ($years as $year => $programs) {
+                if (!isset($existing_programs[$category][$year])) {
+                    $existing_programs[$category][$year] = array();
+                }
+    
+                foreach ($programs as $program) {
+                    if (!in_array($program, $existing_programs[$category][$year], true)) {
+                        $existing_programs[$category][$year][] = $program;
+                    }
+                }
+            }
+        }
+    
+        update_option('gica_academic_programs', $existing_programs);
+    
+        wp_redirect(admin_url('admin.php?page=gica-add-academic-program&status=imported'));
+        exit;
+    }    
+    
 }
 
 new GICA_Add_Academic_Program();
