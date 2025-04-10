@@ -463,3 +463,7 @@
     padding: 0 0.75rem;
   }
 }
+
+.swal2-responsive-toast {
+  margin-top: 30px;
+}

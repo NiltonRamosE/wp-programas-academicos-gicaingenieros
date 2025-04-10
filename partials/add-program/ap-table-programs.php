@@ -80,11 +80,6 @@
             ?>
         </tbody>
     </table>
-    <?php
-    echo "<pre>";
-    echo print_r($programs);
-    echo "</pre>";
-    ?>
     <?php if ($total_pages > 1): ?>
         <div class="add-program__pagination">
             <?php if ($current_page > 1): ?>
