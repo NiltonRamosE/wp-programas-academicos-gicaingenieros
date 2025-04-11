@@ -6,6 +6,8 @@ function gica_mostrar_programas($atts) {
     $programs_bd = get_option('gica_academic_programs', array());
 
     if (!empty($programs_bd)) {
+
+        $first_category = key($programs_bd);
         ?>
         <div class="programas-academicos-container">
             <img src="https://www.gicaingenieros.com/email/images/img-gica-2.jpg" alt="gica-fondo-email">
@@ -18,7 +20,7 @@ function gica_mostrar_programas($atts) {
                 <?php endforeach; ?>
             </nav>
             <?php foreach ($programs_bd as $category => $years) : ?>
-                <section class="programas-academicos-section" id="<?php echo esc_attr($category); ?>" style="display: <?php echo $category === 'programas-virtuales' ? 'block' : 'none'; ?>;">
+                <section class="programas-academicos-section" id="<?php echo esc_attr($category); ?>" style="display: <?php echo $category === $first_category ? 'block' : 'none'; ?>;">
                     <h2><?php echo esc_html(ucwords(str_replace('-', ' ', $category))); ?></h2>
                     <div class="pa-filter">
                         <div class="pa-filter__year">
