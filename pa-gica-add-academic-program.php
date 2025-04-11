@@ -10,7 +10,9 @@ class GICA_Add_Academic_Program {
         add_action('admin_menu', array($this, 'register_add_program_page'));
         add_action('admin_init', array($this, 'register_settings'));
         add_action('admin_post_add_academic_program', array($this, 'handle_form_submission'));
+        add_action('admin_post_add_category_program', array($this, 'handle_form_category'));
         add_action('wp_ajax_delete_academic_program', array($this, 'delete_academic_program'));
+        add_action('wp_ajax_delete_category_program', array($this, 'delete_category_program'));
         add_action('admin_post_export_academic_programs', array($this, 'export_academic_programs'));
         add_action('admin_post_import_academic_programs', array($this, 'import_academic_programs'));
     }
@@ -37,6 +39,10 @@ class GICA_Add_Academic_Program {
                 'sanitize_callback' => array($this, 'sanitize_academic_programs'),
                 'default' => array(),
             )
+        );
+        register_setting(
+            'gica_category_programs_options_group',
+            'gica_category_programs'
         );
     }
 
@@ -82,6 +88,10 @@ class GICA_Add_Academic_Program {
         ?>
         <div class="wrap gica-academic-program">
             <?php include plugin_dir_path(__FILE__) . 'partials/pa-gica-header.php'; ?>
+
+            <?php include plugin_dir_path(__FILE__) . 'partials/add-program/form-add-category.php'; ?>
+
+            <?php include plugin_dir_path(__FILE__) . 'partials/add-program/ap-table-categories.php'; ?>
 
             <?php include plugin_dir_path(__FILE__) . 'partials/add-program/form-add-program.php'; ?>
 
@@ -138,6 +148,34 @@ class GICA_Add_Academic_Program {
         exit;
     }
 
+    public function handle_form_category() {
+        if (!current_user_can('manage_options')) {
+            wp_die('No tienes permisos suficientes para añadir categorías.');
+        }
+    
+        check_admin_referer('add_category_program_nonce');
+    
+        $slug_program_field = sanitize_text_field($_POST['slug-program']);
+
+        $slug = strtolower(str_replace(' ', '-', $slug_program_field));
+        $category = ucwords(str_replace('-', ' ', $slug));
+
+        $categories = get_option('gica_category_programs', array());
+
+        if (!is_array($categories)) {
+            $categories = array();
+        }
+
+        $categories[] = array(
+            'slug' => $slug,
+            'category' => $category,
+        );
+
+        update_option('gica_category_programs', $categories);
+    
+        wp_redirect(admin_url('admin.php?page=gica-add-academic-program&status=success'));
+        exit;
+    }
 
     public function delete_academic_program() {
         check_ajax_referer('delete_academic_program_nonce');
@@ -163,6 +201,23 @@ class GICA_Add_Academic_Program {
             wp_send_json_success();
         } else {
             wp_send_json_error('Programa no encontrado.');
+        }
+    }
+
+    public function delete_category_program() {
+        check_ajax_referer('delete_category_program_nonce');
+
+        $index = $_POST['index'];
+
+        $categories = get_option('gica_category_programs', array());
+
+        if (isset($categories[$index])) {
+            unset($categories[$index]);
+
+            update_option('gica_category_programs', $categories);
+            wp_send_json_success();
+        } else {
+            wp_send_json_error('Categoría no encontrado.');
         }
     }
 

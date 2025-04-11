@@ -1,5 +1,6 @@
 <?php 
     $current_year = date("Y"); 
+    $categories = get_option('gica_category_programs', array());
 ?>
 <section class="gica-academic-program__card">
     <h2 class="gica-academic-program__card-title">Añadir Programa Académico</h2>
@@ -10,12 +11,9 @@
         <div class="add-program__form-group">
             <label for="category_program_field" class="add-program__form-label">Categoría:</label>
             <select name="category-program" id="category_program_field" class="add-program__form-select">
-                <option value="programas-virtuales">Programas Virtuales</option>
-                <option value="seminarios-virtuales">Seminarios Virtuales</option>
-                <option value="cursos-en-vivo">Cursos en Vivo</option>
-                <option value="seminarios-presenciales">Seminarios Presenciales</option>
-                <option value="congresos">Congresos</option>
-                <option value="promociones">Promociones</option>
+            <?php foreach($categories as $category): ?>
+                <option value="<?php echo $category['slug']; ?>"><?php echo $category['category']; ?></option>
+            <?php endforeach; ?>
             </select>
         </div>
 

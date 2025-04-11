@@ -33,6 +33,12 @@ function gica_enqueue_admin_scripts($hook) {
             'ajax_url' => admin_url('admin-ajax.php'),
             'nonce' => wp_create_nonce('delete_academic_program_nonce')
         ));
+
+        wp_enqueue_script('gica-category-program-delete', plugin_dir_url(__FILE__) . 'assets/js/add-program/ap-delete-category.js', array('jquery'), GICA_PLUGIN_VERSION, true);
+        wp_localize_script('gica-category-program-delete', 'gica_category_admin_params', array(
+            'ajax_url' => admin_url('admin-ajax.php'),
+            'nonce' => wp_create_nonce('delete_category_program_nonce')
+        ));
     }
 }
 add_action('admin_enqueue_scripts', 'gica_enqueue_admin_scripts');
