@@ -257,8 +257,17 @@ class GICA_Add_Academic_Program {
         }
     
         $existing_programs = get_option('gica_academic_programs', array());
-    
+        $existing_categories = get_option('gica_category_programs', array());
+
         foreach ($imported_data as $category => $years) {
+            $slug = sanitize_title($category);
+            $category_name = ucwords(str_replace('-', ' ', $category));
+            if (!in_array($slug, array_column($existing_categories, 'slug'))) {
+                $existing_categories[] = array(
+                    'slug' => $slug,
+                    'category' => $category_name,
+                );
+            }
             foreach ($years as $year => $programs) {
                 if (!isset($existing_programs[$category][$year])) {
                     $existing_programs[$category][$year] = array();
@@ -273,10 +282,11 @@ class GICA_Add_Academic_Program {
         }
     
         update_option('gica_academic_programs', $existing_programs);
-    
+        update_option('gica_category_programs', $existing_categories);
+
         wp_redirect(admin_url('admin.php?page=gica-add-academic-program&status=imported'));
         exit;
-    }    
+    }
     
 }
 
