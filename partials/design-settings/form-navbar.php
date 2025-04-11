@@ -13,16 +13,16 @@
             </tr>
             <tr class="navbar__table-row" style="text-align: center;">
                 <td class="navbar__table-input">
-                    <input type="color" id="btn_nav_active" name="gica_design_navbar[btn-nav-active]" value="<?php echo esc_attr($design_navbar['btn-nav-active']); ?>" class="navbar__input--color">
+                    <input type="color" id="btn_nav_active" name="gica_design_navbar[btn-nav-active]" value="<?php echo esc_attr($design_navbar['btn-nav-active']); ?>" class="navbar__input--color" required>
                 </td>
                 <td class="navbar__table-input">
-                    <input type="color" id="btn_nav_primary_color" name="gica_design_navbar[btn-nav-primary-color]" value="<?php echo esc_attr($design_navbar['btn-nav-primary-color']); ?>" class="navbar__input--color">
+                    <input type="color" id="btn_nav_primary_color" name="gica_design_navbar[btn-nav-primary-color]" value="<?php echo esc_attr($design_navbar['btn-nav-primary-color']); ?>" class="navbar__input--color" required>
                 </td>
                 <td class="navbar__table-input">
-                    <input type="color" id="btn_nav_secondary_color" name="gica_design_navbar[btn-nav-secondary-color]" value="<?php echo esc_attr($design_navbar['btn-nav-secondary-color']); ?>" class="navbar__input--color">
+                    <input type="color" id="btn_nav_secondary_color" name="gica_design_navbar[btn-nav-secondary-color]" value="<?php echo esc_attr($design_navbar['btn-nav-secondary-color']); ?>" class="navbar__input--color" required>
                 </td>
                 <td class="navbar__table-input">
-                    <input type="color" id="btn_nav_text_color" name="gica_design_navbar[btn-nav-text-color]" value="<?php echo esc_attr($design_navbar['btn-nav-text-color']); ?>" class="navbar__input--color">
+                    <input type="color" id="btn_nav_text_color" name="gica_design_navbar[btn-nav-text-color]" value="<?php echo esc_attr($design_navbar['btn-nav-text-color']); ?>" class="navbar__input--color" required>
                 </td>
             </tr>
             <tr class="navbar__table-row">
@@ -40,17 +40,23 @@
                             class="navbar__input--number"
                             step="0.1"
                             min="0"
-                            value="<?php echo esc_attr($this->extract_size_value($design_navbar['gap-navbar'])); ?>">
+                            max="50"
+                            value="<?php echo esc_attr($this->extract_size_value($design_navbar['gap-navbar'])); ?>"
+                            required
+                        >
 
-                        <select class="navbar__unit-select ">
+                        <select class="navbar__unit-select" required>
                             <option value="px" <?php selected($this->extract_size_unit($design_navbar['gap-navbar']), 'px'); ?>>px</option>
                             <option value="rem" <?php selected($this->extract_size_unit($design_navbar['gap-navbar']), 'rem'); ?>>rem</option>
                         </select>
 
-                        <input type="hidden"
+                        <input 
+                            type="hidden"
                             name="gica_design_navbar[gap-navbar]"
                             id="gap_navbar_real"
-                            value="<?php echo esc_attr($design_navbar['gap-navbar']); ?>">
+                            value="<?php echo esc_attr($design_navbar['gap-navbar']); ?>"
+                            required
+                        >
                     </div>
                 </td>
                 <td class="navbar__table-input">
@@ -61,17 +67,23 @@
                             class="navbar__input--number"
                             step="0.1"
                             min="0.1"
-                            value="<?php echo esc_attr($this->extract_size_value($design_navbar['margin-bottom-navbar'])); ?>">
+                            max="200"
+                            value="<?php echo esc_attr($this->extract_size_value($design_navbar['margin-bottom-navbar'])); ?>"
+                            required
+                        >
 
-                        <select class="navbar__unit-select ">
+                        <select class="navbar__unit-select" required>
                             <option value="px" <?php selected($this->extract_size_unit($design_navbar['margin-bottom-navbar']), 'px'); ?>>px</option>
                             <option value="rem" <?php selected($this->extract_size_unit($design_navbar['margin-bottom-navbar']), 'rem'); ?>>rem</option>
                         </select>
 
-                        <input type="hidden"
+                        <input 
+                            type="hidden"
                             name="gica_design_navbar[margin-bottom-navbar]"
                             id="margin_bottom_navbar_real"
-                            value="<?php echo esc_attr($design_navbar['margin-bottom-navbar']); ?>">
+                            value="<?php echo esc_attr($design_navbar['margin-bottom-navbar']); ?>"
+                            required
+                        >
                     </div>
                 </td>
                 <td class="navbar__table-input">
@@ -82,17 +94,23 @@
                             class="navbar__input--number"
                             step="0.1"
                             min="0.1"
-                            value="<?php echo esc_attr($this->extract_size_value($design_navbar['border-radius-navbar'])); ?>">
+                            max="250"
+                            value="<?php echo esc_attr($this->extract_size_value($design_navbar['border-radius-navbar'])); ?>"
+                            required
+                        >
 
-                        <select class="navbar__unit-select ">
+                        <select class="navbar__unit-select" required>
                             <option value="px" <?php selected($this->extract_size_unit($design_navbar['border-radius-navbar']), 'px'); ?>>px</option>
                             <option value="rem" <?php selected($this->extract_size_unit($design_navbar['border-radius-navbar']), 'rem'); ?>>rem</option>
                         </select>
 
-                        <input type="hidden"
+                        <input 
+                            type="hidden"
                             name="gica_design_navbar[border-radius-navbar]"
                             id="border_radius_navbar_real"
-                            value="<?php echo esc_attr($design_navbar['border-radius-navbar']); ?>">
+                            value="<?php echo esc_attr($design_navbar['border-radius-navbar']); ?>"
+                            required
+                        >
                     </div>
                 </td>
                 <td class="navbar__table-input">
@@ -103,24 +121,30 @@
                             class="navbar__input--number"
                             step="0.1"
                             min="0"
-                            value="<?php echo esc_attr($this->extract_size_value($design_navbar['font-size-navbar'])); ?>">
+                            max="50"
+                            value="<?php echo esc_attr($this->extract_size_value($design_navbar['font-size-navbar'])); ?>"
+                            required
+                        >
 
-                        <select class="navbar__unit-select ">
+                        <select class="navbar__unit-select" required>
                             <option value="px" <?php selected($this->extract_size_unit($design_navbar['font-size-navbar']), 'px'); ?>>px</option>
                             <option value="rem" <?php selected($this->extract_size_unit($design_navbar['font-size-navbar']), 'rem'); ?>>rem</option>
                         </select>
 
-                        <input type="hidden"
+                        <input 
+                            type="hidden"
                             name="gica_design_navbar[font-size-navbar]"
                             id="font_size_navbar_real"
-                            value="<?php echo esc_attr($design_navbar['font-size-navbar']); ?>">
+                            value="<?php echo esc_attr($design_navbar['font-size-navbar']); ?>"
+                            required
+                        >
                     </div>
                 </td>
             </tr>
             <tr class="navbar__table-row">
                 <th class="navbar__table-label" style="text-align: center;"><label for="font_weight_navbar">Grosor del Texto</label></th>
                 <td class="navbar__table-input" colspan="3">
-                    <select id="font_weight_navbar" name="gica_design_navbar[font-weight-navbar]" class="navbar__input--select">
+                    <select id="font_weight_navbar" name="gica_design_navbar[font-weight-navbar]" class="navbar__input--select" required>
                         <option value="300" <?php selected($design_navbar['font-weight-navbar'], '300'); ?>>Light (300)</option>
                         <option value="400" <?php selected($design_navbar['font-weight-navbar'], '400'); ?>>Normal (400)</option>
                         <option value="500" <?php selected($design_navbar['font-weight-navbar'], '500'); ?>>Medium (500)</option>
@@ -134,12 +158,6 @@
         </table>
 
         <table class="navbar__responsive-table">
-            <tr class="navbar__table-row">
-                <th class="navbar__table-label" style="text-align: center;"><label>xl</label></th>
-                <th class="navbar__table-label" style="text-align: center;"><label>lg</label></th>
-                <th class="navbar__table-label" style="text-align: center;"><label>md</label></th>
-                <th class="navbar__table-label" style="text-align: center;"><label>sm</label></th>
-            </tr>
             <tr class="navbar__responsive-header">
                 <th class="navbar__responsive-title"><span class="navbar__icon navbar__icon--desktop"></span></th>
                 <th class="navbar__responsive-title"><span class="navbar__icon navbar__icon--desktop"></span></th>
@@ -149,16 +167,16 @@
 
             <tr class="navbar__responsive-row">
                 <td class="navbar__responsive-input">
-                    <input type="text" name="gica_design_navbar[grid-columns-navbar-escritorio-xl]" value="<?php echo esc_attr($design_navbar['grid-columns-navbar-escritorio-xl']); ?>" class="navbar__input--text">
+                    <input type="number" step="1" min="1" max="6" name="gica_design_navbar[grid-columns-navbar-escritorio-xl]" value="<?php echo esc_attr($design_navbar['grid-columns-navbar-escritorio-xl']); ?>" class="navbar__input--number" required>
                 </td>
                 <td class="navbar__responsive-input">
-                    <input type="text" name="gica_design_navbar[grid-columns-navbar-escritorio-lg]" value="<?php echo esc_attr($design_navbar['grid-columns-navbar-escritorio-lg']); ?>" class="navbar__input--text">
+                    <input type="number" step="1" min="1" max="6" name="gica_design_navbar[grid-columns-navbar-escritorio-lg]" value="<?php echo esc_attr($design_navbar['grid-columns-navbar-escritorio-lg']); ?>" class="navbar__input--number" required>
                 </td>
                 <td class="navbar__responsive-input">
-                    <input type="text" name="gica_design_navbar[grid-columns-navbar-tablet]" value="<?php echo esc_attr($design_navbar['grid-columns-navbar-tablet']); ?>" class="navbar__input--text">
+                    <input type="number" step="1" min="1" max="6" name="gica_design_navbar[grid-columns-navbar-tablet]" value="<?php echo esc_attr($design_navbar['grid-columns-navbar-tablet']); ?>" class="navbar__input--number" required>
                 </td>
                 <td class="navbar__responsive-input">
-                    <input type="text" name="gica_design_navbar[grid-columns-navbar-mobile]" value="<?php echo esc_attr($design_navbar['grid-columns-navbar-mobile']); ?>" class="navbar__input--text">
+                    <input type="number" step="1" min="1" max="6" name="gica_design_navbar[grid-columns-navbar-mobile]" value="<?php echo esc_attr($design_navbar['grid-columns-navbar-mobile']); ?>" class="navbar__input--number" required>
                 </td>
             </tr>
         </table>

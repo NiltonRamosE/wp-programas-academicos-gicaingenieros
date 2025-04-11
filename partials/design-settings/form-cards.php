@@ -20,26 +20,32 @@
                             class="cards__input--number"
                             step="0.1"
                             min="0"
-                            value="<?php echo esc_attr($this->extract_size_value($design_cards['border-radius-card'])); ?>">
+                            max="250"
+                            value="<?php echo esc_attr($this->extract_size_value($design_cards['border-radius-card'])); ?>"
+                            required
+                        >
 
-                        <select class="cards__unit-select ">
+                        <select class="cards__unit-select" required>
                             <option value="px" <?php selected($this->extract_size_unit($design_cards['border-radius-card']), 'px'); ?>>px</option>
                             <option value="rem" <?php selected($this->extract_size_unit($design_cards['border-radius-card']), 'rem'); ?>>rem</option>
                         </select>
 
-                        <input type="hidden"
+                        <input 
+                            type="hidden"
                             name="gica_design_cards[border-radius-card]"
                             id="border_radius_card_cards_real"
-                            value="<?php echo esc_attr($design_cards['border-radius-card']); ?>">
+                            value="<?php echo esc_attr($design_cards['border-radius-card']); ?>"
+                            required
+                        >
                     </div>
                 </td>
 
                 <td class="cards__table-input">
-                    <input type="color" id="title_color_card" name="gica_design_cards[title-color-card]" value="<?php echo esc_attr($design_cards['title-color-card']); ?>" class="cards__input--color">
+                    <input type="color" id="title_color_card" name="gica_design_cards[title-color-card]" value="<?php echo esc_attr($design_cards['title-color-card']); ?>" class="cards__input--color" required>
                 </td>
 
                 <td class="cards__table-input">
-                    <input type="color" id="subtitle_color_card" name="gica_design_cards[subtitle-color-card]" value="<?php echo esc_attr($design_cards['subtitle-color-card']); ?>" class="cards__input--color">
+                    <input type="color" id="subtitle_color_card" name="gica_design_cards[subtitle-color-card]" value="<?php echo esc_attr($design_cards['subtitle-color-card']); ?>" class="cards__input--color" required>
                 </td>
 
                 <td class="cards__table-input">
@@ -48,19 +54,25 @@
                             type="number"
                             id="title_font_size_card_cards_temp"
                             class="cards__input--number"
-                            step="0.1"
-                            min="0"
-                            value="<?php echo esc_attr($this->extract_size_value($design_cards['title-font-size-card'])); ?>">
+                            step="0.5"
+                            min="1"
+                            max="50"
+                            value="<?php echo esc_attr($this->extract_size_value($design_cards['title-font-size-card'])); ?>"
+                            required
+                        >
 
-                        <select class="cards__unit-select ">
+                        <select class="cards__unit-select" required>
                             <option value="px" <?php selected($this->extract_size_unit($design_cards['title-font-size-card']), 'px'); ?>>px</option>
                             <option value="rem" <?php selected($this->extract_size_unit($design_cards['title-font-size-card']), 'rem'); ?>>rem</option>
                         </select>
 
-                        <input type="hidden"
+                        <input 
+                            type="hidden"
                             name="gica_design_cards[title-font-size-card]"
                             id="title_font_size_card_cards_real"
-                            value="<?php echo esc_attr($design_cards['title-font-size-card']); ?>">
+                            value="<?php echo esc_attr($design_cards['title-font-size-card']); ?>"
+                            required
+                        >
                     </div>
                 </td>
             </tr>
@@ -77,38 +89,44 @@
                             type="number"
                             id="subtitle_font_size_card_cards_temp"
                             class="cards__input--number"
-                            step="0.1"
-                            min="0"
-                            value="<?php echo esc_attr($this->extract_size_value($design_cards['subtitle-font-size-card'])); ?>">
+                            step="0.5"
+                            min="1"
+                            max="50"
+                            value="<?php echo esc_attr($this->extract_size_value($design_cards['subtitle-font-size-card'])); ?>"
+                            required
+                        >
 
-                        <select class="cards__unit-select ">
+                        <select class="cards__unit-select" required>
                             <option value="px" <?php selected($this->extract_size_unit($design_cards['subtitle-font-size-card']), 'px'); ?>>px</option>
                             <option value="rem" <?php selected($this->extract_size_unit($design_cards['subtitle-font-size-card']), 'rem'); ?>>rem</option>
                         </select>
 
-                        <input type="hidden"
+                        <input 
+                            type="hidden"
                             name="gica_design_cards[subtitle-font-size-card]"
                             id="subtitle_font_size_card_cards_real"
-                            value="<?php echo esc_attr($design_cards['subtitle-font-size-card']); ?>">
+                            value="<?php echo esc_attr($design_cards['subtitle-font-size-card']); ?>"
+                            required
+                        >
                     </div>
                 </td>
 
                 <td class="cards__table-input">
-                    <input type="color" id="badge_state_active_card" name="gica_design_cards[badge-state-active-card]" value="<?php echo esc_attr($design_cards['badge-state-active-card']); ?>" class="cards__input--color">
+                    <input type="color" id="badge_state_active_card" name="gica_design_cards[badge-state-active-card]" value="<?php echo esc_attr($design_cards['badge-state-active-card']); ?>" class="cards__input--color" required>
                 </td>
 
                 <td class="cards__table-input">
-                    <input type="color" id="badge_state_inactive_card" name="gica_design_cards[badge-state-inactive-card]" value="<?php echo esc_attr($design_cards['badge-state-inactive-card']); ?>" class="cards__input--color">
+                    <input type="color" id="badge_state_inactive_card" name="gica_design_cards[badge-state-inactive-card]" value="<?php echo esc_attr($design_cards['badge-state-inactive-card']); ?>" class="cards__input--color" required>
                 </td>
 
                 <td class="cards__table-input">
-                    <input type="color" id="badge_state_updated_card" name="gica_design_cards[badge-state-updated-card]" value="<?php echo esc_attr($design_cards['badge-state-updated-card']); ?>" class="cards__input--color">
+                    <input type="color" id="badge_state_updated_card" name="gica_design_cards[badge-state-updated-card]" value="<?php echo esc_attr($design_cards['badge-state-updated-card']); ?>" class="cards__input--color" required>
                 </td>
             </tr>
             <tr class="cards__table-row">
                 <th class="cards__table-label" style="text-align: center;"><label for="title_font_weight_card">Grosor del Texto</label></th>
                 <td class="cards__table-input" colspan="3">
-                    <select id="title_font_weight_card" name="gica_design_cards[title-font-weight-card]" class="cards__input--select">
+                    <select id="title_font_weight_card" name="gica_design_cards[title-font-weight-card]" class="cards__input--select" required>
                         <option value="300" <?php selected($design_cards['title-font-weight-card'], '300'); ?>>Light (300)</option>
                         <option value="400" <?php selected($design_cards['title-font-weight-card'], '400'); ?>>Normal (400)</option>
                         <option value="500" <?php selected($design_cards['title-font-weight-card'], '500'); ?>>Medium (500)</option>

@@ -18,24 +18,30 @@
                             type="number"
                             id="pagination_gap_pagination_temp"
                             class="pagination__input--number"
-                            step="0.1"
+                            step="0.5"
                             min="0"
-                            value="<?php echo esc_attr($this->extract_size_value($design_pagination['pagination-gap'])); ?>">
+                            max="50"
+                            value="<?php echo esc_attr($this->extract_size_value($design_pagination['pagination-gap'])); ?>"
+                            required
+                        >
 
-                        <select class="pagination__unit-select ">
+                        <select class="pagination__unit-select" required>
                             <option value="px" <?php selected($this->extract_size_unit($design_pagination['pagination-gap']), 'px'); ?>>px</option>
                             <option value="rem" <?php selected($this->extract_size_unit($design_pagination['pagination-gap']), 'rem'); ?>>rem</option>
                         </select>
 
-                        <input type="hidden"
+                        <input 
+                            type="hidden"
                             name="gica_design_pagination[pagination-gap]"
                             id="pagination_gap_pagination_real"
-                            value="<?php echo esc_attr($design_pagination['pagination-gap']); ?>">
+                            value="<?php echo esc_attr($design_pagination['pagination-gap']); ?>"
+                            required
+                        >
                     </div>
                 </td>
 
                 <td class="pagination__responsive-input">
-                    <input type="text" name="gica_design_pagination[pagination-border-radius]" value="<?php echo esc_attr($design_pagination['pagination-border-radius']); ?>" class="pagination__input--text">
+                    <input type="text" name="gica_design_pagination[pagination-border-radius]" value="<?php echo esc_attr($design_pagination['pagination-border-radius']); ?>" class="pagination__input--text" required>
                 </td>
 
                 <td class="pagination__table-input">
@@ -44,23 +50,29 @@
                             type="number"
                             id="pagination_border_radius_prev_next_pagination_temp"
                             class="pagination__input--number"
-                            step="0.1"
+                            step="0.5"
                             min="0"
-                            value="<?php echo esc_attr($this->extract_size_value($design_pagination['pagination-border-radius-prev-next'])); ?>">
+                            max="150"
+                            value="<?php echo esc_attr($this->extract_size_value($design_pagination['pagination-border-radius-prev-next'])); ?>"
+                            required
+                        >
 
-                        <select class="pagination__unit-select ">
+                        <select class="pagination__unit-select" required>
                             <option value="px" <?php selected($this->extract_size_unit($design_pagination['pagination-border-radius-prev-next']), 'px'); ?>>px</option>
                             <option value="rem" <?php selected($this->extract_size_unit($design_pagination['pagination-border-radius-prev-next']), 'rem'); ?>>rem</option>
                         </select>
 
-                        <input type="hidden"
+                        <input 
+                            type="hidden"
                             name="gica_design_pagination[pagination-border-radius-prev-next]"
                             id="pagination_border_radius_prev_next_pagination_real"
-                            value="<?php echo esc_attr($design_pagination['pagination-border-radius-prev-next']); ?>">
+                            value="<?php echo esc_attr($design_pagination['pagination-border-radius-prev-next']); ?>"
+                            required
+                        >
                     </div>
                 </td>
                 <td class="pagination__table-input">
-                    <input type="color" id="pagination_bg" name="gica_design_pagination[pagination-bg]" value="<?php echo esc_attr($design_pagination['pagination-bg']); ?>" class="pagination__input--color">
+                    <input type="color" id="pagination_bg" name="gica_design_pagination[pagination-bg]" value="<?php echo esc_attr($design_pagination['pagination-bg']); ?>" class="pagination__input--color" required>
                 </td>
             </tr>
             <tr class="pagination__table-row">
@@ -71,22 +83,22 @@
             </tr>
             <tr class="pagination__table-row" style="text-align: center;">
                 <td class="pagination__table-input">
-                    <input type="color" id="pagination_bg_hover" name="gica_design_pagination[pagination-bg-hover]" value="<?php echo esc_attr($design_pagination['pagination-bg-hover']); ?>" class="pagination__input--color">
+                    <input type="color" id="pagination_bg_hover" name="gica_design_pagination[pagination-bg-hover]" value="<?php echo esc_attr($design_pagination['pagination-bg-hover']); ?>" class="pagination__input--color" required>
                 </td>
                 <td class="pagination__table-input">
-                    <input type="color" id="pagination_bg_hover_active" name="gica_design_pagination[pagination-bg-hover-active]" value="<?php echo esc_attr($design_pagination['pagination-bg-hover-active']); ?>" class="pagination__input--color">
+                    <input type="color" id="pagination_bg_hover_active" name="gica_design_pagination[pagination-bg-hover-active]" value="<?php echo esc_attr($design_pagination['pagination-bg-hover-active']); ?>" class="pagination__input--color" required>
                 </td>
                 <td class="pagination__table-input">
-                    <input type="color" id="pagination_text_color" name="gica_design_pagination[pagination-text-color]" value="<?php echo esc_attr($design_pagination['pagination-text-color']); ?>" class="pagination__input--color">
+                    <input type="color" id="pagination_text_color" name="gica_design_pagination[pagination-text-color]" value="<?php echo esc_attr($design_pagination['pagination-text-color']); ?>" class="pagination__input--color" required>
                 </td>
                 <td class="pagination__table-input">
-                    <input type="color" id="pagination_text_color_active" name="gica_design_pagination[pagination-text-color-active]" value="<?php echo esc_attr($design_pagination['pagination-text-color-active']); ?>" class="pagination__input--color">
+                    <input type="color" id="pagination_text_color_active" name="gica_design_pagination[pagination-text-color-active]" value="<?php echo esc_attr($design_pagination['pagination-text-color-active']); ?>" class="pagination__input--color" required>
                 </td>
             </tr>
             <tr class="pagination__table-row">
                 <th class="pagination__table-label" style="text-align: center;"><label for="pagination_font_weight">Grosor del Texto</label></th>
                 <td class="pagination__table-input" colspan="3">
-                    <select id="pagination_font_weight" name="gica_design_pagination[pagination-font-weight]" class="pagination__input--select">
+                    <select id="pagination_font_weight" name="gica_design_pagination[pagination-font-weight]" class="pagination__input--select" required>
                         <option value="300" <?php selected($design_pagination['pagination-font-weight'], '300'); ?>>Light (300)</option>
                         <option value="400" <?php selected($design_pagination['pagination-font-weight'], '400'); ?>>Normal (400)</option>
                         <option value="500" <?php selected($design_pagination['pagination-font-weight'], '500'); ?>>Medium (500)</option>

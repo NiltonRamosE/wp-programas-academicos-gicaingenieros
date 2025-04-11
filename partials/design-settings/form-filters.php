@@ -14,7 +14,7 @@
             <tr class="filters__table-row" style="text-align: center;">
                 <td class="filters__table-input"></td>
                 <td class="filters__table-input">
-                    <input type="color" id="border_container_section" name="gica_design_filters[border-container-section]" value="<?php echo esc_attr($design_filters['border-container-section']); ?>" class="filters__input--color">
+                    <input type="color" id="border_container_section" name="gica_design_filters[border-container-section]" value="<?php echo esc_attr($design_filters['border-container-section']); ?>" class="filters__input--color" required>
                 </td>
                 <td class="filters__table-input">
                     <div class="filters__size-input-group" style="gap:0px;">
@@ -24,17 +24,23 @@
                             class="filters__input--number"
                             step="0.1"
                             min="0"
-                            value="<?php echo esc_attr($this->extract_size_value($design_filters['padding-container-section'])); ?>">
+                            max="20"
+                            value="<?php echo esc_attr($this->extract_size_value($design_filters['padding-container-section'])); ?>"
+                            required
+                        >
 
-                        <select class="filters__unit-select ">
+                        <select class="filters__unit-select" required>
                             <option value="px" <?php selected($this->extract_size_unit($design_filters['padding-container-section']), 'px'); ?>>px</option>
                             <option value="rem" <?php selected($this->extract_size_unit($design_filters['padding-container-section']), 'rem'); ?>>rem</option>
                         </select>
 
-                        <input type="hidden"
+                        <input 
+                            type="hidden"
                             name="gica_design_filters[padding-container-section]"
                             id="padding_container_section_filters_real"
-                            value="<?php echo esc_attr($design_filters['padding-container-section']); ?>">
+                            value="<?php echo esc_attr($design_filters['padding-container-section']); ?>"
+                            required
+                        >
                     </div>
                 </td>
                 <td class="filters__table-input">
@@ -43,19 +49,25 @@
                             type="number"
                             id="margin_top_container_section_filters_temp"
                             class="filters__input--number"
-                            step="0.1"
+                            step="1"
                             min="0"
-                            value="<?php echo esc_attr($this->extract_size_value($design_filters['margin-top-container-section'])); ?>">
+                            max="200"
+                            value="<?php echo esc_attr($this->extract_size_value($design_filters['margin-top-container-section'])); ?>"
+                            required
+                        >
 
-                        <select class="filters__unit-select ">
+                        <select class="filters__unit-select" required>
                             <option value="px" <?php selected($this->extract_size_unit($design_filters['margin-top-container-section']), 'px'); ?>>px</option>
                             <option value="rem" <?php selected($this->extract_size_unit($design_filters['margin-top-container-section']), 'rem'); ?>>rem</option>
                         </select>
 
-                        <input type="hidden"
+                        <input 
+                            type="hidden"
                             name="gica_design_filters[margin-top-container-section]"
                             id="margin_top_container_section_filters_real"
-                            value="<?php echo esc_attr($design_filters['margin-top-container-section']); ?>">
+                            value="<?php echo esc_attr($design_filters['margin-top-container-section']); ?>"
+                            required
+                        >
                     </div>
                 </td>
             </tr>
@@ -75,19 +87,25 @@
                             type="number"
                             id="margin_bottom_container_filter_filters_temp"
                             class="filters__input--number"
-                            step="0.1"
+                            step="1"
                             min="0"
-                            value="<?php echo esc_attr($this->extract_size_value($design_filters['margin-bottom-container-filter'])); ?>">
+                            max="200"
+                            value="<?php echo esc_attr($this->extract_size_value($design_filters['margin-bottom-container-filter'])); ?>"
+                            required
+                        >
 
-                        <select class="filters__unit-select ">
+                        <select class="filters__unit-select" required>
                             <option value="px" <?php selected($this->extract_size_unit($design_filters['margin-bottom-container-filter']), 'px'); ?>>px</option>
                             <option value="rem" <?php selected($this->extract_size_unit($design_filters['margin-bottom-container-filter']), 'rem'); ?>>rem</option>
                         </select>
 
-                        <input type="hidden"
+                        <input 
+                            type="hidden"
                             name="gica_design_filters[margin-bottom-container-filter]"
                             id="margin_bottom_container_filter_filters_real"
-                            value="<?php echo esc_attr($design_filters['margin-bottom-container-filter']); ?>">
+                            value="<?php echo esc_attr($design_filters['margin-bottom-container-filter']); ?>"
+                            required
+                        >
                     </div>
                 </td>
                 <td class="filters__table-input">
@@ -96,19 +114,25 @@
                             type="number"
                             id="gap_filter_year_filters_temp"
                             class="filters__input--number"
-                            step="0.1"
+                            step="0.5"
                             min="0"
-                            value="<?php echo esc_attr($this->extract_size_value($design_filters['gap-filter-year'])); ?>">
+                            max="200"
+                            value="<?php echo esc_attr($this->extract_size_value($design_filters['gap-filter-year'])); ?>"
+                            required
+                        >
 
-                        <select class="filters__unit-select ">
+                        <select class="filters__unit-select" required>
                             <option value="px" <?php selected($this->extract_size_unit($design_filters['gap-filter-year']), 'px'); ?>>px</option>
                             <option value="rem" <?php selected($this->extract_size_unit($design_filters['gap-filter-year']), 'rem'); ?>>rem</option>
                         </select>
 
-                        <input type="hidden"
+                        <input 
+                            type="hidden"
                             name="gica_design_filters[gap-filter-year]"
                             id="gap_filter_year_filters_real"
-                            value="<?php echo esc_attr($design_filters['gap-filter-year']); ?>">
+                            value="<?php echo esc_attr($design_filters['gap-filter-year']); ?>"
+                            required
+                        >
                     </div>
                 </td>
                 <td class="filters__table-input">
@@ -117,19 +141,25 @@
                             type="number"
                             id="min_width_filter_year_filters_temp"
                             class="filters__input--number"
-                            step="0.1"
-                            min="0"
-                            value="<?php echo esc_attr($this->extract_size_value($design_filters['min-width-filter-year'])); ?>">
+                            step="1"
+                            min="50"
+                            max="200"
+                            value="<?php echo esc_attr($this->extract_size_value($design_filters['min-width-filter-year'])); ?>"
+                            required
+                        >
 
-                        <select class="filters__unit-select ">
+                        <select class="filters__unit-select" required>
                             <option value="px" <?php selected($this->extract_size_unit($design_filters['min-width-filter-year']), 'px'); ?>>px</option>
                             <option value="rem" <?php selected($this->extract_size_unit($design_filters['min-width-filter-year']), 'rem'); ?>>rem</option>
                         </select>
 
-                        <input type="hidden"
+                        <input 
+                            type="hidden"
                             name="gica_design_filters[min-width-filter-year]"
                             id="min_width_filter_year_filters_real"
-                            value="<?php echo esc_attr($design_filters['min-width-filter-year']); ?>">
+                            value="<?php echo esc_attr($design_filters['min-width-filter-year']); ?>"
+                            required
+                        >
                     </div>
                 </td>
             </tr>
@@ -151,17 +181,23 @@
                             class="filters__input--number"
                             step="0.1"
                             min="0"
-                            value="<?php echo esc_attr($this->extract_size_value($design_filters['border-radius-filter-year'])); ?>">
+                            max="25"
+                            value="<?php echo esc_attr($this->extract_size_value($design_filters['border-radius-filter-year'])); ?>"
+                            required
+                        >
 
-                        <select class="filters__unit-select ">
+                        <select class="filters__unit-select" required>
                             <option value="px" <?php selected($this->extract_size_unit($design_filters['border-radius-filter-year']), 'px'); ?>>px</option>
                             <option value="rem" <?php selected($this->extract_size_unit($design_filters['border-radius-filter-year']), 'rem'); ?>>rem</option>
                         </select>
 
-                        <input type="hidden"
+                        <input 
+                            type="hidden"
                             name="gica_design_filters[border-radius-filter-year]"
                             id="border_radius_filter_year_filters_real"
-                            value="<?php echo esc_attr($design_filters['border-radius-filter-year']); ?>">
+                            value="<?php echo esc_attr($design_filters['border-radius-filter-year']); ?>"
+                            required
+                        >
                     </div>
                 </td>
                 <td class="filters__table-input">
@@ -170,23 +206,29 @@
                             type="number"
                             id="font_size_filter_year_filters_temp"
                             class="filters__input--number"
-                            step="0.1"
-                            min="0"
-                            value="<?php echo esc_attr($this->extract_size_value($design_filters['font-size-filter-year'])); ?>">
+                            step="1"
+                            min="1"
+                            max="200"
+                            value="<?php echo esc_attr($this->extract_size_value($design_filters['font-size-filter-year'])); ?>"
+                            required
+                        >
 
-                        <select class="filters__unit-select ">
+                        <select class="filters__unit-select" required>
                             <option value="px" <?php selected($this->extract_size_unit($design_filters['font-size-filter-year']), 'px'); ?>>px</option>
                             <option value="rem" <?php selected($this->extract_size_unit($design_filters['font-size-filter-year']), 'rem'); ?>>rem</option>
                         </select>
 
-                        <input type="hidden"
+                        <input 
+                            type="hidden"
                             name="gica_design_filters[font-size-filter-year]"
                             id="font_size_filter_year_filters_real"
-                            value="<?php echo esc_attr($design_filters['font-size-filter-year']); ?>">
+                            value="<?php echo esc_attr($design_filters['font-size-filter-year']); ?>"
+                            required
+                        >
                     </div>
                 </td>
                 <td class="filters__table-input">
-                    <input type="color" id="filter_color" name="gica_design_filters[filter-color]" value="<?php echo esc_attr($design_filters['filter-color']); ?>" class="filters__input--color">
+                    <input type="color" id="filter_color" name="gica_design_filters[filter-color]" value="<?php echo esc_attr($design_filters['filter-color']); ?>" class="filters__input--color" required>
                 </td>
             </tr>
 
@@ -198,23 +240,23 @@
             </tr>
             <tr class="filters__table-row" style="text-align: center;">
                 <td class="filters__table-input">
-                    <input type="color" id="filter_primary_color" name="gica_design_filters[filter-primary-color]" value="<?php echo esc_attr($design_filters['filter-primary-color']); ?>" class="filters__input--color">
+                    <input type="color" id="filter_primary_color" name="gica_design_filters[filter-primary-color]" value="<?php echo esc_attr($design_filters['filter-primary-color']); ?>" class="filters__input--color" required>
                 </td>
                 <td class="filters__table-input">
-                    <input type="color" id="filter_secondary_color" name="gica_design_filters[filter-secondary-color]" value="<?php echo esc_attr($design_filters['filter-secondary-color']); ?>" class="filters__input--color">
+                    <input type="color" id="filter_secondary_color" name="gica_design_filters[filter-secondary-color]" value="<?php echo esc_attr($design_filters['filter-secondary-color']); ?>" class="filters__input--color" required>
                 </td>
                 <td class="filters__table-input">
-                    <input type="color" id="filter_hover_color" name="gica_design_filters[filter-hover-color]" value="<?php echo esc_attr($design_filters['filter-hover-color']); ?>" class="filters__input--color">
+                    <input type="color" id="filter_hover_color" name="gica_design_filters[filter-hover-color]" value="<?php echo esc_attr($design_filters['filter-hover-color']); ?>" class="filters__input--color" required>
                 </td>
                 <td class="filters__table-input">
-                    <input type="color" id="filter_bg_color" name="gica_design_filters[filter-bg-color]" value="<?php echo esc_attr($design_filters['filter-bg-color']); ?>" class="filters__input--color">
+                    <input type="color" id="filter_bg_color" name="gica_design_filters[filter-bg-color]" value="<?php echo esc_attr($design_filters['filter-bg-color']); ?>" class="filters__input--color" required>
                 </td>
             </tr>
 
             <tr class="filters__table-row">
                 <th class="filters__table-label" style="text-align: center;"><label for="font_weight_filter_year">Grosor del Texto</label></th>
                 <td class="filters__table-input" colspan="3">
-                    <select id="font_weight_filter_year" name="gica_design_filters[font-weight-filter-year]" class="filters__input--select">
+                    <select id="font_weight_filter_year" name="gica_design_filters[font-weight-filter-year]" class="filters__input--select" required>
                         <option value="300" <?php selected($design_filters['font-weight-filter-year'], '300'); ?>>Light (300)</option>
                         <option value="400" <?php selected($design_filters['font-weight-filter-year'], '400'); ?>>Normal (400)</option>
                         <option value="500" <?php selected($design_filters['font-weight-filter-year'], '500'); ?>>Medium (500)</option>
