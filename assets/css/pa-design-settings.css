@@ -336,8 +336,21 @@
   .pagination__table-label {
     width: 100%;
     padding: 0.5rem 0;
+    display: none;
   }
 
+  .main-title__table-row > td::before,
+  .navbar__table-row > td::before,
+  .filters__table-row > td::before,
+  .cards__table-row > td::before,
+  .pagination__table-row > td::before {
+    content: attr(data-label);
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    
+  }
+  
   .main-title__table-input,
   .navbar__table-input,
   .filters__table-input,
@@ -348,10 +361,10 @@
   }
 
   .main-title__actions,
-  .navbar__title__actions,
-  .filters__title__actions,
-  .cards__title__actions,
-  .pagination__title__actions {
+  .navbar__actions,
+  .filters__actions,
+  .cards__actions,
+  .pagination__actions {
     flex-direction: column;
   }
 

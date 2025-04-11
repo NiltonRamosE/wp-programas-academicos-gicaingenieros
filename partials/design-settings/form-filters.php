@@ -12,11 +12,11 @@
                 <th class="filters__table-label" style="text-align: center;"><label for="margin_top_container_section_filters_temp">Margin-top</label></th>
             </tr>
             <tr class="filters__table-row" style="text-align: center;">
-                <td class="filters__table-input"></td>
-                <td class="filters__table-input">
+                <td class="filters__table-input" data-label="Sección General"></td>
+                <td class="filters__table-input" data-label="Borde">
                     <input type="color" id="border_container_section" name="gica_design_filters[border-container-section]" value="<?php echo esc_attr($design_filters['border-container-section']); ?>" class="filters__input--color" required>
                 </td>
-                <td class="filters__table-input">
+                <td class="filters__table-input" data-label="Padding">
                     <div class="filters__size-input-group" style="gap:0px;">
                         <input
                             type="number"
@@ -43,7 +43,7 @@
                         >
                     </div>
                 </td>
-                <td class="filters__table-input">
+                <td class="filters__table-input" data-label="Margin-top">
                     <div class="filters__size-input-group" style="gap:0px;">
                         <input
                             type="number"
@@ -80,8 +80,8 @@
                 <th class="filters__table-label" style="text-align: center;"><label for="min_width_filter_year_filters_temp">Min width button</label></th>
             </tr>
             <tr class="filters__table-row" style="text-align: center;">
-                <td class="filters__table-input"></td>
-                <td class="filters__table-input">
+                <td class="filters__table-input" data-label="Contenido"></td>
+                <td class="filters__table-input" data-label="Margin Bottom">
                     <div class="filters__size-input-group" style="gap:0px;">
                         <input
                             type="number"
@@ -108,7 +108,7 @@
                         >
                     </div>
                 </td>
-                <td class="filters__table-input">
+                <td class="filters__table-input" data-label="Separación de botones">
                     <div class="filters__size-input-group" style="gap:0px;">
                         <input
                             type="number"
@@ -135,7 +135,7 @@
                         >
                     </div>
                 </td>
-                <td class="filters__table-input">
+                <td class="filters__table-input" data-label="SMin width button">
                     <div class="filters__size-input-group" style="gap:0px;">
                         <input
                             type="number"
@@ -172,8 +172,8 @@
             </tr>
 
             <tr class="filters__table-row" style="text-align: center;">
-                <td class="filters__table-input"></td>
-                <td class="filters__table-input">
+                <td class="filters__table-input" data-label="Componentes"></td>
+                <td class="filters__table-input" data-label="Border Radius">
                     <div class="filters__size-input-group" style="gap:0px;">
                         <input
                             type="number"
@@ -200,7 +200,7 @@
                         >
                     </div>
                 </td>
-                <td class="filters__table-input">
+                <td class="filters__table-input" data-label="Text Size">
                     <div class="filters__size-input-group" style="gap:0px;">
                         <input
                             type="number"
@@ -227,7 +227,7 @@
                         >
                     </div>
                 </td>
-                <td class="filters__table-input">
+                <td class="filters__table-input" data-label="Color del Texto">
                     <input type="color" id="filter_color" name="gica_design_filters[filter-color]" value="<?php echo esc_attr($design_filters['filter-color']); ?>" class="filters__input--color" required>
                 </td>
             </tr>
@@ -239,23 +239,23 @@
                 <th class="filters__table-label" style="text-align: center;"><label for="filter_bg_color">Background Color</label></th>
             </tr>
             <tr class="filters__table-row" style="text-align: center;">
-                <td class="filters__table-input">
+                <td class="filters__table-input" data-label="Color Primario">
                     <input type="color" id="filter_primary_color" name="gica_design_filters[filter-primary-color]" value="<?php echo esc_attr($design_filters['filter-primary-color']); ?>" class="filters__input--color" required>
                 </td>
-                <td class="filters__table-input">
+                <td class="filters__table-input" data-label="Color Secundario">
                     <input type="color" id="filter_secondary_color" name="gica_design_filters[filter-secondary-color]" value="<?php echo esc_attr($design_filters['filter-secondary-color']); ?>" class="filters__input--color" required>
                 </td>
-                <td class="filters__table-input">
+                <td class="filters__table-input" data-label="Hover Color">
                     <input type="color" id="filter_hover_color" name="gica_design_filters[filter-hover-color]" value="<?php echo esc_attr($design_filters['filter-hover-color']); ?>" class="filters__input--color" required>
                 </td>
-                <td class="filters__table-input">
+                <td class="filters__table-input" data-label="Background Color">
                     <input type="color" id="filter_bg_color" name="gica_design_filters[filter-bg-color]" value="<?php echo esc_attr($design_filters['filter-bg-color']); ?>" class="filters__input--color" required>
                 </td>
             </tr>
 
             <tr class="filters__table-row">
                 <th class="filters__table-label" style="text-align: center;"><label for="font_weight_filter_year">Grosor del Texto</label></th>
-                <td class="filters__table-input" colspan="3">
+                <td class="filters__table-input" data-label="Grosor del Texto" colspan="3">
                     <select id="font_weight_filter_year" name="gica_design_filters[font-weight-filter-year]" class="filters__input--select" required>
                         <option value="300" <?php selected($design_filters['font-weight-filter-year'], '300'); ?>>Light (300)</option>
                         <option value="400" <?php selected($design_filters['font-weight-filter-year'], '400'); ?>>Normal (400)</option>

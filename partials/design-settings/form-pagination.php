@@ -12,7 +12,7 @@
                 <th class="pagination__table-label" style="text-align: center;"><label for="pagination_bg">Background Color</label></th>
             </tr>
             <tr class="pagination__table-row" style="text-align: center;">
-                <td class="pagination__table-input">
+                <td class="pagination__table-input" data-label="Separación">
                     <div class="pagination__size-input-group" style="gap:0px;">
                         <input
                             type="number"
@@ -40,11 +40,11 @@
                     </div>
                 </td>
 
-                <td class="pagination__responsive-input">
+                <td class="pagination__responsive-input" data-label="Border Radius">
                     <input type="text" name="gica_design_pagination[pagination-border-radius]" value="<?php echo esc_attr($design_pagination['pagination-border-radius']); ?>" class="pagination__input--text" required>
                 </td>
 
-                <td class="pagination__table-input">
+                <td class="pagination__table-input" data-label="Border Radius Prev Next">
                     <div class="pagination__size-input-group" style="gap:0px;">
                         <input
                             type="number"
@@ -71,7 +71,7 @@
                         >
                     </div>
                 </td>
-                <td class="pagination__table-input">
+                <td class="pagination__table-input" data-label="Background Color">
                     <input type="color" id="pagination_bg" name="gica_design_pagination[pagination-bg]" value="<?php echo esc_attr($design_pagination['pagination-bg']); ?>" class="pagination__input--color" required>
                 </td>
             </tr>
@@ -82,22 +82,22 @@
                 <th class="pagination__table-label" style="text-align: center;"><label for="pagination_text_color_active">Color del Texto Active</label></th>
             </tr>
             <tr class="pagination__table-row" style="text-align: center;">
-                <td class="pagination__table-input">
+                <td class="pagination__table-input" data-label="Background Hover">
                     <input type="color" id="pagination_bg_hover" name="gica_design_pagination[pagination-bg-hover]" value="<?php echo esc_attr($design_pagination['pagination-bg-hover']); ?>" class="pagination__input--color" required>
                 </td>
-                <td class="pagination__table-input">
+                <td class="pagination__table-input" data-label="Background Active">
                     <input type="color" id="pagination_bg_hover_active" name="gica_design_pagination[pagination-bg-hover-active]" value="<?php echo esc_attr($design_pagination['pagination-bg-hover-active']); ?>" class="pagination__input--color" required>
                 </td>
-                <td class="pagination__table-input">
+                <td class="pagination__table-input" data-label="Color del Texto">
                     <input type="color" id="pagination_text_color" name="gica_design_pagination[pagination-text-color]" value="<?php echo esc_attr($design_pagination['pagination-text-color']); ?>" class="pagination__input--color" required>
                 </td>
-                <td class="pagination__table-input">
+                <td class="pagination__table-input" data-label="Color del Texto Active">
                     <input type="color" id="pagination_text_color_active" name="gica_design_pagination[pagination-text-color-active]" value="<?php echo esc_attr($design_pagination['pagination-text-color-active']); ?>" class="pagination__input--color" required>
                 </td>
             </tr>
             <tr class="pagination__table-row">
                 <th class="pagination__table-label" style="text-align: center;"><label for="pagination_font_weight">Grosor del Texto</label></th>
-                <td class="pagination__table-input" colspan="3">
+                <td class="pagination__table-input" data-label="Grosor del Texto" colspan="3">
                     <select id="pagination_font_weight" name="gica_design_pagination[pagination-font-weight]" class="pagination__input--select" required>
                         <option value="300" <?php selected($design_pagination['pagination-font-weight'], '300'); ?>>Light (300)</option>
                         <option value="400" <?php selected($design_pagination['pagination-font-weight'], '400'); ?>>Normal (400)</option>

@@ -12,16 +12,16 @@
                 <th class="navbar__table-label" style="text-align: center;"><label for="btn_nav_text_color">Color del Texto</label></th>
             </tr>
             <tr class="navbar__table-row" style="text-align: center;">
-                <td class="navbar__table-input">
+                <td class="navbar__table-input" data-label="Botón activo">
                     <input type="color" id="btn_nav_active" name="gica_design_navbar[btn-nav-active]" value="<?php echo esc_attr($design_navbar['btn-nav-active']); ?>" class="navbar__input--color" required>
                 </td>
-                <td class="navbar__table-input">
+                <td class="navbar__table-input" data-label="Color Primario">
                     <input type="color" id="btn_nav_primary_color" name="gica_design_navbar[btn-nav-primary-color]" value="<?php echo esc_attr($design_navbar['btn-nav-primary-color']); ?>" class="navbar__input--color" required>
                 </td>
-                <td class="navbar__table-input">
+                <td class="navbar__table-input" data-label="Color Secundario">
                     <input type="color" id="btn_nav_secondary_color" name="gica_design_navbar[btn-nav-secondary-color]" value="<?php echo esc_attr($design_navbar['btn-nav-secondary-color']); ?>" class="navbar__input--color" required>
                 </td>
-                <td class="navbar__table-input">
+                <td class="navbar__table-input" data-label="Color del Texto">
                     <input type="color" id="btn_nav_text_color" name="gica_design_navbar[btn-nav-text-color]" value="<?php echo esc_attr($design_navbar['btn-nav-text-color']); ?>" class="navbar__input--color" required>
                 </td>
             </tr>
@@ -32,7 +32,7 @@
                 <th class="navbar__table-label" style="text-align: center;"><label for="font_size_navbar_temp">Text Size</label></th>
             </tr>
             <tr class="navbar__table-row">
-                <td class="navbar__table-input">
+                <td class="navbar__table-input" data-label="Botón activo">
                     <div class="navbar__size-input-group" style="gap:0px;">
                         <input
                             type="number"
@@ -59,7 +59,7 @@
                         >
                     </div>
                 </td>
-                <td class="navbar__table-input">
+                <td class="navbar__table-input" data-label="Separación entre botones">
                     <div class="navbar__size-input-group" style="gap:0px;">
                         <input
                             type="number"
@@ -86,7 +86,7 @@
                         >
                     </div>
                 </td>
-                <td class="navbar__table-input">
+                <td class="navbar__table-input" data-label="Margin Inferior">
                     <div class="navbar__size-input-group" style="gap:0px;">
                         <input
                             type="number"
@@ -113,7 +113,7 @@
                         >
                     </div>
                 </td>
-                <td class="navbar__table-input">
+                <td class="navbar__table-input" data-label="Text Size">
                     <div class="navbar__size-input-group" style="gap:0px;">
                         <input
                             type="number"
@@ -143,7 +143,7 @@
             </tr>
             <tr class="navbar__table-row">
                 <th class="navbar__table-label" style="text-align: center;"><label for="font_weight_navbar">Grosor del Texto</label></th>
-                <td class="navbar__table-input" colspan="3">
+                <td class="navbar__table-input" colspan="3" data-label="Grosor del Texto">
                     <select id="font_weight_navbar" name="gica_design_navbar[font-weight-navbar]" class="navbar__input--select" required>
                         <option value="300" <?php selected($design_navbar['font-weight-navbar'], '300'); ?>>Light (300)</option>
                         <option value="400" <?php selected($design_navbar['font-weight-navbar'], '400'); ?>>Normal (400)</option>

@@ -7,11 +7,11 @@
         <table class="main-title__table">
             <tr class="main-title__table-row">
                 <th class="main-title__table-label"><label for="title_color">Color del Título</label></th>
-                <td class="main-title__table-input">
+                <td class="main-title__table-input" data-label="Color del Título">
                     <input type="color" id="title_color" name="gica_design_title[title-color]" value="<?php echo esc_attr($design_title['title-color']); ?>" class="main-title__input--color" required>
                 </td>
                 <th class="main-title__table-label"><label for="text_title_size_min_temp">Min Text Size </label></th>
-                <td class="main-title__table-input">
+                <td class="main-title__table-input" data-label="Min Text Size">
                     <div class="main-title__size-input-group">
                         <input
                             type="number"
@@ -42,11 +42,11 @@
 
             <tr class="main-title__table-row">
                 <th class="main-title__table-label"><label for="line_title_color">Color de la Línea</label></th>
-                <td class="main-title__table-input">
+                <td class="main-title__table-input" data-label="Color de la Línea">
                     <input type="color" id="line_title_color" name="gica_design_title[line-title-color]" value="<?php echo esc_attr($design_title['line-title-color']); ?>" class="main-title__input--color" required>
                 </td>
                 <th class="main-title__table-label"><label for="text_title_size_max_temp">Max Text Size</label></th>
-                <td class="main-title__table-input">
+                <td class="main-title__table-input" data-label="Max Text Size">
                     <div class="main-title__size-input-group">
                         <input
                             type="number"
@@ -77,7 +77,7 @@
 
             <tr class="main-title__table-row">
                 <th class="main-title__table-label"><label for="text_title_weight">Grosor del Texto</label></th>
-                <td class="main-title__table-input" colspan="3">
+                <td class="main-title__table-input" colspan="3" data-label="Grosor del Texto">
                     <select id="text_title_weight" name="gica_design_title[text-title-weight]" class="main-title__input--select" required>
                         <option value="300" <?php selected($design_title['text-title-weight'], '300'); ?>>Light (300)</option>
                         <option value="400" <?php selected($design_title['text-title-weight'], '400'); ?>>Normal (400)</option>
