@@ -6,7 +6,7 @@
 
         <div class="add-program__form-group">
             <label for="slug_program_field" class="add-program__form-label">Slug (sin caracteres especiales):</label>
-            <input type="text" id="slug_program_field" name="slug-program" class="add-program__form-input" placeholder="Ejemplo: cursos-en-vivo">
+            <input type="text" id="slug_program_field" name="slug-program" class="add-program__form-input" placeholder="Ejemplo: cursos-en-vivo" required>
         </div>
         <div class="add-program__form-group">
             <button type="submit" class="add-program__form-submit add-program__action-btn add-program__action-btn--primary">Añadir Categoría</button>
