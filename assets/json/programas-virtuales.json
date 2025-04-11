@@ -1,102 +1,748 @@
 {
+  "programas-virtuales": {
     "2019": [
-        { "code": "COIM-H1", "title": "COMPONENTES OLEOHIDRÁULICOS INDUSTRIALES Y MÓVILES", "image": "http://gicaingenieros.com/images/banners/componentes-oleohidraulicos-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/componentes-oleohidraulicos/coim.html", "active": true , "updated": true }, 
-        { "code": "LIPO-MH3", "title": "LECTURA E INTERPRETACIÓN DE PLANOS OLEOHIDRÁULICOS DE MAQUINARIA PESADA", "image": "http://gicaingenieros.com/images/banners/planos-oleohidraulicos-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/planos-oleohidraulicos-MH3/lipo.html", "active": true, "updated": true },
-        { "code": "PFM", "title": "PRINCIPIOS Y FUNDAMENTOS DE MANTENIMIENTO", "image": "http://gicaingenieros.com/images/banners/mantenimiento-industrial-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/principios-fundamentos-mantenimiento/pfm.html", "active": true, "updated": true },
-        { "code": "MMPMC", "title": "MANTENIMIENTO DE MAQUINARIA PESADA PARA MINERÍA Y CONSTRUCCIÓN", "image": "http://gicaingenieros.com/images/banners/maquinaria-pesada-mc-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/maquinaria-pesada-mc/mmpmc.html", "active": true, "updated": true },
-        { "code": "HDEMP", "title": "HERRAMIENTAS PARA DIAGNÓSTICO ELECTRÓNICO", "image": "http://gicaingenieros.com/images/banners/diagnostico-electronico-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/diagnostico-electronico/hde.html", "active": true, "updated": true },
-        { "code": "ITM", "title": "INGLÉS TÉCNICO PARA MECÁNICOS", "image": "http://gicaingenieros.com/images/banners/ingles-tecnico-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/ingles-tecnico/itm.html", "active": true, "updated": true },
-        { "code": "IPMC", "title": "INGLÉS PARA PROFESIONALES DE MANTENIMIENTO Y CONFIABILIDAD", "image": "http://gicaingenieros.com/images/banners/ingles-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/ingles/ipmc.html", "active": true, "updated": true },
-        { "code": "GAISO55001", "title": "GESTIÓN DE ACTIVOS BAJO ISO 55001:2014", "image": "http://gicaingenieros.com/images/banners/gestion-activos-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/gestion-activos/gaiso55001.html", "active": true, "updated": true },
-        { "code": "SGCISO9001", "title": "SISTEMAS DE GESTIÓN DE LA CALIDAD", "image": "http://gicaingenieros.com/images/banners/gestion-calidad-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/sistemas-gestion-calidad/calidad.html", "active": true, "updated": true },
-        { "code": "MSPGM", "title": "MS PROJECT PARA LA GESTIÓN DE MANTENIMIENTO", "image": "http://gicaingenieros.com/images/banners/msproject-gm-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/msp-gestion-mantenimiento/msp-gestion-mantenimiento.html", "active": true, "updated": true },
-        { "code": "LIPE", "title": "LECTURA E INTERPRETACIÓN DE PLANOS ELÉCTRICOS", "image": "http://gicaingenieros.com/images/banners/planos-electricos-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/planos-electricos/planos-electricos.html", "active": true, "updated": true },
-        { "code": "CFM994F", "title": "CARGADOR FRONTAL PARA MINERÍA CAT 994F", "image": "http://gicaingenieros.com/images/banners/cfm-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/cargador-frontal-mineria/cargador-frontal-mineria.html", "active": true, "updated": true },
-        { "code": "CM793F", "title": "CAMIÓN MINERO CAT 793F", "image": "http://gicaingenieros.com/images/banners/cm-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/camion-minero/camion-minero.html", "active": true, "updated": true },
-        { "code": "TOD10T", "title": "TRACTOR DE ORUGAS CAT D10T", "image": "http://gicaingenieros.com/images/banners/to-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/tractor-orugas/tractor-orugas.html", "active": true, "updated": true },
-        { "code": "MN24M", "title": "MOTONIVELADORA CAT 24M", "image": "http://gicaingenieros.com/images/banners/mn-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/motoniveladora/motoniveladora.html", "active": true, "updated": true },
-        { "code": "EHM", "title": "EXCAVADORA HIDRÁULICA PARA MINERÍA", "image": "http://gicaingenieros.com/images/banners/ehm-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/excavadora-hidraulica-mineria/ehm.html", "active": true, "updated": true },
-        { "code": "SST45001", "title": "INTERPRETACIÓN DE LA NORMA ISO 45001:2018 Y FORMACIÓN DE AUDITOR INTERNO", "image": "http://gicaingenieros.com/images/banners/seguridad-salud-trabajo-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/seguridad-salud-trabajo/seguridad-salud-trabajo.html", "active": true, "updated": true },
-        { "code": "ISO 19011", "title": "NUEVA NORMA ISO 19011:2018 DIRECTRICES PARA LA AUDITORÍA DE LOS SISTEMAS DE GESTIÓN", "image": "http://gicaingenieros.com/images/banners/iso19011-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/nueva-norma-iso19011/iso19011.html", "active": true, "updated": true },
-        { "code": "PCGM", "title": "PLANIFICACIÓN Y CONTROL DE GESTIÓN DE MANTENIMIENTO", "image": "http://gicaingenieros.com/images/banners/pcgm-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/planificacionycontrol/pcgm.html", "active": true, "updated": true },
-        { "code": "EPM", "title": "ELABORACIÓN DE PLANES DE MANTENIMIENTO", "image": "http://gicaingenieros.com/images/banners/epm-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/elaboracionplanesmantenimiento/epm.html", "active": true, "updated": true },
-        { "code": "GR31000", "title": "GESTIÓN DEL RIESGO BASADO EN ISO 31000:2018", "image": "http://gicaingenieros.com/images/banners/iso31000-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/gestion-riesgo/iso31000.html", "active": true, "updated": true },
-        { "code": "FST", "title": "FATIGA Y SOMNOLENCIA EN EL TRABAJO", "image": "http://gicaingenieros.com/images/banners/fst-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/fatiga-somnolencia/fst.html", "active": true, "updated": true },
-        { "code": "IPERC", "title": "IDENTIFICACIÓN DE PELIGROS, EVALUACIÓN DE RIESGOS Y CONTROLES OPERACIONALES", "image": "http://gicaingenieros.com/images/banners/iperc-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/identificacion-peligros/iperc.html", "active": true, "updated": true },
-        { "code": "TA", "title": "TRABAJOS EN ALTURA", "image": "http://gicaingenieros.com/images/banners/ta-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/trabajo-altura/ta.html", "active": true, "updated": true },
-        { "code": "BLOQ", "title": "BLOQUEO Y ETIQUETADO", "image": "http://gicaingenieros.com/images/banners/bloq-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/bloqueo-etiquetado/bloq.html", "active": true, "updated": true },
-        { "code": "LSST", "title": "LEY DE SEGURIDAD Y SALUD EN EL TRABAJO", "image": "http://gicaingenieros.com/images/banners/lsst-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/ley-seguridad-salud-trabajo/lsst.html", "active": true, "updated": true },
-        { "code": "RIEL", "title": "RIESGOS ELÉCTRICOS", "image": "http://gicaingenieros.com/images/banners/riel-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/riel/riesgos-electricos.html", "active": true, "updated": true },
-        { "code": "EXT", "title": "EXTINTORES PORTÁTILES", "image": "http://gicaingenieros.com/images/banners/ext-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/extintores-portatiles/ext.html", "active": true, "updated": true },
-        { "code": "ERGO", "title": "ERGONOMÍA", "image": "http://gicaingenieros.com/images/banners/ergo-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/ergonomia/ergo.html", "active": true, "updated": true },
-        { "code": "GAMC", "title": "GESTIÓN DE ACTIVOS, MANTENIMIENTO Y CONFIABILIDAD EN MAQUINARIA PESADA", "image": "http://gicaingenieros.com/images/banners/gamc-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/gamc/gamc.html", "active": true, "updated": true }
+      {
+        "code": "COIM-H1",
+        "title": "COMPONENTES OLEOHIDRÁULICOS INDUSTRIALES Y MÓVILES",
+        "image": "http://gicaingenieros.com/images/banners/componentes-oleohidraulicos-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/componentes-oleohidraulicos/coim.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "LIPO-MH3",
+        "title": "LECTURA E INTERPRETACIÓN DE PLANOS OLEOHIDRÁULICOS DE MAQUINARIA PESADA",
+        "image": "http://gicaingenieros.com/images/banners/planos-oleohidraulicos-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/planos-oleohidraulicos-MH3/lipo.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "PFM",
+        "title": "PRINCIPIOS Y FUNDAMENTOS DE MANTENIMIENTO",
+        "image": "http://gicaingenieros.com/images/banners/mantenimiento-industrial-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/principios-fundamentos-mantenimiento/pfm.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "MMPMC",
+        "title": "MANTENIMIENTO DE MAQUINARIA PESADA PARA MINERÍA Y CONSTRUCCIÓN",
+        "image": "http://gicaingenieros.com/images/banners/maquinaria-pesada-mc-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/maquinaria-pesada-mc/mmpmc.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "HDEMP",
+        "title": "HERRAMIENTAS PARA DIAGNÓSTICO ELECTRÓNICO",
+        "image": "http://gicaingenieros.com/images/banners/diagnostico-electronico-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/diagnostico-electronico/hde.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "ITM",
+        "title": "INGLÉS TÉCNICO PARA MECÁNICOS",
+        "image": "http://gicaingenieros.com/images/banners/ingles-tecnico-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/ingles-tecnico/itm.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "IPMC",
+        "title": "INGLÉS PARA PROFESIONALES DE MANTENIMIENTO Y CONFIABILIDAD",
+        "image": "http://gicaingenieros.com/images/banners/ingles-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/ingles/ipmc.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "GAISO55001",
+        "title": "GESTIÓN DE ACTIVOS BAJO ISO 55001:2014",
+        "image": "http://gicaingenieros.com/images/banners/gestion-activos-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/gestion-activos/gaiso55001.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "SGCISO9001",
+        "title": "SISTEMAS DE GESTIÓN DE LA CALIDAD",
+        "image": "http://gicaingenieros.com/images/banners/gestion-calidad-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/sistemas-gestion-calidad/calidad.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "MSPGM",
+        "title": "MS PROJECT PARA LA GESTIÓN DE MANTENIMIENTO",
+        "image": "http://gicaingenieros.com/images/banners/msproject-gm-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/msp-gestion-mantenimiento/msp-gestion-mantenimiento.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "LIPE",
+        "title": "LECTURA E INTERPRETACIÓN DE PLANOS ELÉCTRICOS",
+        "image": "http://gicaingenieros.com/images/banners/planos-electricos-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/planos-electricos/planos-electricos.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "CFM994F",
+        "title": "CARGADOR FRONTAL PARA MINERÍA CAT 994F",
+        "image": "http://gicaingenieros.com/images/banners/cfm-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/cargador-frontal-mineria/cargador-frontal-mineria.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "CM793F",
+        "title": "CAMIÓN MINERO CAT 793F",
+        "image": "http://gicaingenieros.com/images/banners/cm-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/camion-minero/camion-minero.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "TOD10T",
+        "title": "TRACTOR DE ORUGAS CAT D10T",
+        "image": "http://gicaingenieros.com/images/banners/to-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/tractor-orugas/tractor-orugas.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "MN24M",
+        "title": "MOTONIVELADORA CAT 24M",
+        "image": "http://gicaingenieros.com/images/banners/mn-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/motoniveladora/motoniveladora.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "EHM",
+        "title": "EXCAVADORA HIDRÁULICA PARA MINERÍA",
+        "image": "http://gicaingenieros.com/images/banners/ehm-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/excavadora-hidraulica-mineria/ehm.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "SST45001",
+        "title": "INTERPRETACIÓN DE LA NORMA ISO 45001:2018 Y FORMACIÓN DE AUDITOR INTERNO",
+        "image": "http://gicaingenieros.com/images/banners/seguridad-salud-trabajo-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/seguridad-salud-trabajo/seguridad-salud-trabajo.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "ISO 19011",
+        "title": "NUEVA NORMA ISO 19011:2018 DIRECTRICES PARA LA AUDITORÍA DE LOS SISTEMAS DE GESTIÓN",
+        "image": "http://gicaingenieros.com/images/banners/iso19011-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/nueva-norma-iso19011/iso19011.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "PCGM",
+        "title": "PLANIFICACIÓN Y CONTROL DE GESTIÓN DE MANTENIMIENTO",
+        "image": "http://gicaingenieros.com/images/banners/pcgm-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/planificacionycontrol/pcgm.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "EPM",
+        "title": "ELABORACIÓN DE PLANES DE MANTENIMIENTO",
+        "image": "http://gicaingenieros.com/images/banners/epm-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/elaboracionplanesmantenimiento/epm.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "GR31000",
+        "title": "GESTIÓN DEL RIESGO BASADO EN ISO 31000:2018",
+        "image": "http://gicaingenieros.com/images/banners/iso31000-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/gestion-riesgo/iso31000.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "FST",
+        "title": "FATIGA Y SOMNOLENCIA EN EL TRABAJO",
+        "image": "http://gicaingenieros.com/images/banners/fst-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/fatiga-somnolencia/fst.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "IPERC",
+        "title": "IDENTIFICACIÓN DE PELIGROS, EVALUACIÓN DE RIESGOS Y CONTROLES OPERACIONALES",
+        "image": "http://gicaingenieros.com/images/banners/iperc-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/identificacion-peligros/iperc.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "TA",
+        "title": "TRABAJOS EN ALTURA",
+        "image": "http://gicaingenieros.com/images/banners/ta-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/trabajo-altura/ta.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "BLOQ",
+        "title": "BLOQUEO Y ETIQUETADO",
+        "image": "http://gicaingenieros.com/images/banners/bloq-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/bloqueo-etiquetado/bloq.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "LSST",
+        "title": "LEY DE SEGURIDAD Y SALUD EN EL TRABAJO",
+        "image": "http://gicaingenieros.com/images/banners/lsst-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/ley-seguridad-salud-trabajo/lsst.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "RIEL",
+        "title": "RIESGOS ELÉCTRICOS",
+        "image": "http://gicaingenieros.com/images/banners/riel-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/riel/riesgos-electricos.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "EXT",
+        "title": "EXTINTORES PORTÁTILES",
+        "image": "http://gicaingenieros.com/images/banners/ext-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/extintores-portatiles/ext.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "ERGO",
+        "title": "ERGONOMÍA",
+        "image": "http://gicaingenieros.com/images/banners/ergo-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/ergonomia/ergo.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "GAMC",
+        "title": "GESTIÓN DE ACTIVOS, MANTENIMIENTO Y CONFIABILIDAD EN MAQUINARIA PESADA",
+        "image": "http://gicaingenieros.com/images/banners/gamc-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/gamc/gamc.html",
+        "active": true,
+        "updated": true
+      }
     ],
     "2020": [
-        { "code": "GSSC", "title": "GERENCIA DE LA SEGURIDAD Y SALUD EN LA CONSTRUCCIÓN", "image": "http://gicaingenieros.com/images/banners/gssc-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/gerencia-construccion/gssc.html", "active": false, "updated": true },
-        { "code": "GSSM", "title": "GERENCIA DE LA SEGURIDAD Y SALUD EN MINERÍA", "image": "http://gicaingenieros.com/images/banners/gssm-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/gerencia-mineria/gssm.html", "active": false, "updated": true },
-        { "code": "GMMP", "title": "GESTIÓN DE MANTENIMIENTO EN MAQUINARIA PESADA", "image": "http://gicaingenieros.com/images/banners/gmmp-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/gestion-mantenimiento-mp/gmmp.html", "active": false, "updated": true },
-        { "code": "ISGC", "title": "IMPLEMENTACIÓN DE SISTEMAS DE GESTIÓN DE LA CALIDAD BAJO ISO 9001:2015", "image": "http://gicaingenieros.com/images/banners/isgc-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/implemetacionSGC9001/isgc.html", "active": false, "updated": true },
-        { "code": "TMPM", "title": "TECNOLOGÍA DE MAQUINARIA PESADA EN MINERÍA", "image": "http://gicaingenieros.com/images/banners/tmpm-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/tecnologia-maquinaria/tmpm.html", "active": true, "updated": true },
-        { "code": "FLS", "title": "FISCALIZACIÓN LABORAL DE LA SUNAFIL", "image": "http://gicaingenieros.com/images/banners/fls-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/fiscalizacion-laboral/fls.html", "active": false, "updated": true },
-        { "code": "IATEI", "title": "INVESTIGACIÓN DE ACCIDENTES DE TRABAJO, ENFERMEDADES OCUPACIONALES E INCIDENTES", "image": "http://gicaingenieros.com/images/banners/iatei-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/investigacion-accidentes/iatei.html", "active": false, "updated": true },
-        { "code": "ASGC9001", "title": "FORMACIÓN DE AUDITOR LÍDER Y AUDITOR INTERNO SGC ISO 9001:2015", "image": "http://gicaingenieros.com/images/banners/asgc9001-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/asgc9001/asgc9001.html", "active": false, "updated": true },
-        { "code": "SSOMA", "title": "FORMACIÓN DE AUDITOR INTERNO SSOMA ISO 45001:2018 E 14001:2015", "image": "http://gicaingenieros.com/images/banners/ssoma-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/ssoma/ssoma.html", "active": true, "updated": true },
-        { "code": "SGA55", "title": "SISTEMA DE GESTIÓN DE ACTIVOS ISO 55001:2014 – NORMATIVIDAD Y AUDITORÍA", "image": "http://gicaingenieros.com/images/banners/sga55-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/sga55/sga55.html", "active": true, "updated": true },
-        { "code": "IPERCCOVID19", "title": "IPERC COVID19 CASOS DE APLICACIÓN", "image": "http://gicaingenieros.com/images/banners/iperccovid19-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/iperccovid19/iperccovid19.html", "active": true, "updated": true },
-        { "code": "GPMI", "title": "GERENCIA DE PROYECTOS BASADO EN LA METODOLOGÍA DEL PMI", "image": "http://gicaingenieros.com/images/banners/gpmi-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/gpmi/gpmi.html", "active": false, "updated": true },
-        { "code": "GREL", "title": "GRUPOS ELECTRÓGENOS", "image": "http://gicaingenieros.com/images/banners/grel-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/grel/grel.html", "active": true, "updated": true },
-        { "code": "REMOTO", "title": "TRABAJO REMOTO", "image": "http://gicaingenieros.com/images/banners/remoto-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/remoto/remoto.html", "active": false, "updated": true },
-        { "code": "AGEMA9001", "title": "AUDITORÍA DE LA GESTIÓN DE MANTENIMIENTO BAJO ISO 9001:2015", "image": "http://gicaingenieros.com/images/banners/agema9001-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/agema9001/agema9001.html", "active": true, "updated": true },
-        { "code": "RPS", "title": "RIESGOS PSICOSOCIALES", "image": "http://gicaingenieros.com/images/banners/rps-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/rps/rps.html", "active": true, "updated": true },
-        { "code": "FLSCOVID", "title": "INSPECCIÓN Y FISCALIZACIÓN DEL TRABAJO A CONSECUENCIA DE COVID-19", "image": "http://gicaingenieros.com/images/banners/flscovid-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/flscovid/flscovid.html", "active": true, "updated": true },
-        { "code": "RM448MINSA", "title": "LINEAMIENTOS PARA LA VIGILANCIA DE LA SALUD DE LOS TRABAJADORES CON RIESGO DE EXPOSICIÓN A COVID-19", "image": "http://gicaingenieros.com/images/banners/rm448minsa-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/rm448minsa/rm448minsa.html", "active": true, "updated": false },
-        { "code": "RM448CONSTRUCCION", "title": "DISEÑO DE PLANES DE VIGILANCIA, PREVENCIÓN Y CONTROL DE COVID-19 APLICADO EN CONSTRUCCIÓN", "image": "http://gicaingenieros.com/images/banners/rm448construccion-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/rm448construccion/rm448construccion.html", "active": true, "updated": true },
-        { "code": "RM448MINERIA", "title": "DISEÑO DE PLANES DE VIGILANCIA, PREVENCIÓN Y CONTROL DE COVID-19 APLICADO EN SUBSECTORES MINERÍA, HIDROCARBUROS Y ELECTRICIDAD", "image": "http://gicaingenieros.com/images/banners/rm448mineria-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/rm448mineria/rm448mineria.html", "active": true, "updated": true },
-        { "code": "RM448RESTAURANTE", "title": "DISEÑO DE PLANES DE VIGILANCIA, PREVENCIÓN Y CONTROL DE COVID-19 APLICADO EN RESTAURANTES", "image": "http://gicaingenieros.com/images/banners/rm448restaurantes-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/rm448restaurantes/rm448restaurantes.html", "active": true, "updated": true },
-        { "code": "RM448PESCA", "title": "DISEÑO DE PLANES DE VIGILANCIA, PREVENCIÓN Y CONTROL DE COVID-19 APLICADO EN PESCA", "image": "http://gicaingenieros.com/images/banners/rm448pesca-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/rm448pesca/rm448pesca.html", "active": true, "updated": true },
-        { "code": "RM448METALMECÁNICA", "title": "DISEÑO DE PLANES DE VIGILANCIA, PREVENCIÓN Y CONTROL DE COVID-19 APLICADO EN METALMECÁNICA", "image": "http://gicaingenieros.com/images/banners/rm448metalmecanica-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/rm448metalmecanica/rm448metalmecanica.html", "active": true, "updated": true },
-        { "code": "RM448TRANSPORTE", "title": "DISEÑO DE PLANES DE VIGILANCIA, PREVENCIÓN Y CONTROL DE COVID-19 APLICADO EN TRANSPORTE", "image": "http://gicaingenieros.com/images/banners/rm448transporte-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/rm448transporte/rm448transporte.html", "active": true, "updated": true },
-        { "code": "RM448TELECOMUNICACIONES", "title": "DISEÑO DE PLANES DE VIGILANCIA, PREVENCIÓN Y CONTROL DE COVID-19 APLICADO EN TELECOMUNICACIONES", "image": "http://gicaingenieros.com/images/banners/rm448telecomunicaciones-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/rm448telecomunicaciones/rm448telecomunicaciones.html", "active": true, "updated": true },
-        { "code": "SSTSALUD", "title": "GESTIÓN SST PARA PROFESIONALES DE LA SALUD FRENTE AL COVID-19", "image": "http://gicaingenieros.com/images/banners/sstsalud-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/sstsalud/sstsalud.html", "active": false, "updated": true },
-        { "code": "EPPSALUD", "title": "USO DE EQUIPOS DE PROTECCIÓN PERSONAL (EPP) PARA LOS TRABAJADORES DEL SERVICIO DE SALUD", "image": "http://gicaingenieros.com/images/banners/eppsalud-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/eppsalud/eppsalud.html", "active": false, "updated": true },
-        { "code": "RM128IMPLEMENTACION", "title": "DISEÑO DE PLANES DE VIGILANCIA, PREVENCIÓN Y CONTROL DE COVID-19 APLICADO EN SUBSECTORES MINERÍA, HIDROCARBUROS Y ELECTRICIDAD", "image": "http://gicaingenieros.com/images/banners/rm128implementacion-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/rm128implementacion/rm128implementacion.html", "active": true, "updated": true },
-        { "code": "IPBCOVID19", "title": "IMPLEMENTACIÓN DE PROTOCOLOS BIOSEGURIDAD COVID-19", "image": "http://gicaingenieros.com/images/banners/ipbcovid19-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/ipbcovid19/ipbcovid19.html", "active": false, "updated": true },
-        { "code": "RM972MINSA", "title": "LINEAMIENTOS PARA LA VIGILANCIA DE LA SALUD DE LOS TRABAJADORES CON RIESGO DE EXPOSICIÓN A SARS-COV-2", "image": "http://gicaingenieros.com/images/banners/rm972minsa-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/rm972minsa/rm972minsa.html", "active": true, "updated": true },
-        { "code": "RM239CONSTRUCCION", "title": "DISEÑO DE PLANES DE VIGILANCIA, PREVENCIÓN Y CONTROL DE COVID-19 APLICADO EN CONSTRUCCIÓN", "image": "http://gicaingenieros.com/images/banners/rm239construccion-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/rm239construccion/rm239construccion.html", "active": true, "updated": false },
-        { "code": "RM239MINERIA", "title": "DISEÑO DE PLANES DE VIGILANCIA, PREVENCIÓN Y CONTROL DE COVID-19 APLICADO EN SUBSECTORES MINERÍA, HIDROCARBUROS Y ELECTRICIDAD", "image": "http://gicaingenieros.com/images/banners/rm239mineria-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/rm239mineria/rm239mineria.html", "active": true, "updated": false },
-        { "code": "RM239RESTAURANTE", "title": "DISEÑO DE PLANES DE VIGILANCIA, PREVENCIÓN Y CONTROL DE COVID-19 APLICADO EN RESTAURANTES", "image": "http://gicaingenieros.com/images/banners/rm239restaurantes-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/rm239restaurantes/rm239restaurantes.html", "active": true, "updated": false },
-        { "code": "RM239METALMECÁNICA", "title": "DISEÑO DE PLANES DE VIGILANCIA, PREVENCIÓN Y CONTROL DE COVID-19 APLICADO EN METALMECÁNICA", "image": "http://gicaingenieros.com/images/banners/rm239metalmecanica-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/rm239metalmecanica/rm239metalmecanica.html", "active": true, "updated": false },
-        { "code": "RM239PESCA", "title": "DISEÑO DE PLANES DE VIGILANCIA, PREVENCIÓN Y CONTROL DE COVID-19 APLICADO EN PESCA", "image": "http://gicaingenieros.com/images/banners/rm239pesca-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/rm239pesca/rm239pesca.html", "active": true, "updated": false },
-        { "code": "RM239TELECOMUNICACIONES", "title": "DISEÑO DE PLANES DE VIGILANCIA, PREVENCIÓN Y CONTROL DE COVID-19 APLICADO EN TELECOMUNICACIONES", "image": "http://gicaingenieros.com/images/banners/rm239telecomunicaciones-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/rm239telecomunicaciones/rm239telecomunicaciones.html", "active": true, "updated": false },
-        { "code": "RM239TRANSPORTE", "title": "DISEÑO DE PLANES DE VIGILANCIA, PREVENCIÓN Y CONTROL DE COVID-19 APLICADO EN TRANSPORTE", "image": "http://gicaingenieros.com/images/banners/rm239transporte-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/rm239transporte/rm239transporte.html", "active": true, "updated": false }
+      {
+        "code": "GSSC",
+        "title": "GERENCIA DE LA SEGURIDAD Y SALUD EN LA CONSTRUCCIÓN",
+        "image": "http://gicaingenieros.com/images/banners/gssc-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/gerencia-construccion/gssc.html",
+        "active": false,
+        "updated": true
+      },
+      {
+        "code": "GSSM",
+        "title": "GERENCIA DE LA SEGURIDAD Y SALUD EN MINERÍA",
+        "image": "http://gicaingenieros.com/images/banners/gssm-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/gerencia-mineria/gssm.html",
+        "active": false,
+        "updated": true
+      },
+      {
+        "code": "GMMP",
+        "title": "GESTIÓN DE MANTENIMIENTO EN MAQUINARIA PESADA",
+        "image": "http://gicaingenieros.com/images/banners/gmmp-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/gestion-mantenimiento-mp/gmmp.html",
+        "active": false,
+        "updated": true
+      },
+      {
+        "code": "ISGC",
+        "title": "IMPLEMENTACIÓN DE SISTEMAS DE GESTIÓN DE LA CALIDAD BAJO ISO 9001:2015",
+        "image": "http://gicaingenieros.com/images/banners/isgc-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/implemetacionSGC9001/isgc.html",
+        "active": false,
+        "updated": true
+      },
+      {
+        "code": "TMPM",
+        "title": "TECNOLOGÍA DE MAQUINARIA PESADA EN MINERÍA",
+        "image": "http://gicaingenieros.com/images/banners/tmpm-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/tecnologia-maquinaria/tmpm.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "FLS",
+        "title": "FISCALIZACIÓN LABORAL DE LA SUNAFIL",
+        "image": "http://gicaingenieros.com/images/banners/fls-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/fiscalizacion-laboral/fls.html",
+        "active": false,
+        "updated": true
+      },
+      {
+        "code": "IATEI",
+        "title": "INVESTIGACIÓN DE ACCIDENTES DE TRABAJO, ENFERMEDADES OCUPACIONALES E INCIDENTES",
+        "image": "http://gicaingenieros.com/images/banners/iatei-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/investigacion-accidentes/iatei.html",
+        "active": false,
+        "updated": true
+      },
+      {
+        "code": "ASGC9001",
+        "title": "FORMACIÓN DE AUDITOR LÍDER Y AUDITOR INTERNO SGC ISO 9001:2015",
+        "image": "http://gicaingenieros.com/images/banners/asgc9001-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/asgc9001/asgc9001.html",
+        "active": false,
+        "updated": true
+      },
+      {
+        "code": "SSOMA",
+        "title": "FORMACIÓN DE AUDITOR INTERNO SSOMA ISO 45001:2018 E 14001:2015",
+        "image": "http://gicaingenieros.com/images/banners/ssoma-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/ssoma/ssoma.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "SGA55",
+        "title": "SISTEMA DE GESTIÓN DE ACTIVOS ISO 55001:2014 – NORMATIVIDAD Y AUDITORÍA",
+        "image": "http://gicaingenieros.com/images/banners/sga55-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/sga55/sga55.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "IPERCCOVID19",
+        "title": "IPERC COVID19 CASOS DE APLICACIÓN",
+        "image": "http://gicaingenieros.com/images/banners/iperccovid19-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/iperccovid19/iperccovid19.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "GPMI",
+        "title": "GERENCIA DE PROYECTOS BASADO EN LA METODOLOGÍA DEL PMI",
+        "image": "http://gicaingenieros.com/images/banners/gpmi-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/gpmi/gpmi.html",
+        "active": false,
+        "updated": true
+      },
+      {
+        "code": "GREL",
+        "title": "GRUPOS ELECTRÓGENOS",
+        "image": "http://gicaingenieros.com/images/banners/grel-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/grel/grel.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "REMOTO",
+        "title": "TRABAJO REMOTO",
+        "image": "http://gicaingenieros.com/images/banners/remoto-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/remoto/remoto.html",
+        "active": false,
+        "updated": true
+      },
+      {
+        "code": "AGEMA9001",
+        "title": "AUDITORÍA DE LA GESTIÓN DE MANTENIMIENTO BAJO ISO 9001:2015",
+        "image": "http://gicaingenieros.com/images/banners/agema9001-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/agema9001/agema9001.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "RPS",
+        "title": "RIESGOS PSICOSOCIALES",
+        "image": "http://gicaingenieros.com/images/banners/rps-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/rps/rps.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "FLSCOVID",
+        "title": "INSPECCIÓN Y FISCALIZACIÓN DEL TRABAJO A CONSECUENCIA DE COVID-19",
+        "image": "http://gicaingenieros.com/images/banners/flscovid-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/flscovid/flscovid.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "RM448MINSA",
+        "title": "LINEAMIENTOS PARA LA VIGILANCIA DE LA SALUD DE LOS TRABAJADORES CON RIESGO DE EXPOSICIÓN A COVID-19",
+        "image": "http://gicaingenieros.com/images/banners/rm448minsa-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/rm448minsa/rm448minsa.html",
+        "active": true,
+        "updated": false
+      },
+      {
+        "code": "RM448CONSTRUCCION",
+        "title": "DISEÑO DE PLANES DE VIGILANCIA, PREVENCIÓN Y CONTROL DE COVID-19 APLICADO EN CONSTRUCCIÓN",
+        "image": "http://gicaingenieros.com/images/banners/rm448construccion-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/rm448construccion/rm448construccion.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "RM448MINERIA",
+        "title": "DISEÑO DE PLANES DE VIGILANCIA, PREVENCIÓN Y CONTROL DE COVID-19 APLICADO EN SUBSECTORES MINERÍA, HIDROCARBUROS Y ELECTRICIDAD",
+        "image": "http://gicaingenieros.com/images/banners/rm448mineria-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/rm448mineria/rm448mineria.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "RM448RESTAURANTE",
+        "title": "DISEÑO DE PLANES DE VIGILANCIA, PREVENCIÓN Y CONTROL DE COVID-19 APLICADO EN RESTAURANTES",
+        "image": "http://gicaingenieros.com/images/banners/rm448restaurantes-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/rm448restaurantes/rm448restaurantes.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "RM448PESCA",
+        "title": "DISEÑO DE PLANES DE VIGILANCIA, PREVENCIÓN Y CONTROL DE COVID-19 APLICADO EN PESCA",
+        "image": "http://gicaingenieros.com/images/banners/rm448pesca-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/rm448pesca/rm448pesca.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "RM448METALMECÁNICA",
+        "title": "DISEÑO DE PLANES DE VIGILANCIA, PREVENCIÓN Y CONTROL DE COVID-19 APLICADO EN METALMECÁNICA",
+        "image": "http://gicaingenieros.com/images/banners/rm448metalmecanica-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/rm448metalmecanica/rm448metalmecanica.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "RM448TRANSPORTE",
+        "title": "DISEÑO DE PLANES DE VIGILANCIA, PREVENCIÓN Y CONTROL DE COVID-19 APLICADO EN TRANSPORTE",
+        "image": "http://gicaingenieros.com/images/banners/rm448transporte-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/rm448transporte/rm448transporte.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "RM448TELECOMUNICACIONES",
+        "title": "DISEÑO DE PLANES DE VIGILANCIA, PREVENCIÓN Y CONTROL DE COVID-19 APLICADO EN TELECOMUNICACIONES",
+        "image": "http://gicaingenieros.com/images/banners/rm448telecomunicaciones-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/rm448telecomunicaciones/rm448telecomunicaciones.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "SSTSALUD",
+        "title": "GESTIÓN SST PARA PROFESIONALES DE LA SALUD FRENTE AL COVID-19",
+        "image": "http://gicaingenieros.com/images/banners/sstsalud-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/sstsalud/sstsalud.html",
+        "active": false,
+        "updated": true
+      },
+      {
+        "code": "EPPSALUD",
+        "title": "USO DE EQUIPOS DE PROTECCIÓN PERSONAL (EPP) PARA LOS TRABAJADORES DEL SERVICIO DE SALUD",
+        "image": "http://gicaingenieros.com/images/banners/eppsalud-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/eppsalud/eppsalud.html",
+        "active": false,
+        "updated": true
+      },
+      {
+        "code": "RM128IMPLEMENTACION",
+        "title": "DISEÑO DE PLANES DE VIGILANCIA, PREVENCIÓN Y CONTROL DE COVID-19 APLICADO EN SUBSECTORES MINERÍA, HIDROCARBUROS Y ELECTRICIDAD",
+        "image": "http://gicaingenieros.com/images/banners/rm128implementacion-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/rm128implementacion/rm128implementacion.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "IPBCOVID19",
+        "title": "IMPLEMENTACIÓN DE PROTOCOLOS BIOSEGURIDAD COVID-19",
+        "image": "http://gicaingenieros.com/images/banners/ipbcovid19-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/ipbcovid19/ipbcovid19.html",
+        "active": false,
+        "updated": true
+      },
+      {
+        "code": "RM972MINSA",
+        "title": "LINEAMIENTOS PARA LA VIGILANCIA DE LA SALUD DE LOS TRABAJADORES CON RIESGO DE EXPOSICIÓN A SARS-COV-2",
+        "image": "http://gicaingenieros.com/images/banners/rm972minsa-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/rm972minsa/rm972minsa.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "RM239CONSTRUCCION",
+        "title": "DISEÑO DE PLANES DE VIGILANCIA, PREVENCIÓN Y CONTROL DE COVID-19 APLICADO EN CONSTRUCCIÓN",
+        "image": "http://gicaingenieros.com/images/banners/rm239construccion-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/rm239construccion/rm239construccion.html",
+        "active": true,
+        "updated": false
+      },
+      {
+        "code": "RM239MINERIA",
+        "title": "DISEÑO DE PLANES DE VIGILANCIA, PREVENCIÓN Y CONTROL DE COVID-19 APLICADO EN SUBSECTORES MINERÍA, HIDROCARBUROS Y ELECTRICIDAD",
+        "image": "http://gicaingenieros.com/images/banners/rm239mineria-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/rm239mineria/rm239mineria.html",
+        "active": true,
+        "updated": false
+      },
+      {
+        "code": "RM239RESTAURANTE",
+        "title": "DISEÑO DE PLANES DE VIGILANCIA, PREVENCIÓN Y CONTROL DE COVID-19 APLICADO EN RESTAURANTES",
+        "image": "http://gicaingenieros.com/images/banners/rm239restaurantes-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/rm239restaurantes/rm239restaurantes.html",
+        "active": true,
+        "updated": false
+      },
+      {
+        "code": "RM239METALMECÁNICA",
+        "title": "DISEÑO DE PLANES DE VIGILANCIA, PREVENCIÓN Y CONTROL DE COVID-19 APLICADO EN METALMECÁNICA",
+        "image": "http://gicaingenieros.com/images/banners/rm239metalmecanica-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/rm239metalmecanica/rm239metalmecanica.html",
+        "active": true,
+        "updated": false
+      },
+      {
+        "code": "RM239PESCA",
+        "title": "DISEÑO DE PLANES DE VIGILANCIA, PREVENCIÓN Y CONTROL DE COVID-19 APLICADO EN PESCA",
+        "image": "http://gicaingenieros.com/images/banners/rm239pesca-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/rm239pesca/rm239pesca.html",
+        "active": true,
+        "updated": false
+      },
+      {
+        "code": "RM239TELECOMUNICACIONES",
+        "title": "DISEÑO DE PLANES DE VIGILANCIA, PREVENCIÓN Y CONTROL DE COVID-19 APLICADO EN TELECOMUNICACIONES",
+        "image": "http://gicaingenieros.com/images/banners/rm239telecomunicaciones-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/rm239telecomunicaciones/rm239telecomunicaciones.html",
+        "active": true,
+        "updated": false
+      },
+      {
+        "code": "RM239TRANSPORTE",
+        "title": "DISEÑO DE PLANES DE VIGILANCIA, PREVENCIÓN Y CONTROL DE COVID-19 APLICADO EN TRANSPORTE",
+        "image": "http://gicaingenieros.com/images/banners/rm239transporte-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/rm239transporte/rm239transporte.html",
+        "active": true,
+        "updated": false
+      }
     ],
     "2021": [
-        { "code": "IASST45001", "title": "IMPLEMENTACIÓN Y AUDITORÍA EN SEGURIDAD Y SALUD EN EL TRABAJO ISO 45001:2018", "image": "http://gicaingenieros.com/images/banners/iasst45-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/iasst45/iasst45.html", "active": false, "updated": true },
-        { "code": "PCGM", "title": "PLANIFICACIÓN Y CONTROL DE GESTIÓN DE MANTENIMIENTO", "image": "http://gicaingenieros.com/images/banners/pcgm-02.jpg", "url": "http://gicaingenieros.com/email/seguimiento/pcgm2/pcgm2.html", "active": true, "updated": true },
-        { "code": "IPERCLATAM", "title": "IDENTIFICACIÓN DE PELIGROS, EVALUACIÓN DE RIESGOS Y CONTROLES OPERACIONALES", "image": "http://gicaingenieros.com/images/banners/iperclatam-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/iperclatam/iperclatam.html", "active": true, "updated": true },
-        { "code": "CV-PHPV271", "title": "PERFORADORA HIDRÁULICA PV-271", "image": "http://gicaingenieros.com/images/banners/phpv271-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/phpv271/phpv271.html", "active": true, "updated": true },
-        { "code": "CV-MPCF966H", "title": "MANTENIMIENTO PREVENTIVO DEL CARGADOR FRONTAL CAT 966H", "image": "http://gicaingenieros.com/images/banners/mpcf966h-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/mpcf966h/mpcf966h.html", "active": true, "updated": true },
-        { "code": "CV-MPEH330D", "title": "MANTENIMIENTO PREVENTIVO DE LA EXCAVADORA HIDRÁULICA CAT 330D", "image": "http://gicaingenieros.com/images/banners/mpeh330d-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/mpeh330d/mpeh330d.html", "active": true, "updated": true },
-        { "code": "CV-MPRE420F", "title": "MANTENIMIENTO PREVENTIVO DE LA RETROEXCAVADORA CAT 420F", "image": "http://gicaingenieros.com/images/banners/mpre420f-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/mpre420f/mpre420f.html", "active": true, "updated": true },
-        { "code": "CV-MPTOD8T", "title": "MANTENIMIENTO PREVENTIVO DEL TRACTOR DE ORUGAS CAT D8T", "image": "http://gicaingenieros.com/images/banners/mptod8t-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/mptod8t/mptod8t.html", "active": true, "updated": true },
-        { "code": "DV-MPMP", "title": "MANTENIMIENTO PREVENTIVO DE MAQUINARIA PESADA", "image": "http://gicaingenieros.com/images/banners/mpmp-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/mpmp/mpmp.html", "active": true, "updated": true },
-        { "code": "CV-MPLHDR1600G", "title": "MANTENIMIENTO PREVENTIVO DEL CARGADOR DE BAJO PERFIL CAT R1600G", "image": "http://gicaingenieros.com/images/banners/mplhdr1600g-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/mplhdr1600g/mplhdr1600g.html", "active": true, "updated": true },
-        { "code": "CV-MOODLE", "title": "USO DE AULAS VIRTUALES EN MOODLE PARA DOCENTES", "image": "http://gicaingenieros.com/images/banners/moodle-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/moodle/moodle.html", "active": true, "updated": true },
-        { "code": "CV-KAHOOT", "title": "USO DE KAHOOT PARA DOCENTES", "image": "http://gicaingenieros.com/images/banners/kahoot-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/kahoot/kahoot.html", "active": true, "updated": true },
-        { "code": "CV-ZOOM", "title": "USO DE ZOOM PARA DOCENTES", "image": "http://gicaingenieros.com/images/banners/zoom-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/zoom/zoom.html", "active": true, "updated": true },
-        { "code": "CV-GOOGLE", "title": "HERRAMIENTAS DE GOOGLE PARA DOCENTES", "image": "http://gicaingenieros.com/images/banners/google-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/google/google.html", "active": true, "updated": true },
-        { "code": "CV-FWGFMAM", "title": "THE MAINTENANCE FRAMEWORK: GFMAM 2021", "image": "http://gicaingenieros.com/images/banners/fwgfmam-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/fwgfmam/fwgfmam.html", "active": true, "updated": true },
-        { "code": "DA321MINSA", "title": "DISPOSICIONES PARA LA VIGILANCIA DE LA SALUD DE LOS TRABAJADORES CON RIESGO DE EXPOSICIÓN A SARS-COV-2", "image": "http://gicaingenieros.com/images/banners/da321minsa-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/da321minsa/da321minsa.html", "active": true, "updated": true }
+      {
+        "code": "IASST45001",
+        "title": "IMPLEMENTACIÓN Y AUDITORÍA EN SEGURIDAD Y SALUD EN EL TRABAJO ISO 45001:2018",
+        "image": "http://gicaingenieros.com/images/banners/iasst45-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/iasst45/iasst45.html",
+        "active": false,
+        "updated": true
+      },
+      {
+        "code": "PCGM",
+        "title": "PLANIFICACIÓN Y CONTROL DE GESTIÓN DE MANTENIMIENTO",
+        "image": "http://gicaingenieros.com/images/banners/pcgm-02.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/pcgm2/pcgm2.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "IPERCLATAM",
+        "title": "IDENTIFICACIÓN DE PELIGROS, EVALUACIÓN DE RIESGOS Y CONTROLES OPERACIONALES",
+        "image": "http://gicaingenieros.com/images/banners/iperclatam-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/iperclatam/iperclatam.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "CV-PHPV271",
+        "title": "PERFORADORA HIDRÁULICA PV-271",
+        "image": "http://gicaingenieros.com/images/banners/phpv271-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/phpv271/phpv271.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "CV-MPCF966H",
+        "title": "MANTENIMIENTO PREVENTIVO DEL CARGADOR FRONTAL CAT 966H",
+        "image": "http://gicaingenieros.com/images/banners/mpcf966h-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/mpcf966h/mpcf966h.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "CV-MPEH330D",
+        "title": "MANTENIMIENTO PREVENTIVO DE LA EXCAVADORA HIDRÁULICA CAT 330D",
+        "image": "http://gicaingenieros.com/images/banners/mpeh330d-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/mpeh330d/mpeh330d.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "CV-MPRE420F",
+        "title": "MANTENIMIENTO PREVENTIVO DE LA RETROEXCAVADORA CAT 420F",
+        "image": "http://gicaingenieros.com/images/banners/mpre420f-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/mpre420f/mpre420f.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "CV-MPTOD8T",
+        "title": "MANTENIMIENTO PREVENTIVO DEL TRACTOR DE ORUGAS CAT D8T",
+        "image": "http://gicaingenieros.com/images/banners/mptod8t-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/mptod8t/mptod8t.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "DV-MPMP",
+        "title": "MANTENIMIENTO PREVENTIVO DE MAQUINARIA PESADA",
+        "image": "http://gicaingenieros.com/images/banners/mpmp-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/mpmp/mpmp.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "CV-MPLHDR1600G",
+        "title": "MANTENIMIENTO PREVENTIVO DEL CARGADOR DE BAJO PERFIL CAT R1600G",
+        "image": "http://gicaingenieros.com/images/banners/mplhdr1600g-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/mplhdr1600g/mplhdr1600g.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "CV-MOODLE",
+        "title": "USO DE AULAS VIRTUALES EN MOODLE PARA DOCENTES",
+        "image": "http://gicaingenieros.com/images/banners/moodle-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/moodle/moodle.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "CV-KAHOOT",
+        "title": "USO DE KAHOOT PARA DOCENTES",
+        "image": "http://gicaingenieros.com/images/banners/kahoot-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/kahoot/kahoot.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "CV-ZOOM",
+        "title": "USO DE ZOOM PARA DOCENTES",
+        "image": "http://gicaingenieros.com/images/banners/zoom-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/zoom/zoom.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "CV-GOOGLE",
+        "title": "HERRAMIENTAS DE GOOGLE PARA DOCENTES",
+        "image": "http://gicaingenieros.com/images/banners/google-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/google/google.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "CV-FWGFMAM",
+        "title": "THE MAINTENANCE FRAMEWORK: GFMAM 2021",
+        "image": "http://gicaingenieros.com/images/banners/fwgfmam-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/fwgfmam/fwgfmam.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "DA321MINSA",
+        "title": "DISPOSICIONES PARA LA VIGILANCIA DE LA SALUD DE LOS TRABAJADORES CON RIESGO DE EXPOSICIÓN A SARS-COV-2",
+        "image": "http://gicaingenieros.com/images/banners/da321minsa-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/da321minsa/da321minsa.html",
+        "active": true,
+        "updated": true
+      }
     ],
     "2022": [
-        { "code": "DV-SUPSSOMA", "title": "SUPERVISOR DE SEGURIDAD Y SALUD OCUPACIONAL Y MEDIO AMBIENTE - SSOMA", "image": "http://gicaingenieros.com/images/banners/supssoma-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/supssoma/supssoma.html", "active": true, "updated": true },
-        { "code": "DV-AUISSOMA", "title": "FORMACIÓN DE AUDITOR INTERNO SSOMA BAJO ISO 45001:2018 E ISO 14001:2015", "image": "http://gicaingenieros.com/images/banners/auissoma-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/auissoma/auissoma.html", "active": true, "updated": true },
-        { "code": "CV-APA7", "title": "NORMAS APA SÉPTIMA EDICIÓN", "image": "http://gicaingenieros.com/images/banners/apa7-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/apa7/apa7.html", "active": true, "updated": true },
-        { "code": "CV-EPPSELEC", "title": "EPPS PARA TRABAJO CON ELECTRICIDAD BAJO LA NORMA NFPA70E Y OSHA", "image": "http://gicaingenieros.com/images/banners/eppselec-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/eppselec/eppselec.html", "active": true, "updated": true },
-        { "code": "CV-TAR-IZAJE", "title": "SEGURIDAD EN IZAJE DE CARGAS CON GRÚAS MÓVILES BAJO LA NORMA OSHA 29 CFR 1910.180", "image": "http://gicaingenieros.com/images/banners/tar-izaje-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/tar-izaje/tar-izaje.html", "active": true, "updated": true },
-        { "code": "CV-ITPM", "title": "IMPLEMENTACIÓN DEL MANTENIMIENTO PRODUCTIVO TOTAL (TPM)", "image": "http://gicaingenieros.com/images/banners/itpm-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/itpm/itpm.html", "active": true, "updated": true },
-        { "code": "CV-ACREUNI", "title": "ESTÁNDARES DEL MODELO DE ACREDITACIÓN DE PROGRAMAS DE ESTUDIO PARA EDUCACIÓN SUPERIOR UNIVERSITARIA", "image": "http://gicaingenieros.com/images/banners/acreuni-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/acreuni/acreuni.html", "active": true, "updated": true },
-        { "code": "CV-VDI2221", "title": "DISEÑO MECÁNICO BAJO NORMA VDI 2221:2019", "image": "http://gicaingenieros.com/images/banners/vdi2221-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/vdi2221/vdi2221.html", "active": true, "updated": true },
-        { "code": "CV-TERMOGRAFIA", "title": "TERMOGRAFÍA BAJO REQUISITOS ISO 18436-7 NIVEL I", "image": "http://gicaingenieros.com/images/banners/termografia-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/termografia/termografia.html", "active": true, "updated": true }
+      {
+        "code": "DV-SUPSSOMA",
+        "title": "SUPERVISOR DE SEGURIDAD Y SALUD OCUPACIONAL Y MEDIO AMBIENTE - SSOMA",
+        "image": "http://gicaingenieros.com/images/banners/supssoma-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/supssoma/supssoma.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "DV-AUISSOMA",
+        "title": "FORMACIÓN DE AUDITOR INTERNO SSOMA BAJO ISO 45001:2018 E ISO 14001:2015",
+        "image": "http://gicaingenieros.com/images/banners/auissoma-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/auissoma/auissoma.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "CV-APA7",
+        "title": "NORMAS APA SÉPTIMA EDICIÓN",
+        "image": "http://gicaingenieros.com/images/banners/apa7-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/apa7/apa7.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "CV-EPPSELEC",
+        "title": "EPPS PARA TRABAJO CON ELECTRICIDAD BAJO LA NORMA NFPA70E Y OSHA",
+        "image": "http://gicaingenieros.com/images/banners/eppselec-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/eppselec/eppselec.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "CV-TAR-IZAJE",
+        "title": "SEGURIDAD EN IZAJE DE CARGAS CON GRÚAS MÓVILES BAJO LA NORMA OSHA 29 CFR 1910.180",
+        "image": "http://gicaingenieros.com/images/banners/tar-izaje-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/tar-izaje/tar-izaje.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "CV-ITPM",
+        "title": "IMPLEMENTACIÓN DEL MANTENIMIENTO PRODUCTIVO TOTAL (TPM)",
+        "image": "http://gicaingenieros.com/images/banners/itpm-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/itpm/itpm.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "CV-ACREUNI",
+        "title": "ESTÁNDARES DEL MODELO DE ACREDITACIÓN DE PROGRAMAS DE ESTUDIO PARA EDUCACIÓN SUPERIOR UNIVERSITARIA",
+        "image": "http://gicaingenieros.com/images/banners/acreuni-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/acreuni/acreuni.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "CV-VDI2221",
+        "title": "DISEÑO MECÁNICO BAJO NORMA VDI 2221:2019",
+        "image": "http://gicaingenieros.com/images/banners/vdi2221-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/vdi2221/vdi2221.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "CV-TERMOGRAFIA",
+        "title": "TERMOGRAFÍA BAJO REQUISITOS ISO 18436-7 NIVEL I",
+        "image": "http://gicaingenieros.com/images/banners/termografia-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/termografia/termografia.html",
+        "active": true,
+        "updated": true
+      }
     ]
+  }
 }

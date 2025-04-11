@@ -74,7 +74,7 @@ function gica_mostrar_programas($atts) {
         </div>
         <?php
     } else {
-        echo "<p>Error al leer los archivos JSON.</p>";
+        echo "<p>No hay programas disponibles.</p>";
     }
 
     return ob_get_clean();
