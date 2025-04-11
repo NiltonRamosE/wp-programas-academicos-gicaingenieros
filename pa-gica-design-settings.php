@@ -100,6 +100,8 @@ class GICA_Design_Settings {
         add_action('wp_enqueue_scripts', array($this, 'generate_dynamic_css_filters'), 100);
         add_action('wp_enqueue_scripts', array($this, 'generate_dynamic_css_cards'), 100);
         add_action('wp_enqueue_scripts', array($this, 'generate_dynamic_css_pagination'), 100);
+        add_action('admin_post_export_design_settings', array($this, 'export_design_settings'));
+        add_action('admin_post_import_design_settings', array($this, 'import_design_settings'));
     }
 
     public function register_settings_page() {
@@ -152,68 +154,30 @@ class GICA_Design_Settings {
         $design_pagination = get_option('gica_design_pagination', array());
         $design_pagination = wp_parse_args($design_pagination, $this->default_design_pagination);
 
-        $last_updated = date('d/m/Y H:i');
+        $title_gica = "Personalización del Diseño GicaIngenieros";
+        $redirect_page = 'admin.php?page=gica-dashboard';
+        $redirect_page_name = "Ir al Dashboard";
+        $third_option_redirect_page = 'admin-post.php?action=export_design_settings';
+        $third_option_name = "Exportar Diseño";
+        $fourth_option_name_design_settings = "Cargar JSON de diseño";
         ?>
-        <div class="wrap gica-design-settings">
-            <header class="gica-design-settings__header">
-                <div class="gica-design-settings__header-img-container">
-                    <img src="https://www.gicaingenieros.com/email/images/img-gica-2.jpg" alt="GICA Ingenieros" class="gica-design-settings__header-img">
-                </div>
-                <div class="gica-design-settings__header-content">
-                    <div>
-                        <h1 class="gica-design-settings__title">
-                            Programas Académicos
-                        </h1>
-                        <p class="gica-design-settings__subtitle">Personalización de Shortcode GicaIngenieros</p>
-                    </div>
-                    <div class="gica-design-settings__header-badge">
-                        <span class="gica-design-settings__update"> v<?php echo GICA_PLUGIN_VERSION; ?> • <?php echo $last_updated; ?></span>
-                    </div>
-                </div>
-                <div class="gica-design-settings__header-line"></div>
-            </header>
+        <div class="wrap gica-academic-program">
+            <?php include plugin_dir_path(__FILE__) . 'partials/pa-gica-header.php'; ?>
 
-            <div class="gica-design-settings__grid">
-                <?php include plugin_dir_path(__FILE__) . 'partials/design-settings/form-main-title.php'; ?>
-            </div>
-            
-            <div class="gica-design-settings__grid">
-                <?php include plugin_dir_path(__FILE__) . 'partials/design-settings/form-navbar.php'; ?>
-            </div>
 
-            <div class="gica-design-settings__grid">
-                <?php include plugin_dir_path(__FILE__) . 'partials/design-settings/form-filters.php'; ?>
-            </div>
+            <?php include plugin_dir_path(__FILE__) . 'partials/design-settings/form-main-title.php'; ?>
 
-            <div class="gica-design-settings__grid">
-                <?php include plugin_dir_path(__FILE__) . 'partials/design-settings/form-cards.php'; ?>
-            </div>
+            <?php include plugin_dir_path(__FILE__) . 'partials/design-settings/form-navbar.php'; ?>
 
-            <div class="gica-design-settings__grid">
-                <?php include plugin_dir_path(__FILE__) . 'partials/design-settings/form-pagination.php'; ?>
-            </div>
+            <?php include plugin_dir_path(__FILE__) . 'partials/design-settings/form-filters.php'; ?>
 
-            <section class="gica-design-settings__card gica-design-settings__card--actions">
-                <h2 class="gica-design-settings__card-title">Acciones Rápidas</h2>
-                <div class="gica-design-settings__action-buttons">
-                    <a href="<?php echo admin_url('admin.php?page=gica-dashboard'); ?>" class="gica-design-settings__action-btn gica-design-settings__action-btn--primary">
-                        Ir al Dashboard
-                    </a>
-                    <button class="gica-design-settings__action-btn gica-design-settings__action-btn--secondary">
-                        Ver Documentación
-                    </button>
-                    <button class="gica-design-settings__action-btn gica-design-settings__action-btn--secondary">
-                        Exportar Datos
-                    </button>
-                </div>
-            </section>
+            <?php include plugin_dir_path(__FILE__) . 'partials/design-settings/form-cards.php'; ?>
 
-            <footer class="gica-design-settings__footer">
-                <div class="gica-design-settings__footer-content">
-                    <p class="gica-design-settings__footer-text">Plugin desarrollado por <a href="https://niltonramosencarnacion.vercel.app/" target="_blank">Nilton Ramos Encarnacion</a></p>
-                    <p class="gica-design-settings__version">Versión <?php echo GICA_PLUGIN_VERSION; ?> | Licencia GPL2</p>
-                </div>
-            </footer>
+            <?php include plugin_dir_path(__FILE__) . 'partials/design-settings/form-pagination.php'; ?>
+
+            <?php include plugin_dir_path(__FILE__) . 'partials/pa-gica-actions.php'; ?>
+
+            <?php include plugin_dir_path(__FILE__) . 'partials/pa-gica-footer.php'; ?>
         </div>
         <?php
     }
@@ -384,6 +348,90 @@ class GICA_Design_Settings {
         wp_register_style('gica-dynamic-css_pagination', false);
         wp_enqueue_style('gica-dynamic-css_pagination');
         wp_add_inline_style('gica-dynamic-css_pagination', $css);
+    }
+
+    function export_design_settings() {
+
+        $design_title = get_option('gica_design_title', array());
+        $design_title = wp_parse_args($design_title, $this->default_design_title);
+
+        $design_navbar = get_option('gica_design_navbar', array());
+        $design_navbar = wp_parse_args($design_navbar, $this->default_design_navbar);
+
+        $design_filters = get_option('gica_design_filters', array());
+        $design_filters = wp_parse_args($design_filters, $this->default_design_filters);
+
+        $design_cards = get_option('gica_design_cards', array());
+        $design_cards = wp_parse_args($design_cards, $this->default_design_cards);
+
+        $design_pagination = get_option('gica_design_pagination', array());
+        $design_pagination = wp_parse_args($design_pagination, $this->default_design_pagination);
+
+        $design_settings = array(
+            'title' => $design_title,
+            'navbar' => $design_navbar,
+            'filters' => $design_filters,
+            'cards' => $design_cards,
+            'pagination' => $design_pagination,
+        );
+
+        $json_data = json_encode($design_settings, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+
+        header('Content-Type: application/json');
+        header('Content-Disposition: attachment; filename="design-settings.json"');
+        header('Content-Length: ' . strlen($json_data));
+
+        echo $json_data;
+        exit;
+    }
+
+    function import_design_settings() {
+        if (!current_user_can('manage_options')) {
+            wp_die('No tienes permisos suficientes.');
+        }
+
+        check_admin_referer('import_design_settings_nonce');
+
+    
+        if (isset($_FILES['design_settings_file']) && $_FILES['design_settings_file']['error'] == UPLOAD_ERR_OK) {
+            $file = $_FILES['design_settings_file'];
+            
+            if ($file['type'] == 'application/json') {
+                $json_data = file_get_contents($file['tmp_name']);
+                
+                $design_settings = json_decode($json_data, true);
+    
+                if (is_array($design_settings)) {
+                    if (isset($design_settings['title'])) {
+                        update_option('gica_design_title', $design_settings['title']);
+                    }
+                    if (isset($design_settings['navbar'])) {
+                        update_option('gica_design_navbar', $design_settings['navbar']);
+                    }
+                    if (isset($design_settings['filters'])) {
+                        update_option('gica_design_filters', $design_settings['filters']);
+                    }
+                    if (isset($design_settings['cards'])) {
+                        update_option('gica_design_cards', $design_settings['cards']);
+                    }
+                    if (isset($design_settings['pagination'])) {
+                        update_option('gica_design_pagination', $design_settings['pagination']);
+                    }
+    
+                    wp_redirect(add_query_arg('import_status', 'success', wp_get_referer()));
+                    exit;
+                } else {
+                    wp_redirect(add_query_arg('import_status', 'error', wp_get_referer()));
+                    exit;
+                }
+            } else {
+                wp_redirect(add_query_arg('import_status', 'invalid_file', wp_get_referer()));
+                exit;
+            }
+        } else {
+            wp_redirect(add_query_arg('import_status', 'upload_error', wp_get_referer()));
+            exit;
+        }
     }
 }
 

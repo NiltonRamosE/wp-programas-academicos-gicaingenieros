@@ -1,36 +1,248 @@
 {
+  "seminarios-presenciales": {
     "2019": [
-        { "code": "S-CSO-T", "title": "COMPONENTES DE SISTEMAS OLEOHIDRÁULICOS", "image": "http://gicaingenieros.com/images/banners/scsotrujillo-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-cso-trujillo.html", "active": true, "updated": true },
-        { "code": "S - PCGM - T", "title": "PLANIFICACIÓN Y CONTROL DE GESTIÓN DE MANTENIMIENTO", "image": "http://gicaingenieros.com/images/banners/spcgmtrujillo-01-enero19.jpg", "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-pcgm-trujillo.html", "active": true, "updated": true },
-        { "code": "SCM - T", "title": "CAMIÓN MINERO 793F", "image": "http://gicaingenieros.com/images/banners/scmtrujillo-01-febrero19.jpg", "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-cm-trujillo.html", "active": true, "updated": true },
-        { "code": "SHDE - T", "title": "HERRAMIENTA DE DIAGNÓSTICO ELECTRÓNICO EN MAQUINARIA PESADA", "image": "http://gicaingenieros.com/images/banners/shdetrujillo-01-marzo19.jpg", "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-hde-trujillo.html", "active": true, "updated": true },
-        { "code": "SLIPO", "title": "LECTURA E INTERPRETACIÓN DE PLANOS OLEOHIDRÁULICOS", "image": "http://gicaingenieros.com/images/banners/slipotrujillo-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-lipo-trujillo.html", "active": true, "updated": true },
-        { "code": "SHDE - T", "title": "HERRAMIENTA DE DIAGNÓSTICO ELECTRÓNICO EN MAQUINARIA PESADA", "image": "http://gicaingenieros.com/images/banners/shdetrujillo-01-abril19.jpg", "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-hde-trujillo.html", "active": true, "updated": true },
-        { "code": "ST - GPC - C", "title": "GERENCIA, PRODUCTIVIDAD Y COSTO HORARIO EN MAQUINARIA PESADA (COLOMBIA)", "image": "http://gicaingenieros.com/images/banners/stgpc-colombia-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-gpc-colombia.html", "active": true, "updated": true },
-        { "code": "SMEPM - E", "title": "METODOLOGÍA PARA LA ELABORACIÓN DE PLANES DE MANTENIMIENTO (ECUADOR)", "image": "http://gicaingenieros.com/images/banners/smepm-ecuador-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-mepm-ecuador.html", "active": true, "updated": true },
-        { "code": "LIPO-S2", "title": "LECTURA E INTERPRETACIÓN DE PLANOS OLEOHIDRÁULICOS DE LA EXCAVADORA HIDRAULICA CAT 374D", "image": "http://gicaingenieros.com/images/banners/slipoehctrujillo-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-lipoehc-trujillo.html", "active": true, "updated": true },
-        { "code": "IRAL", "title": "INTERPRETACIÓN DE REPORTES DE ANÁLISIS DE LUBRICANTES EN MAQUINARIA PESADA", "image": "http://gicaingenieros.com/images/banners/siraltrujillo.jpg", "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-iral-trujillo.html", "active": true, "updated": true },
-        { "code": "S - PCGM - T", "title": "PLANIFICACIÓN Y CONTROL DE GESTIÓN DE MANTENIMIENTO", "image": "http://gicaingenieros.com/images/banners/spcgmtrujillo-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-pcgm-trujillo.html", "active": true, "updated": true },
-        { "code": "SHDE - T", "title": "HERRAMIENTA DE DIAGNÓSTICO ELECTRÓNICO EN MAQUINARIA PESADA", "image": "http://gicaingenieros.com/images/banners/shdetrujillo-01-junio19.jpg", "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-hde-trujillo.html", "active": true, "updated": true },
-        { "code": "SCM - T", "title": "CAMIÓN MINERO 793F", "image": "http://gicaingenieros.com/images/banners/scmtrujillo-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-cm-trujillo.html", "active": true, "updated": true },
-        { "code": "SHDE - T", "title": "HERRAMIENTA DE DIAGNÓSTICO ELECTRÓNICO EN MAQUINARIA PESADA", "image": "http://gicaingenieros.com/images/banners/shdetrujillo-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-hde-trujillo.html", "active": true, "updated": true },
-        { "code": "SPCGM - L", "title": "PLANIFICACIÓN Y CONTROL DE GESTIÓN DE MANTENIMIENTO", "image": "http://gicaingenieros.com/images/banners/spcgm-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-pcgm.html", "active": true, "updated": true },
-        { "code": "LIPO - EHH - T", "title": "LECTURA E INTERPRETACIÓN DEL PLANO OLEOHIDRÁULICO DE LA EXCAVADORA HIDRÁULICA HITACHI EX5500 PARA MINERÍA", "image": "http://gicaingenieros.com/images/banners/slipoehhtrujillo-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-lipoehh-trujillo.html", "active": true, "updated": true },
-        { "code": "GEM - L", "title": "GESTIÓN DE EQUIPOS Y MAQUINARIAS", "image": "http://gicaingenieros.com/images/banners/sgemlima-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-gem-lima.html", "active": true, "updated": true },
-        { "code": "SLIPO", "title": "LECTURA E INTERPRETACIÓN DE PLANOS OLEOHIDRÁULICOS", "image": "http://gicaingenieros.com/images/banners/slipotrujillo-02.jpg", "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-lipo-trujillo.html", "active": true, "updated": true },
-        { "code": "SHDE - T", "title": "HERRAMIENTA DE DIAGNÓSTICO ELECTRÓNICO EN MAQUINARIA PESADA", "image": "http://gicaingenieros.com/images/banners/shdetrujillo-17-agosto19.jpg.jpg", "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-hde-trujillo.html", "active": true, "updated": true },
-        { "code": "SSGC - L", "title": "IMPLEMENTACIÓN DE UN SISTEMA DE GESTIÓN DE LA CALIDAD BAJO ISO 9001:2015", "image": "http://gicaingenieros.com/images/banners/ssgclima-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-sgc.html", "active": true, "updated": true },
-        { "code": "GEMA - T", "title": "GESTIÓN ESTRATÉGICA DE MANTENIMIENTO AVANZADO", "image": "http://gicaingenieros.com/images/banners/banner-gema-trujillo.jpg", "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-gema-trujillo.html", "active": true, "updated": true },
-        { "code": "GEMA - L", "title": "GESTIÓN ESTRATÉGICA DE MANTENIMIENTO AVANZADO", "image": "http://gicaingenieros.com/images/banners/banner-sgema-lima.jpg", "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-gema-lima.html", "active": true, "updated": true },
-        { "code": "GEM - B", "title": "GESTIÓN DE EQUIPOS Y MAQUINARIAS", "image": "http://gicaingenieros.com/images/banners/sgembolivia-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-gem-bolivia.html", "active": true, "updated": true },
-        { "code": "SISGC9001", "title": "IMPLEMENTACIÓN DE SISTEMA DE GESTIÓN DE CALIDAD BAJO ISO 9001:2015", "image": "http://gicaingenieros.com/images/banners/banner-sgc-trujillo.jpg", "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-sgc-trujillo.html", "active": true, "updated": true },
-        { "code": "MPGM - T", "title": "MAQUINARIA PESADA PARA GRAN MINERIA", "image": "http://gicaingenieros.com/images/banners/banner-smpgm-trujillo.jpg", "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-mpgm-trujillo.html", "active": true, "updated": true },
-        { "code": "SLIPE966H", "title": "LECTURA E INTERPRETACIÓN DEL PLANO ELÉCTRICO DEL CARGADOR FRONTAL CAT 966H", "image": "http://gicaingenieros.com/images/banners/slipecfctrujillo-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-lipecfc-trujillo.html", "active": true, "updated": true },
-        { "code": "SLIPO966H", "title": "LECTURA E INTERPRETACIÓN DEL PLANO OLEOHIDRÁULICO DEL CARGADOR FRONTAL CAT 966H", "image": "http://gicaingenieros.com/images/banners/slipocfctrujillo-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-lipocfc-trujillo.html", "active": true, "updated": true },
-        { "code": "SHDE - T", "title": "HERRAMIENTA DE DIAGNÓSTICO ELECTRÓNICO EN MAQUINARIA PESADA", "image": "http://gicaingenieros.com/images/banners/shdetrujillo-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-hde-trujillo.html", "active": true, "updated": true },
-        { "code": "SHDE - T", "title": "HERRAMIENTA DE DIAGNÓSTICO ELECTRÓNICO EN MAQUINARIA PESADA", "image": "http://gicaingenieros.com/images/banners/shdetrujillo-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-hde-trujillo.html", "active": true, "updated": true }
+      {
+        "code": "S-CSO-T",
+        "title": "COMPONENTES DE SISTEMAS OLEOHIDRÁULICOS",
+        "image": "http://gicaingenieros.com/images/banners/scsotrujillo-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-cso-trujillo.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "S - PCGM - T",
+        "title": "PLANIFICACIÓN Y CONTROL DE GESTIÓN DE MANTENIMIENTO",
+        "image": "http://gicaingenieros.com/images/banners/spcgmtrujillo-01-enero19.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-pcgm-trujillo.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "SCM - T",
+        "title": "CAMIÓN MINERO 793F",
+        "image": "http://gicaingenieros.com/images/banners/scmtrujillo-01-febrero19.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-cm-trujillo.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "SHDE - T",
+        "title": "HERRAMIENTA DE DIAGNÓSTICO ELECTRÓNICO EN MAQUINARIA PESADA",
+        "image": "http://gicaingenieros.com/images/banners/shdetrujillo-01-marzo19.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-hde-trujillo.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "SLIPO",
+        "title": "LECTURA E INTERPRETACIÓN DE PLANOS OLEOHIDRÁULICOS",
+        "image": "http://gicaingenieros.com/images/banners/slipotrujillo-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-lipo-trujillo.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "SHDE - T",
+        "title": "HERRAMIENTA DE DIAGNÓSTICO ELECTRÓNICO EN MAQUINARIA PESADA",
+        "image": "http://gicaingenieros.com/images/banners/shdetrujillo-01-abril19.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-hde-trujillo.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "ST - GPC - C",
+        "title": "GERENCIA, PRODUCTIVIDAD Y COSTO HORARIO EN MAQUINARIA PESADA (COLOMBIA)",
+        "image": "http://gicaingenieros.com/images/banners/stgpc-colombia-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-gpc-colombia.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "SMEPM - E",
+        "title": "METODOLOGÍA PARA LA ELABORACIÓN DE PLANES DE MANTENIMIENTO (ECUADOR)",
+        "image": "http://gicaingenieros.com/images/banners/smepm-ecuador-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-mepm-ecuador.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "LIPO-S2",
+        "title": "LECTURA E INTERPRETACIÓN DE PLANOS OLEOHIDRÁULICOS DE LA EXCAVADORA HIDRAULICA CAT 374D",
+        "image": "http://gicaingenieros.com/images/banners/slipoehctrujillo-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-lipoehc-trujillo.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "IRAL",
+        "title": "INTERPRETACIÓN DE REPORTES DE ANÁLISIS DE LUBRICANTES EN MAQUINARIA PESADA",
+        "image": "http://gicaingenieros.com/images/banners/siraltrujillo.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-iral-trujillo.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "S - PCGM - T",
+        "title": "PLANIFICACIÓN Y CONTROL DE GESTIÓN DE MANTENIMIENTO",
+        "image": "http://gicaingenieros.com/images/banners/spcgmtrujillo-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-pcgm-trujillo.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "SHDE - T",
+        "title": "HERRAMIENTA DE DIAGNÓSTICO ELECTRÓNICO EN MAQUINARIA PESADA",
+        "image": "http://gicaingenieros.com/images/banners/shdetrujillo-01-junio19.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-hde-trujillo.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "SCM - T",
+        "title": "CAMIÓN MINERO 793F",
+        "image": "http://gicaingenieros.com/images/banners/scmtrujillo-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-cm-trujillo.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "SHDE - T",
+        "title": "HERRAMIENTA DE DIAGNÓSTICO ELECTRÓNICO EN MAQUINARIA PESADA",
+        "image": "http://gicaingenieros.com/images/banners/shdetrujillo-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-hde-trujillo.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "SPCGM - L",
+        "title": "PLANIFICACIÓN Y CONTROL DE GESTIÓN DE MANTENIMIENTO",
+        "image": "http://gicaingenieros.com/images/banners/spcgm-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-pcgm.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "LIPO - EHH - T",
+        "title": "LECTURA E INTERPRETACIÓN DEL PLANO OLEOHIDRÁULICO DE LA EXCAVADORA HIDRÁULICA HITACHI EX5500 PARA MINERÍA",
+        "image": "http://gicaingenieros.com/images/banners/slipoehhtrujillo-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-lipoehh-trujillo.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "GEM - L",
+        "title": "GESTIÓN DE EQUIPOS Y MAQUINARIAS",
+        "image": "http://gicaingenieros.com/images/banners/sgemlima-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-gem-lima.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "SLIPO",
+        "title": "LECTURA E INTERPRETACIÓN DE PLANOS OLEOHIDRÁULICOS",
+        "image": "http://gicaingenieros.com/images/banners/slipotrujillo-02.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-lipo-trujillo.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "SHDE - T",
+        "title": "HERRAMIENTA DE DIAGNÓSTICO ELECTRÓNICO EN MAQUINARIA PESADA",
+        "image": "http://gicaingenieros.com/images/banners/shdetrujillo-17-agosto19.jpg.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-hde-trujillo.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "SSGC - L",
+        "title": "IMPLEMENTACIÓN DE UN SISTEMA DE GESTIÓN DE LA CALIDAD BAJO ISO 9001:2015",
+        "image": "http://gicaingenieros.com/images/banners/ssgclima-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-sgc.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "GEMA - T",
+        "title": "GESTIÓN ESTRATÉGICA DE MANTENIMIENTO AVANZADO",
+        "image": "http://gicaingenieros.com/images/banners/banner-gema-trujillo.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-gema-trujillo.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "GEMA - L",
+        "title": "GESTIÓN ESTRATÉGICA DE MANTENIMIENTO AVANZADO",
+        "image": "http://gicaingenieros.com/images/banners/banner-sgema-lima.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-gema-lima.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "GEM - B",
+        "title": "GESTIÓN DE EQUIPOS Y MAQUINARIAS",
+        "image": "http://gicaingenieros.com/images/banners/sgembolivia-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-gem-bolivia.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "SISGC9001",
+        "title": "IMPLEMENTACIÓN DE SISTEMA DE GESTIÓN DE CALIDAD BAJO ISO 9001:2015",
+        "image": "http://gicaingenieros.com/images/banners/banner-sgc-trujillo.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-sgc-trujillo.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "MPGM - T",
+        "title": "MAQUINARIA PESADA PARA GRAN MINERIA",
+        "image": "http://gicaingenieros.com/images/banners/banner-smpgm-trujillo.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-mpgm-trujillo.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "SLIPE966H",
+        "title": "LECTURA E INTERPRETACIÓN DEL PLANO ELÉCTRICO DEL CARGADOR FRONTAL CAT 966H",
+        "image": "http://gicaingenieros.com/images/banners/slipecfctrujillo-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-lipecfc-trujillo.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "SLIPO966H",
+        "title": "LECTURA E INTERPRETACIÓN DEL PLANO OLEOHIDRÁULICO DEL CARGADOR FRONTAL CAT 966H",
+        "image": "http://gicaingenieros.com/images/banners/slipocfctrujillo-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-lipocfc-trujillo.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "SHDE - T",
+        "title": "HERRAMIENTA DE DIAGNÓSTICO ELECTRÓNICO EN MAQUINARIA PESADA",
+        "image": "http://gicaingenieros.com/images/banners/shdetrujillo-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-hde-trujillo.html",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "SHDE - T",
+        "title": "HERRAMIENTA DE DIAGNÓSTICO ELECTRÓNICO EN MAQUINARIA PESADA",
+        "image": "http://gicaingenieros.com/images/banners/shdetrujillo-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-hde-trujillo.html",
+        "active": true,
+        "updated": true
+      }
     ],
     "2020": [
-        { "code": "S - PCGM - T", "title": "PLANIFICACIÓN Y CONTROL DE GESTIÓN DE MANTENIMIENTO", "image": "http://gicaingenieros.com/images/banners/spcgmtrujillo-01.jpg", "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-pcgm-trujillo.html", "active": true, "updated": true }
+      {
+        "code": "S - PCGM - T",
+        "title": "PLANIFICACIÓN Y CONTROL DE GESTIÓN DE MANTENIMIENTO",
+        "image": "http://gicaingenieros.com/images/banners/spcgmtrujillo-01.jpg",
+        "url": "http://gicaingenieros.com/email/seguimiento/seminarios/seminario-pcgm-trujillo.html",
+        "active": true,
+        "updated": true
+      }
     ]
+  }
 }

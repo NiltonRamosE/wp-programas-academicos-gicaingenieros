@@ -1,9 +1,46 @@
 {
+  "promociones": {
     "2022": [
-        { "code": "", "title": "¡DÍA MUNDIAL SEGURIDAD Y SALUD EN EL TRABAJO!", "image": "http://gicaingenieros.com/promosst/img/promosst-01.jpg", "url": "http://gicaingenieros.com/promosst", "active": true, "updated": true },
-        { "code": "", "title": "¡PROMOS MAYO 2022!", "image": "http://gicaingenieros.com/promomayo/img/promomayo-01.jpg", "url": "http://gicaingenieros.com/promomayo", "active": true, "updated": true },
-        { "code": "", "title": "¡COMBOS PROMO JUNIO!", "image": "http://gicaingenieros.com/promojunio/img/promojunio-01.jpg", "url": "http://gicaingenieros.com/promojunio", "active": true, "updated": true },
-        { "code": "", "title": "¡PROMOS POR ANIVERSARIO PERÚ 28 Y 29 DE JULIO 2022!", "image": "http://gicaingenieros.com/promopatrio/img/promopatrio-01.jpg", "url": "http://gicaingenieros.com/promopatrio", "active": true, "updated": true },
-        { "code": "", "title": "¡PROMOS AGOSTO 2022!", "image": "http://gicaingenieros.com/promoagosto/img/promoagosto-01.jpg", "url": "http://gicaingenieros.com/promoagosto", "active": true, "updated": true }
+      {
+        "code": "",
+        "title": "¡DÍA MUNDIAL SEGURIDAD Y SALUD EN EL TRABAJO!",
+        "image": "http://gicaingenieros.com/promosst/img/promosst-01.jpg",
+        "url": "http://gicaingenieros.com/promosst",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "",
+        "title": "¡PROMOS MAYO 2022!",
+        "image": "http://gicaingenieros.com/promomayo/img/promomayo-01.jpg",
+        "url": "http://gicaingenieros.com/promomayo",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "",
+        "title": "¡COMBOS PROMO JUNIO!",
+        "image": "http://gicaingenieros.com/promojunio/img/promojunio-01.jpg",
+        "url": "http://gicaingenieros.com/promojunio",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "",
+        "title": "¡PROMOS POR ANIVERSARIO PERÚ 28 Y 29 DE JULIO 2022!",
+        "image": "http://gicaingenieros.com/promopatrio/img/promopatrio-01.jpg",
+        "url": "http://gicaingenieros.com/promopatrio",
+        "active": true,
+        "updated": true
+      },
+      {
+        "code": "",
+        "title": "¡PROMOS AGOSTO 2022!",
+        "image": "http://gicaingenieros.com/promoagosto/img/promoagosto-01.jpg",
+        "url": "http://gicaingenieros.com/promoagosto",
+        "active": true,
+        "updated": true
+      }
     ]
+  }
 }

@@ -1,5 +1,5 @@
-<section class="gica-design-settings__card">
-    <h2 class="gica-design-settings__card-title">Cards</h2>
+<section class="gica-academic-program__card">
+    <h2 class="gica-academic-program__card-title">Cards</h2>
 
     <form method="post" action="options.php" class="cards__form">
         <?php settings_fields('gica_design_cards_options'); ?>

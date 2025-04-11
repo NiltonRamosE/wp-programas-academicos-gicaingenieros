@@ -1,5 +1,5 @@
-<section class="gica-design-settings__card">
-    <h2 class="gica-design-settings__card-title">Filtros</h2>
+<section class="gica-academic-program__card">
+    <h2 class="gica-academic-program__card-title">Filtros</h2>
 
     <form method="post" action="options.php" class="filters__form">
         <?php settings_fields('gica_design_filters_options'); ?>

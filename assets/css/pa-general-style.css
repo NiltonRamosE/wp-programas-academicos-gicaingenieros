@@ -1,0 +1,288 @@
+/*-----------------------------------------------------------------------------------
+
+    Version: 1.1.0
+
+-----------------------------------------------------------------------------------
+    
+    CSS PLUGIN DASHBOARD PROGRAMAS ACADÉMICOS
+    =========================================
+	
+    00. Variables
+    01. Header
+    02. Layout
+    03. Actions Section
+    04. Footer
+-----------------------------------------------------------------------------------*/
+
+/*----------------------------------------*/
+/*  00. Variables
+/*----------------------------------------*/
+:root {
+  /*-- General --*/
+  --primary-color: #092f58;
+  --secondary-color: #f9c127;
+  --tertiary-color: #63a3fa;
+  --quaternary-color: #7f8c8d;
+
+  --bg-color: white;
+  --btn-secondary-color: #dd8d02;
+  --border-container: rgba(0, 0, 0, 0.1);
+  --container-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/*----------------------------------------*/
+/*  01. Header
+/*----------------------------------------*/
+
+/*-- Common Style --*/
+
+.gica-academic-program {
+  font-family: "Montserrat", monospace;
+
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.gica-academic-program__header {
+  margin-bottom: 3rem;
+  padding: 0 0 1.5rem 0;
+  position: relative;
+}
+
+/*-- Image --*/
+
+.gica-academic-program__header-img-container {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px 8px 0 0;
+  max-height: 180px;
+}
+
+.gica-academic-program__header-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+/*-- Content --*/
+
+.gica-academic-program__header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1.5rem;
+}
+
+.gica-academic-program__title {
+  font-size: 2.5rem;
+  margin: 0;
+  line-height: 1.2;
+  color: var(--primary-color);
+  letter-spacing: -0.5px;
+}
+
+.gica-academic-program__subtitle {
+  font-size: 1.1rem;
+  margin: 0.5rem 0 0 0;
+  color: var(--quaternary-color);
+}
+
+.gica-academic-program__header-badge {
+  background: var(--bg-color);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  box-shadow: var(--container-shadow);
+  border: 1px solid var(--border-container);
+}
+
+.gica-academic-program__update {
+  font-size: 0.85rem;
+  color: var(--quaternary-color);
+  font-family: "Courier New", monospace;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.gica-academic-program__update::before {
+  content: "↻";
+  font-size: 1rem;
+  color: var(--secondary-color);
+}
+
+.gica-academic-program__header-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--border-container);
+}
+
+/*-- Transition Hover Style --*/
+
+.gica-academic-program__header-badge {
+  transition: all 0.3s ease;
+}
+
+.gica-academic-program__header-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/*-- 
+      - Media Queries
+  -----------------------------------------*/
+@media (max-width: 768px) {
+  .gica-academic-program__header-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .gica-academic-program__title {
+    font-size: 2rem;
+  }
+
+  .gica-academic-program__header-badge {
+    align-self: flex-end;
+  }
+}
+
+/*----------------------------------------*/
+/*  02. Layout
+/*----------------------------------------*/
+
+/*-- Cards General--*/
+
+.gica-academic-program__card {
+  background: var(--bg-color);
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gica-academic-program__card-title {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  color: var(--primary-color);
+  border-bottom: 1px solid var(--border-container);
+  padding-bottom: 0.75rem;
+}
+
+/*----------------------------------------*/
+/*  03. Actions Section
+/*----------------------------------------*/
+
+.gica-academic-program__action-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.gica-academic-program__action-btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.gica-academic-program__action-btn--primary {
+  background: var(--secondary-color);
+  color: var(--bg-color);
+}
+
+.gica-academic-program__action-btn--primary:hover {
+  background: var(--btn-secondary-color);
+  transform: translateY(-2px);
+}
+
+.gica-academic-program__action-btn--secondary {
+  background: var(--bg-color);
+  color: var(--primary-color);
+  border: 1px solid var(--border-container);
+}
+
+.gica-academic-program__action-btn--secondary:hover {
+  border-color: var(--secondary-color);
+  color: var(--secondary-color);
+}
+
+.gica-academic-program__action-buttons form {
+  display: flex;
+}
+
+.gica-academic-program__action-buttons input[type="file"] {
+  position: absolute;
+  opacity: 0;
+  overflow: hidden;
+}
+.gica-academic-program__upload-file{
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.gica-academic-program__submit-file{
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/*----------------------------------------*/
+/*  04. Footer
+/*----------------------------------------*/
+
+.gica-academic-program__footer {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-container);
+  text-align: center;
+}
+
+.gica-academic-program__footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gica-academic-program__footer-text {
+  margin: 0;
+  color: var(--quaternary-color);
+}
+
+.gica-academic-program__footer-text a {
+  color: var(--tertiary-color);
+  text-decoration: none;
+}
+
+.gica-academic-program__footer-text a:hover {
+  text-decoration: underline;
+}
+
+.gica-academic-program__version {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #999;
+}
+
+/*-- 
+      - Media Queries
+  -----------------------------------------*/
+@media (max-width: 768px) {
+  .gica-academic-program {
+    padding: 1rem;
+  }
+
+  .gica-academic-program__stats {
+    flex-direction: column;
+  }
+
+  .gica-academic-program__footer-content {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
