@@ -124,8 +124,8 @@ class GICA_Add_Academic_Program {
         }
         
         $programs[$category_program_field][$year_publication_program_field][] = array(
-            'code' => $code_program_field,
-            'title' => $title_program_field,
+            'code' => strtoupper($code_program_field),
+            'title' => strtoupper($title_program_field),
             'image' => $image_program_field,
             'url' => $url_program_field,
             'active' => $active_program_field,
