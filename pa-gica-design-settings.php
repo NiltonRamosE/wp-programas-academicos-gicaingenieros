@@ -159,7 +159,7 @@ class GICA_Design_Settings {
         $redirect_page_name = "Ir al Dashboard";
         $third_option_redirect_page = 'admin-post.php?action=export_design_settings';
         $third_option_name = "Exportar Diseño";
-        $fourth_option_name_design_settings = "Importar Diseño";
+        $fourth_option_name_design_settings = "Cargar JSON de diseño";
         ?>
         <div class="wrap gica-academic-program">
             <?php include plugin_dir_path(__FILE__) . 'partials/pa-gica-header.php'; ?>
@@ -393,19 +393,15 @@ class GICA_Design_Settings {
         check_admin_referer('import_design_settings_nonce');
 
     
-        // Comprobar si se ha subido el archivo
         if (isset($_FILES['design_settings_file']) && $_FILES['design_settings_file']['error'] == UPLOAD_ERR_OK) {
-            // Leer el contenido del archivo JSON
             $file = $_FILES['design_settings_file'];
             
             if ($file['type'] == 'application/json') {
                 $json_data = file_get_contents($file['tmp_name']);
                 
-                // Decodificar el JSON
                 $design_settings = json_decode($json_data, true);
     
                 if (is_array($design_settings)) {
-                    // Guardar las configuraciones en la base de datos
                     if (isset($design_settings['title'])) {
                         update_option('gica_design_title', $design_settings['title']);
                     }
@@ -422,21 +418,17 @@ class GICA_Design_Settings {
                         update_option('gica_design_pagination', $design_settings['pagination']);
                     }
     
-                    // Redirigir con mensaje de éxito
                     wp_redirect(add_query_arg('import_status', 'success', wp_get_referer()));
                     exit;
                 } else {
-                    // Redirigir con error en la decodificación del JSON
                     wp_redirect(add_query_arg('import_status', 'error', wp_get_referer()));
                     exit;
                 }
             } else {
-                // Redirigir si el archivo no es JSON
                 wp_redirect(add_query_arg('import_status', 'invalid_file', wp_get_referer()));
                 exit;
             }
         } else {
-            // Redirigir si hubo un error al subir el archivo
             wp_redirect(add_query_arg('import_status', 'upload_error', wp_get_referer()));
             exit;
         }

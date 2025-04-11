@@ -32,7 +32,7 @@
 
 /*----------------------------------------*/
 /*  01. Header
-  /*----------------------------------------*/
+/*----------------------------------------*/
 
 /*-- Common Style --*/
 
@@ -154,7 +154,7 @@
 
 /*----------------------------------------*/
 /*  02. Layout
-  /*----------------------------------------*/
+/*----------------------------------------*/
 
 /*-- Cards General--*/
 
@@ -175,7 +175,7 @@
 
 /*----------------------------------------*/
 /*  03. Actions Section
-  /*----------------------------------------*/
+/*----------------------------------------*/
 
 .gica-academic-program__action-buttons {
   display: flex;
@@ -214,9 +214,27 @@
   color: var(--secondary-color);
 }
 
+.gica-academic-program__action-buttons form {
+  display: flex;
+}
+
+.gica-academic-program__action-buttons input[type="file"] {
+  position: absolute;
+  opacity: 0;
+  overflow: hidden;
+}
+.gica-academic-program__upload-file{
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.gica-academic-program__submit-file{
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
 /*----------------------------------------*/
 /*  04. Footer
-  /*----------------------------------------*/
+/*----------------------------------------*/
 
 .gica-academic-program__footer {
   margin-top: 3rem;

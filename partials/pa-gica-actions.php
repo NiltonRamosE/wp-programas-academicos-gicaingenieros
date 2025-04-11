@@ -14,9 +14,12 @@
             <form method="post" enctype="multipart/form-data" action="<?php echo admin_url('admin-post.php'); ?>">
                 <?php wp_nonce_field('import_academic_programs_nonce'); ?>
                 <input type="hidden" name="action" value="import_academic_programs">
-                <input type="file" name="import_json" accept=".json" required>
-                <button type="submit" class="gica-academic-program__action-btn gica-academic-program__action-btn--secondary">
+                <input type="file" name="import_json" id="import_json" accept=".json" required>
+                <label for="import_json" class="gica-academic-program__action-btn gica-academic-program__action-btn--secondary gica-academic-program__upload-file">
                     <span class="dashicons dashicons-update spin"></span> <?php echo $fourth_option_name_add_program; ?>
+                </label>
+                <button type="submit" class="gica-academic-program__action-btn gica-academic-program__action-btn--secondary gica-academic-program__submit-file">
+                    Importar
                 </button>
             </form>
         <?php endif; ?>
@@ -24,12 +27,14 @@
             <form method="post" enctype="multipart/form-data" action="<?php echo admin_url('admin-post.php'); ?>">
                 <?php wp_nonce_field('import_design_settings_nonce'); ?>
                 <input type="hidden" name="action" value="import_design_settings">
-                <input type="file" name="design_settings_file" accept=".json" required>
-                <button type="submit" class="gica-academic-program__action-btn gica-academic-program__action-btn--secondary">
+                <input type="file" name="design_settings_file" id="design_settings_file" accept=".json" required>
+                <label for="design_settings_file" class="gica-academic-program__action-btn gica-academic-program__action-btn--secondary gica-academic-program__upload-file">
                     <span class="dashicons dashicons-update spin"></span> <?php echo $fourth_option_name_design_settings; ?>
+                </label>
+                <button type="submit" class="gica-academic-program__action-btn gica-academic-program__action-btn--secondary gica-academic-program__submit-file">
+                    Importar
                 </button>
             </form>
         <?php endif; ?>
-
     </div>
 </section>

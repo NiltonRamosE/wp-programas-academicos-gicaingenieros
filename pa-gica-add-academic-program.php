@@ -72,7 +72,7 @@ class GICA_Add_Academic_Program {
         $third_option_redirect_page = 'admin-post.php?action=export_academic_programs';
         $third_option_name = "Exportar archivo JSON";
 
-        $fourth_option_name_add_program = "Importar archivo JSON";
+        $fourth_option_name_add_program = "Importar JSON de programas";
 
         $programs = get_option('gica_academic_programs', array());
         if (!is_array($programs)) {
