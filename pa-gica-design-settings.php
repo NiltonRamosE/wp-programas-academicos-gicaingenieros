@@ -3,6 +3,7 @@
  * GICA Design Settings
  * Maneja la personalización desde el panel de administración
  */
+require_once plugin_dir_path(__FILE__) . 'helpers/pa-gica-dynamic-css-helper.php';
 
 class GICA_Design_Settings {
 
@@ -95,11 +96,11 @@ class GICA_Design_Settings {
 
         add_action('admin_menu', array($this, 'register_settings_page'));
         add_action('admin_init', array($this, 'register_settings'));
-        add_action('wp_enqueue_scripts', array($this, 'generate_dynamic_css_main_title'), 100);
-        add_action('wp_enqueue_scripts', array($this, 'generate_dynamic_css_navbar'), 100);
-        add_action('wp_enqueue_scripts', array($this, 'generate_dynamic_css_filters'), 100);
-        add_action('wp_enqueue_scripts', array($this, 'generate_dynamic_css_cards'), 100);
-        add_action('wp_enqueue_scripts', array($this, 'generate_dynamic_css_pagination'), 100);
+        add_action('wp_enqueue_scripts', array($this, 'generate_dynamic_css_main_title'), 999);
+        add_action('wp_enqueue_scripts', array($this, 'generate_dynamic_css_navbar'), 999);
+        add_action('wp_enqueue_scripts', array($this, 'generate_dynamic_css_filters'), 999);
+        add_action('wp_enqueue_scripts', array($this, 'generate_dynamic_css_cards'), 999);
+        add_action('wp_enqueue_scripts', array($this, 'generate_dynamic_css_pagination'), 999);
         add_action('admin_post_export_design_settings', array($this, 'export_design_settings'));
         add_action('admin_post_import_design_settings', array($this, 'import_design_settings'));
     }
@@ -226,129 +227,50 @@ class GICA_Design_Settings {
     }
 
     public function generate_dynamic_css_main_title() {
-        $design_title = get_option('gica_design_title', array());
-        $design_title = wp_parse_args($design_title, $this->default_design_title);
-        
-        $css = ":root {\n";
-        $css .= "    --title-color: {$design_title['title-color']};\n";
-        $css .= "    --line-title-color: {$design_title['line-title-color']};\n";
-        $css .= "    --text-title-size-min: {$design_title['text-title-size-min']};\n";
-        $css .= "    --text-title-size-max: {$design_title['text-title-size-max']};\n";
-        $css .= "    --text-title-weight: {$design_title['text-title-weight']};\n";
-
-        $css .= "    --width-title-line-base: {$design_title['width-title-line-base']};\n";
-        $css .= "    --width-title-line-tablet: {$design_title['width-title-line-tablet']};\n";
-        $css .= "    --width-title-line-mobile: {$design_title['width-title-line-mobile']};\n";
-
-        $css .= "    --width-title-line-hover-base: {$design_title['width-title-line-hover-base']};\n";
-        $css .= "    --width-title-line-hover-tablet: {$design_title['width-title-line-hover-tablet']};\n";
-        $css .= "    --width-title-line-hover-mobile: {$design_title['width-title-line-hover-mobile']};\n";
-        $css .= "}\n";
-        
-        wp_register_style('gica-dynamic-css_main_title', false);
-        wp_enqueue_style('gica-dynamic-css_main_title');
-        wp_add_inline_style('gica-dynamic-css_main_title', $css);
+        GICA_Design_CSS_Helper::generate_dynamic_css(
+            $this->default_design_title,
+            'gica_design_title',
+            array_keys($this->default_design_title),
+            'gica-dynamic-css_main_title'
+        );
     }
 
-    public function generate_dynamic_css_navbar() {
-        $design_navbar = get_option('gica_design_navbar', array());
-        $design_navbar = wp_parse_args($design_navbar, $this->default_design_navbar);
-        
-        $css = ":root {\n";
-        $css .= "    --gap-navbar: {$design_navbar['gap-navbar']};\n";
-        $css .= "    --margin-bottom-navbar: {$design_navbar['margin-bottom-navbar']};\n";
-        $css .= "    --border-radius-navbar: {$design_navbar['border-radius-navbar']};\n";
-        $css .= "    --font-size-navbar: {$design_navbar['font-size-navbar']};\n";
-        $css .= "    --font-weight-navbar: {$design_navbar['font-weight-navbar']};\n";
 
-        $css .= "    --grid-columns-navbar-escritorio-xl: {$design_navbar['grid-columns-navbar-escritorio-xl']};\n";
-        $css .= "    --grid-columns-navbar-escritorio-lg: {$design_navbar['grid-columns-navbar-escritorio-lg']};\n";
-        $css .= "    --grid-columns-navbar-tablet: {$design_navbar['grid-columns-navbar-tablet']};\n";
-        $css .= "    --grid-columns-navbar-mobile: {$design_navbar['grid-columns-navbar-mobile']};\n";
-        
-        $css .= "    --btn-nav-active: {$design_navbar['btn-nav-active']};\n";
-        $css .= "    --btn-nav-primary-color: {$design_navbar['btn-nav-primary-color']};\n";
-        $css .= "    --btn-nav-secondary-color: {$design_navbar['btn-nav-secondary-color']};\n";
-        $css .= "    --btn-nav-text-color: {$design_navbar['btn-nav-text-color']};\n";
-        $css .= "}\n";
-        
-        wp_register_style('gica-dynamic-css_navbar', false);
-        wp_enqueue_style('gica-dynamic-css_navbar');
-        wp_add_inline_style('gica-dynamic-css_navbar', $css);
+    public function generate_dynamic_css_navbar() {
+        GICA_Design_CSS_Helper::generate_dynamic_css(
+            $this->default_design_navbar,
+            'gica_design_navbar',
+            array_keys($this->default_design_navbar),
+            'gica-dynamic-css_navbar'
+        );
     }
     
     public function generate_dynamic_css_filters() {
-        $design_filters = get_option('gica_design_filters', array());
-        $design_filters = wp_parse_args($design_filters, $this->default_design_filters);
-        
-        $css = ":root {\n";
-        $css .= "    --border-container-section: {$design_filters['border-container-section']};\n";
-        $css .= "    --padding-container-section: {$design_filters['padding-container-section']};\n";
-        $css .= "    --margin-top-container-section: {$design_filters['margin-top-container-section']};\n";
-        
-        $css .= "    --margin-bottom-container-filter: {$design_filters['margin-bottom-container-filter']};\n";
-        
-        $css .= "    --gap-filter-year: {$design_filters['gap-filter-year']};\n";
-        $css .= "    --border-radius-filter-year: {$design_filters['border-radius-filter-year']};\n";
-        $css .= "    --font-weight-filter-year: {$design_filters['font-weight-filter-year']};\n";
-        $css .= "    --font-size-filter-year: {$design_filters['font-size-filter-year']};\n";
-        $css .= "    --min-width-filter-year: {$design_filters['min-width-filter-year']};\n";
-        
-        $css .= "    --filter-primary-color: {$design_filters['filter-primary-color']};\n";
-        $css .= "    --filter-secondary-color: {$design_filters['filter-secondary-color']};\n";
-        $css .= "    --filter-color: {$design_filters['filter-color']};\n";
-        $css .= "    --filter-hover-color: {$design_filters['filter-hover-color']};\n";
-        $css .= "    --filter-bg-color: {$design_filters['filter-bg-color']};\n";
-        $css .= "}\n";
-        
-        wp_register_style('gica-dynamic-css_filters', false);
-        wp_enqueue_style('gica-dynamic-css_filters');
-        wp_add_inline_style('gica-dynamic-css_filters', $css);
+        GICA_Design_CSS_Helper::generate_dynamic_css(
+            $this->default_design_filters,
+            'gica_design_filters',
+            array_keys($this->default_design_filters),
+            'gica-dynamic-css_filters'
+        );
     }
-
+    
     public function generate_dynamic_css_cards() {
-        $design_cards = get_option('gica_design_cards', array());
-        $design_cards = wp_parse_args($design_cards, $this->default_design_cards);
-        
-        $css = ":root {\n";
-        $css .= "    --border-radius-card: {$design_cards['border-radius-card']};\n";
-        $css .= "    --title-color-card: {$design_cards['title-color-card']};\n";
-        $css .= "    --subtitle-color-card: {$design_cards['subtitle-color-card']};\n";
-        $css .= "    --title-font-size-card: {$design_cards['title-font-size-card']};\n";
-        $css .= "    --subtitle-font-size-card: {$design_cards['subtitle-font-size-card']};\n";
-        $css .= "    --title-font-weight-card: {$design_cards['title-font-weight-card']};\n";
-        
-        $css .= "    --badge-state-active-card: {$design_cards['badge-state-active-card']};\n";
-        $css .= "    --badge-state-inactive-card: {$design_cards['badge-state-inactive-card']};\n";
-        $css .= "    --badge-state-updated-card: {$design_cards['badge-state-updated-card']};\n";
-        $css .= "}\n";
-        
-        wp_register_style('gica-dynamic-css_cards', false);
-        wp_enqueue_style('gica-dynamic-css_cards');
-        wp_add_inline_style('gica-dynamic-css_cards', $css);
+        GICA_Design_CSS_Helper::generate_dynamic_css(
+            $this->default_design_cards,
+            'gica_design_cards',
+            array_keys($this->default_design_cards),
+            'gica-dynamic-css_cards'
+        );
     }
-
+    
     public function generate_dynamic_css_pagination() {
-        $design_pagination = get_option('gica_design_pagination', array());
-        $design_pagination = wp_parse_args($design_pagination, $this->default_design_pagination);
-        
-        $css = ":root {\n";
-        $css .= "    --pagination-gap: {$design_pagination['pagination-gap']};\n";
-        $css .= "    --pagination-font-weight: {$design_pagination['pagination-font-weight']};\n";
-        $css .= "    --pagination-border-radius: {$design_pagination['pagination-border-radius']};\n";
-        $css .= "    --pagination-border-radius-prev-next: {$design_pagination['pagination-border-radius-prev-next']};\n";
-
-        $css .= "    --pagination-bg: {$design_pagination['pagination-bg']};\n";
-        $css .= "    --pagination-bg-hover: {$design_pagination['pagination-bg-hover']};\n";
-        $css .= "    --pagination-bg-hover-active: {$design_pagination['pagination-bg-hover-active']};\n";
-        $css .= "    --pagination-text-color: {$design_pagination['pagination-text-color']};\n";
-        $css .= "    --pagination-text-color-active: {$design_pagination['pagination-text-color-active']};\n";
-        $css .= "}\n";
-        
-        wp_register_style('gica-dynamic-css_pagination', false);
-        wp_enqueue_style('gica-dynamic-css_pagination');
-        wp_add_inline_style('gica-dynamic-css_pagination', $css);
-    }
+        GICA_Design_CSS_Helper::generate_dynamic_css(
+            $this->default_design_pagination,
+            'gica_design_pagination',
+            array_keys($this->default_design_pagination),
+            'gica-dynamic-css_pagination'
+        );
+    }    
 
     function export_design_settings() {
 
