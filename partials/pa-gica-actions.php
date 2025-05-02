@@ -4,7 +4,7 @@
         <a href="<?php echo admin_url($redirect_page); ?>" class="gica-academic-program__action-btn gica-academic-program__action-btn--primary">
             <?php echo $redirect_page_name; ?>
         </a>
-        <a href="https://niltonramosencarnacion.vercel.app" target="_blank" class="gica-academic-program__action-btn gica-academic-program__action-btn--secondary">
+        <a href="https://niltonramosencarnacion.vercel.app/projects/programacademicowp/pawp-docs" target="_blank" class="gica-academic-program__action-btn gica-academic-program__action-btn--secondary">
             Ver Documentación
         </a>
         <a href="<?php echo admin_url($third_option_redirect_page); ?>" title="Exporta lo guardado en un archivo .json" class="gica-academic-program__action-btn gica-academic-program__action-btn--secondary">
